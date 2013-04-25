@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+    <changeSet id="create table users" author="igor">
+        <sql>
+            CREATE TABLE users (
+            id int(11) NOT NULL AUTO_INCREMENT,
+            user_id varchar(128) NOT NULL,
+            hash varchar(128) NOT NULL,
+            created_at datetime DEFAULT NULL,
+            updated_at datetime DEFAULT NULL,
+            PRIMARY KEY (id)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+        </sql>
+    </changeSet>
+
+    <changeSet id="create table pages" author="igor">
+        <sql>
+            CREATE TABLE pages (
+            id int(11) NOT NULL AUTO_INCREMENT,
+            title varchar(128) NOT NULL,
+            content text NOT NULL,
+            created_at datetime DEFAULT NULL,
+            updated_at datetime DEFAULT NULL,
+            seo_id varchar(128) NOT NULL,
+            PRIMARY KEY (id)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+        </sql>
+    </changeSet>
+
+    <changeSet id="make user id unique" author="igor">
+            <sql>
+                alter table users add unique key user_id_unique(user_id);
+            </sql>
+        </changeSet>
+</databaseChangeLog>
