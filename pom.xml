@@ -28,7 +28,7 @@
                         <version>2.0.5</version>
                         <executions>
                             <execution>
-                                <id>migration</id>
+                                <id>migration-production</id>
                                 <phase>validate</phase>
                                 <configuration>
                                     <url>jdbc:mysql://127.0.0.1/javalite_development</url>
@@ -90,7 +90,7 @@
                 <version>2.0.5</version>
                 <executions>
                     <execution>
-                        <id>migration</id>
+                        <id>migration-development</id>
                         <phase>validate</phase>
                         <configuration>
                             <url>${jdbc.url}</url>
