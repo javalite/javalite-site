@@ -16,6 +16,48 @@
         <jdbc.test.url>jdbc:mysql://localhost/javalite_test</jdbc.test.url>
     </properties>
 
+    <profiles>
+        <profile>
+            <id>production</id>
+            <build>
+                <plugins>
+
+                    <plugin>
+                        <groupId>org.liquibase</groupId>
+                        <artifactId>liquibase-maven-plugin</artifactId>
+                        <version>2.0.5</version>
+                        <executions>
+                            <execution>
+                                <id>migration</id>
+                                <phase>validate</phase>
+                                <configuration>
+                                    <url>jdbc:mysql://127.0.0.1/javalite_development</url>
+                                </configuration>
+                                <goals>
+                                    <goal>update</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <changeLogFile>src/db/migrations.xml</changeLogFile>
+                            <driver>com.mysql.jdbc.Driver</driver>
+                            <username>root</username>
+                            <password>${env.MYSQL_PASSWORD}</password>
+                        </configuration>
+                        <dependencies>
+                            <dependency>
+                                <groupId>mysql</groupId>
+                                <artifactId>mysql-connector-java</artifactId>
+                                <version>5.1.15</version>
+                            </dependency>
+                        </dependencies>
+                    </plugin>
+
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
     <build>
         <finalName>javalt</finalName>
         <plugins>
