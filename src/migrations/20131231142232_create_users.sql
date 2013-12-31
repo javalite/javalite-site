@@ -1,0 +1,10 @@
+CREATE TABLE users (
+  id         INT(11)      NOT NULL AUTO_INCREMENT,
+  user_id    VARCHAR(128) NOT NULL,
+  hash       VARCHAR(128) NOT NULL,
+  created_at DATETIME DEFAULT NULL,
+  updated_at DATETIME DEFAULT NULL,
+  PRIMARY KEY (id)
+)
+  ENGINE =InnoDB
+  DEFAULT CHARSET =utf8;

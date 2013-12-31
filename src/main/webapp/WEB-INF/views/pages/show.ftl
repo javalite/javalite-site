@@ -40,8 +40,7 @@ ${page.content}
        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
    })();
 </script>
-<noscript>Please enable JavaScript to view comments.</a>
-</noscript>
+<noscript>Please enable JavaScript to view comments</noscript>
 
 
 
