@@ -11,40 +11,43 @@
             <div class="nav-collapse">
 
                 <ul class="nav">
-                    <li><a href="/#news">News</a></li>
+                    <#--<li><a href="/#news">News</a></li>-->
 
-                    <li><a href="/p/activejdbc">ActiveJDBC</a></li>
+                    <li><a href="/activejdbc">ActiveJDBC</a></li>
 
-                    <li><a href="/p/activeweb">ActiveWeb</a></li>
-                    <li><a href="/p/jspec">JSpec</a></li>
+                    <li><a href="/activeweb">ActiveWeb</a></li>
+                    <li><a href="/jspec">JSpec</a></li>
 
-                    <li><a href="/p/http">Http</a></li>
+                    <li><a href="/http">Http</a></li>
 
 
                     <li class="divider-vertical"></li>
-                    <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">JavaDoc<b
-                            class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="http://ipsolutionsdev.com/activejdbc/">ActiveJDBC</a></li>
-                            <li><a href="http://ipsolutionsdev.com/activejdbc/">ActiveWeb</a></li>
-                            <li><a href="http://ipsolutionsdev.com/activejdbc/org/javalite/test/jspec/Expectation.html">JSpec</a></li>
-                            <li><a href="http://ipsolutionsdev.com/activejdbc/org/javalite/http/package-summary.html">Http</a></li>
 
-                        </ul>
-                    </li>
+                        <li><a href="/documentation">Documentation</a></li>
+                    <#--<li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">JavaDoc<b-->
+                            <#--class="caret"></b></a>-->
+                        <#--<ul class="dropdown-menu">-->
+                            <#--<li><a href="http://ipsolutionsdev.com/activejdbc/">ActiveJDBC</a></li>-->
+                            <#--<li><a href="http://ipsolutionsdev.com/activejdbc/">ActiveWeb</a></li>-->
+                            <#--<li><a href="http://ipsolutionsdev.com/activejdbc/org/javalite/test/jspec/Expectation.html">JSpec</a></li>-->
+                            <#--<li><a href="http://ipsolutionsdev.com/activejdbc/org/javalite/http/package-summary.html">Http</a></li>-->
 
+                        <#--</ul>-->
+                    <#--</li>-->
 
-                    <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Sources<b
-                            class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="http://github/activejdbc/">ActiveJDBC</a></li>
-                            <li><a href="http://github/activeweb/">ActiveWeb</a></li>
-                            <li><a href="http://github/activeweb/jspec">JSpec</a></li>
-                            <li><a href="http://github/activeweb/http">Http</a></li>
-                        </ul>
-                    </li>
+                        <li><a href="/sources">Sources</a></li>
 
-                    <li><@link_to controller="support">Support</@link_to></li>
+                    <#--<li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Sources<b-->
+                            <#--class="caret"></b></a>-->
+                        <#--<ul class="dropdown-menu">-->
+                            <#--<li><a href="http://github/activejdbc/">ActiveJDBC</a></li>-->
+                            <#--<li><a href="http://github/activeweb/">ActiveWeb</a></li>-->
+                            <#--<li><a href="http://github/activeweb/jspec">JSpec</a></li>-->
+                            <#--<li><a href="http://github/activeweb/http">Http</a></li>-->
+                        <#--</ul>-->
+                    <#--</li>-->
+
+                        <li><a href="/support">Support</a></li>
                 </ul>
 
                 <ul class="nav pull-right">

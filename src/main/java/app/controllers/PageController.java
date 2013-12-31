@@ -22,17 +22,14 @@ import org.javalite.activeweb.AppController;
 /**
  * @author Igor Polevoy
  */
-public class HomeController extends AppController {
+public class PageController extends AppController {
     public void index(){
-
-        Page p = (Page) Page.findFirst("seo_id = 'home'");//hardcoded - frown:)
-
+        Page p = Page.findFirst("seo_id = 'home'");//hardcoded - frown:)
         if (p == null) {
             render("/system/404");
         } else {
             view("page", p);
+            render("/pages/show");
         }
-
-        render("/pages/show");
     }
 }

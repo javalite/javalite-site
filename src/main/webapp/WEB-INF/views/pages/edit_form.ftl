@@ -21,7 +21,7 @@
 <pre >
 &lt;ul class=&quot;breadcrumb&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;/&quot;&gt;Home&lt;/a&gt; &lt;span class=&quot;divider&quot;&gt;/&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;/p/activejdbc&quot;&gt;ActiveJDBC&lt;/a&gt; &lt;span class=&quot;divider&quot;&gt;/&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;/activejdbc&quot;&gt;ActiveJDBC&lt;/a&gt; &lt;span class=&quot;divider&quot;&gt;/&lt;/span&gt;&lt;/li&gt;
     &lt;li class=&quot;active&quot;&gt;REPLACE&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1&gt;ActiveJDBC&lt;/h1&gt;

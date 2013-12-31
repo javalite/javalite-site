@@ -1,6 +1,6 @@
 package app.config;
 
-import app.controllers.PagesController;
+import app.controllers.*;
 import org.javalite.activeweb.AbstractRouteConfig;
 import org.javalite.activeweb.AppContext;
 
@@ -9,6 +9,13 @@ import org.javalite.activeweb.AppContext;
  */
 public class RouteConfig extends AbstractRouteConfig{
     public void init(AppContext appContext) {
-        route("/p/{id}").to(PagesController.class).action("show").get();
+
+        route("/login").to(LoginController.class);
+        route("/logout").to(LogoutController.class);
+        route("/pages").to(PagesController.class);
+        route("/unauthorized").to(UnauthorizedController.class);
+        route("/hash").to(HashController.class);
+        route("/highlighter").to(HighlighterController.class);
+        route("/{id}").to(PagesController.class).action("show").get();
     }
 }

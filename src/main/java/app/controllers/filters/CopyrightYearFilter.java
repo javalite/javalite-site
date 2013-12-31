@@ -1,4 +1,4 @@
-package app.controllers;
+package app.controllers.filters;
 
 import org.javalite.activeweb.controller_filters.HttpSupportFilter;
 
