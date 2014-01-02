@@ -52,12 +52,12 @@ public class PagesController extends AppController {
     }
 
     public void update() {
-        Page p = (Page) Page.findFirst("seo_id = ?", param("id"));
+        Page p = Page.findFirst("seo_id = ?", param("id"));
         p.setTitle(param("title"));
         p.setContent(param("content"));
 
         if (p.save()) {
-            redirect(PagesController.class, param("seo_id"));
+            redirect(param("id"));
         } else {
             view("page", p);
             view("errors", p.errors());
