@@ -1,4 +1,4 @@
-CREATE TABLE pages (
+CREATE TABLE IF NOT EXISTS pages (
   id         INT(11)      NOT NULL AUTO_INCREMENT,
   title      VARCHAR(128) NOT NULL,
   content    TEXT         NOT NULL,

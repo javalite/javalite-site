@@ -1,4 +1,4 @@
-CREATE TABLE users (
+CREATE TABLE IF NOT EXISTS users (
   id         INT(11)      NOT NULL AUTO_INCREMENT,
   user_id    VARCHAR(128) NOT NULL,
   hash       VARCHAR(128) NOT NULL,
