@@ -1,8 +1,16 @@
 package app.controllers;
 
-import app.models.Page;
 import org.javalite.activeweb.AppController;
 import org.javalite.activeweb.annotations.RESTful;
+import org.javalite.common.Util;
+import org.javalite.test.XPathHelper;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.StringReader;
+
+import static org.javalite.common.Util.readFile;
 
 /**
  * @author Igor Polevoy: 5/6/12 6:16 PM
@@ -12,56 +20,31 @@ import org.javalite.activeweb.annotations.RESTful;
 public class PagesController extends AppController {
 
     public void index() {
-        view("pages", Page.findAll().orderBy("seo_id asc"));
+        view("page", readFile("/home/igor/projects/javalite/website/output/index.html"));
     }
 
+    public void show() throws IOException {
+        String file = readFile("/home/igor/projects/javalite/website/output/" +getId() + ".md.html");
 
-    public void show() {
-        Page p = (Page) Page.findFirst("seo_id = ?", param("id"));
+        BufferedReader br = new BufferedReader(new StringReader(file));
+        String firstLine = br.readLine();
 
-        if (p == null) {
-            render("/system/404");
-        } else {
-            view("page", p);
+        String[] parts = firstLine.split("\\|");
+        String title = "";
+        String[] breadcrubms = new String[0];
+
+        if(parts.length == 2){
+            title = parts[0].substring(3);
+            breadcrubms = parts[1].substring(1, parts[1].length() - 4).split(",");
         }
-    }
 
-    public void create() {
+        if(!title.equals("")){
+            view("title", title);
+            view("breadcrumbs", breadcrubms);
+            view("page", file.substring(firstLine.length()));
 
-        Page p = new Page();
-        p.fromMap(params1st());
-        if (p.save()) {
-            redirect(PagesController.class);
-        } else {
-            view("page", p);
-            view("errors", p.errors());
-            render("new_form");
-        }
-    }
-
-    public void newForm() {}
-
-
-    public void editForm() {
-        Page p = (Page) Page.findFirst("seo_id = ?", param("id"));
-        if (p != null) {
-            view("page", p);
-        } else {
-            render("/system/404");
-        }
-    }
-
-    public void update() {
-        Page p = Page.findFirst("seo_id = ?", param("id"));
-        p.setTitle(param("title"));
-        p.setContent(param("content"));
-
-        if (p.save()) {
-            redirect(param("id"));
-        } else {
-            view("page", p);
-            view("errors", p.errors());
-            render("edit_form");
+        }else{
+            view("page", file);
         }
     }
 }

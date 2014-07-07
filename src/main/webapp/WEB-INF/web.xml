@@ -19,7 +19,7 @@
         </init-param>
         <init-param>
             <param-name>root_controller</param-name>
-            <param-value>page</param-value>
+            <param-value>pages</param-value>
         </init-param>
     </filter>
 

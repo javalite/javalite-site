@@ -14,6 +14,10 @@
     <link href="/css/bootswatch/bootstrap-responsive.css" rel="stylesheet"/>
     <link href="/css/bootswatch/docs.css" rel="stylesheet"/>
 
+
+
+
+
     <link href="/css/main.css" rel="stylesheet"/>
     <script src="/js/bootswatch/jquery.js"></script>
     <script src="/js/bootswatch/bootstrap-dropdown.js"></script>
@@ -21,6 +25,10 @@
     <script src="/js/bootswatch/bootstrap-collapse.js"></script>
     <script src="/js/bootswatch/bootstrap-tooltip.js"></script>
     <script src="/js/aw.js" type="text/javascript"></script>
+
+
+    <#--<script src="/js/lib/jquery.toc.min.js"></script>-->
+    <#--<link href="/css/jquery.toc.css" rel="stylesheet"/>-->
 
     <script type="text/javascript">
         var _gaq = _gaq || [];

@@ -1,3 +1,17 @@
 .error{
     color:red;
 }
+
+.kw{
+    color: darkblue;
+    font-weight:bold ;
+}
+
+.st{
+    color: #408140;
+    font-weight:bold ;
+}
+
+.fu{
+    color: #000000;
+}

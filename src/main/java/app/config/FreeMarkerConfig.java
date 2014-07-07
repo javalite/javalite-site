@@ -16,6 +16,7 @@ limitations under the License.
 
 package app.config;
 
+import org.javalite.activejdbc.Base;
 import org.javalite.activeweb.freemarker.AbstractFreeMarkerConfig;
 
 /**

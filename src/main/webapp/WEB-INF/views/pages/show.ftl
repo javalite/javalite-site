@@ -1,27 +1,34 @@
+<#--<@content for="title">${(page.title)!""}</@content>-->
 
-<@content for="title">${(page.title)!""}</@content>
-
-
+<#--Library from: http://www.webdevelopers.eu/shop/10/doc/index-->
 <script type="text/javascript">
-    function scrollTo(id){
-          $('html,body').animate({scrollTop: $("#"+id).offset().top - 50}, 'slow');
-    }
+    $(function() {
+        $("#toc").toc("h2, h3, h4", "simple:nohilite", 50);
+    });
 </script>
 
-<@render partial="/common/highlighter_includes"/>
 
 
-<#if (session.user)??>
+<@content for="title">${title!}</@content>
+
+
+<#if breadcrumbs ??>
 <ul class="breadcrumb">
-    <li><@link_to>Pages</@link_to> <span class="divider">|</span></li>
-    <li><@link_to id="${page.seo_id}/edit_form">Edit</@link_to>  <span class="divider">|</span></li>
-        <li><@link_to controller="logout">Logout</@link_to> </li>
+    <li><a href="/">Home</a> <span class="divider">/</span></li>
+    <#list breadcrumbs as br>
+        <#if br_has_next >
+            <li>${br}<span class="divider">/</span></li>
+        <#else>
+            <li>${br}</li>
+        </#if>
+    </#list>
 </ul>
 </#if>
 
-${page.content}
 
-<hr/>
+${page}
+
+
 
 
 <div style="height: 20px"></div>
@@ -29,16 +36,16 @@ ${page.content}
 <div id="disqus_thread"></div>
 <script type="text/javascript">
 
-   var disqus_shortname = 'javalite';
+    var disqus_shortname = 'javalite';
 
-   /* * * DON'T EDIT BELOW THIS LINE * * */
-   (function () {
-       var dsq = document.createElement('script');
-       dsq.type = 'text/javascript';
-       dsq.async = true;
-       dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-   })();
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
 </script>
 <noscript>Please enable JavaScript to view comments</noscript>
 

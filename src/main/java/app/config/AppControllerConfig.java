@@ -15,14 +15,9 @@ limitations under the License.
 */
 package app.config;
 
-import app.controllers.PageController;
 import app.controllers.filters.CopyrightYearFilter;
-import app.controllers.LoginController;
-import app.controllers.PagesController;
-import app.controllers.filters.AuthorizationFilter;
 import org.javalite.activeweb.AbstractControllerConfig;
 import org.javalite.activeweb.AppContext;
-import org.javalite.activeweb.controller_filters.DBConnectionFilter;
 import org.javalite.activeweb.controller_filters.TimingFilter;
 
 
@@ -33,9 +28,5 @@ public class AppControllerConfig extends AbstractControllerConfig {
 
     public void init(AppContext context) {
         addGlobalFilters(new TimingFilter(), new CopyrightYearFilter());
-
-        add(new DBConnectionFilter()).to(PageController.class, PagesController.class, LoginController.class);
-
-        add(new AuthorizationFilter()).to(PagesController.class).forActions("edit-form", "update", "new-form");
     }
 }
