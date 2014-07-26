@@ -67,6 +67,13 @@
             <artifactId>slf4j-simple</artifactId>
             <version>1.7.6</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.javalite</groupId>
+            <artifactId>app-config</artifactId>
+            <version>1.4.10-SNAPSHOT</version>
+        </dependency>
+
         <dependency>
             <groupId>com.sun</groupId>
             <artifactId>tools</artifactId>
@@ -75,4 +82,17 @@
             <systemPath>${java.home}/../lib/tools.jar</systemPath>
         </dependency>
     </dependencies>
+
+    <repositories>
+        <repository>
+            <id>snapshots1</id>
+            <name>Sonatype Snapshots</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+                <checksumPolicy>warn</checksumPolicy>
+            </snapshots>
+        </repository>
+    </repositories>
 </project>

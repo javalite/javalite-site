@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.StringReader;
 
+import static org.javalite.app_config.AppConfig.p;
 import static org.javalite.common.Util.readFile;
 
 /**
@@ -20,11 +21,12 @@ import static org.javalite.common.Util.readFile;
 public class PagesController extends AppController {
 
     public void index() {
-        view("page", readFile("/home/igor/projects/javalite/website/output/index.html"));
+        view("page", readFile(p("content_dir") + "/index.html"));
     }
 
     public void show() throws IOException {
-        String file = readFile("/home/igor/projects/javalite/website/output/" +getId() + ".md.html");
+
+        String file = readFile(p("content_dir") + "/" +getId() + ".md.html");
 
         BufferedReader br = new BufferedReader(new StringReader(file));
         String firstLine = br.readLine();
