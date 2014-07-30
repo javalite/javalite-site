@@ -15,3 +15,18 @@
 .fu{
     color: #000000;
 }
+
+.sp-code-number{
+    background-color: #f5f5f5;
+    border: solid 1px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    border-collapse: separate;
+}
+.sp-code-number td{
+    border: none;
+}
+.sp-code-number pre{
+    border: none;
+    margin: 0;
+    padding: 0.25em 0;
+}
