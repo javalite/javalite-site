@@ -64,6 +64,12 @@
             <artifactId>activeweb</artifactId>
             <version>1.11-SNAPSHOT</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.javalite</groupId>
+            <artifactId>javalite-common</artifactId>
+            <version>1.4.10-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>org.javalite</groupId>
             <artifactId>activeweb-testing</artifactId>

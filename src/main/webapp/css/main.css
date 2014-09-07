@@ -3,17 +3,21 @@
 }
 
 .kw{
-    color: darkblue;
+    color: #ff8500;
+}
+
+.dt{
+    color: #07ccff;
     font-weight:bold ;
 }
 
 .st{
-    color: #408140;
-    font-weight:bold ;
+    color: #ffec01;
 }
 
 .fu{
-    color: #000000;
+    color: #ffffff;
+    font-weight:bold ;
 }
 
 .sp-code-number{
@@ -29,4 +33,10 @@
     border: none;
     margin: 0;
     padding: 0.25em 0;
+}
+
+.sourceCode{
+    background-color: #505050;
+    font-size:large;
+    color: #ffffff;
 }

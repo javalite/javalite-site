@@ -1,43 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-
+    <meta charset="utf-8">
+    <title>JavaLite - <@yield to="title"/></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="${context_path}/css/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="${context_path}/css/bootswatch.css">
+    <link rel="stylesheet" href="${context_path}/css/main.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="${context_path}/js/html5shiv.js"></script>
+    <script src="${context_path}/js/respond.min.js"></script>
     <![endif]-->
-    <!-- Le styles -->
-    <link href="/css/bootswatch/bootstrap.min.css" rel="stylesheet"/>
-    <link href="/css/bootswatch/bootstrap-responsive.css" rel="stylesheet"/>
-    <link href="/css/bootswatch/docs.css" rel="stylesheet"/>
+    <script>
 
-
-
-
-
-    <link href="/css/main.css" rel="stylesheet"/>
-    <script src="/js/bootswatch/jquery.js"></script>
-    <script src="/js/bootswatch/bootstrap-dropdown.js"></script>
-    <script src="/js/bootswatch/bootstrap-scrollspy.js"></script>
-    <script src="/js/bootswatch/bootstrap-collapse.js"></script>
-    <script src="/js/bootswatch/bootstrap-tooltip.js"></script>
-    <script src="/js/aw.js" type="text/javascript"></script>
-
-
-    <#--<script src="/js/lib/jquery.toc.min.js"></script>-->
-    <#--<link href="/css/jquery.toc.css" rel="stylesheet"/>-->
-
-    <script type="text/javascript">
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-23019901-1']);
         _gaq.push(['_setDomainName', "bootswatch.com"]);
         _gaq.push(['_setAllowLinker', true]);
         _gaq.push(['_trackPageview']);
 
-        (function() {
+        (function () {
             var ga = document.createElement('script');
             ga.type = 'text/javascript';
             ga.async = true;
@@ -45,22 +28,75 @@
             var s = document.getElementsByTagName('script')[0];
             s.parentNode.insertBefore(ga, s);
         })();
-        function igor() {
-            $("#igor").css("display", "block");
-        }
+
     </script>
-
-    <title>JavaLite: <@yield to="title"/></title>
 </head>
+<body>
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="../" class="navbar-brand">JavaLite</a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+            <ul class="nav navbar-nav">
 
-<body data-spy="scroll" data-target=".subnav" data-offset="50">
+                <li><a href="/activejdbc">ActiveJDBC</a></li>
 
-<#include "header.ftl" >
-<div class="container">
-${page_content}
-    <#include "footer.ftl" >
+                <li><a href="/activeweb">ActiveWeb</a></li>
+                <li><a href="/jspec">JSpec</a></li>
+
+                <li><a href="/http">Http</a></li>
+
+
+                <li class="divider-vertical"></li>
+
+                <li><a href="/documentation">Documentation</a></li>
+            <#--<li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">JavaDoc<b-->
+            <#--class="caret"></b></a>-->
+            <#--<ul class="dropdown-menu">-->
+            <#--<li><a href="http://ipsolutionsdev.com/activejdbc/">ActiveJDBC</a></li>-->
+            <#--<li><a href="http://ipsolutionsdev.com/activejdbc/">ActiveWeb</a></li>-->
+            <#--<li><a href="http://ipsolutionsdev.com/activejdbc/org/javalite/test/jspec/Expectation.html">JSpec</a></li>-->
+            <#--<li><a href="http://ipsolutionsdev.com/activejdbc/org/javalite/http/package-summary.html">Http</a></li>-->
+
+            <#--</ul>-->
+            <#--</li>-->
+
+                <li><a href="/sources">Sources</a></li>
+
+            <#--<li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Sources<b-->
+            <#--class="caret"></b></a>-->
+            <#--<ul class="dropdown-menu">-->
+            <#--<li><a href="http://github/activejdbc/">ActiveJDBC</a></li>-->
+            <#--<li><a href="http://github/activeweb/">ActiveWeb</a></li>-->
+            <#--<li><a href="http://github/activeweb/jspec">JSpec</a></li>-->
+            <#--<li><a href="http://github/activeweb/http">Http</a></li>-->
+            <#--</ul>-->
+            <#--</li>-->
+
+                <li><a href="/support">Support</a></li>
+            </ul>
+
+
+        </div>
+    </div>
 </div>
 
 
+<div class="container">
+
+    ${page_content}
+
+
+</div>
+
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="${context_path}/js/bootstrap.min.js"></script>
+<script src="${context_path}/js/bootswatch.js"></script>
 </body>
 </html>

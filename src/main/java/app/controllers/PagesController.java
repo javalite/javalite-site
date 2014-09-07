@@ -2,13 +2,13 @@ package app.controllers;
 
 import org.javalite.activeweb.AppController;
 import org.javalite.activeweb.annotations.RESTful;
-import org.javalite.common.Util;
-import org.javalite.test.XPathHelper;
+import org.javalite.common.Inflector;
 
-import java.io.BufferedReader;
-import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.StringReader;
+import java.util.Properties;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static org.javalite.app_config.AppConfig.p;
 import static org.javalite.common.Util.readFile;
@@ -21,32 +21,35 @@ import static org.javalite.common.Util.readFile;
 public class PagesController extends AppController {
 
     public void index() {
-        view("page", readFile(p("content_dir") + "/index.html"));
     }
 
     public void show() throws IOException {
-
-        String file = readFile(p("content_dir") + "/" +getId() + ".md.html");
-
-        BufferedReader br = new BufferedReader(new StringReader(file));
-        String firstLine = br.readLine();
-
-        String[] parts = firstLine.split("\\|");
-        String title = "";
-        String[] breadcrubms = new String[0];
-
-        if(parts.length == 2){
-            title = parts[0].substring(3);
-            breadcrubms = parts[1].substring(1, parts[1].length() - 4).split(",");
+        try {
+            view("title", getTitle());
+            view("page", readFile(p("content_dir") + "/" + getId() + ".md.html"));
+        } catch (Exception e) {
+            e.printStackTrace();
+            render("/system/404");
         }
+    }
 
-        if(!title.equals("")){
-            view("title", title);
-            view("breadcrumbs", breadcrubms);
-            view("page", file.substring(firstLine.length()));
+    private String getTitle() {
 
-        }else{
-            view("page", file);
+        if (getId() != null) {
+            try {
+                Properties props = new Properties();
+                props.load(new FileInputStream(p("content_dir") + "/" + getId() + ".properties"));
+                return props.getProperty("title") != null ? props.getProperty("title") : "";
+
+            } catch (Exception e) {
+
+                Pattern pattern = Pattern.compile("_", Pattern.CASE_INSENSITIVE);
+                Matcher matcher = pattern.matcher(getId());
+                return matcher.find() ? Inflector.capitalize(matcher.replaceAll(" ")) : getId();
+            }
+
+        } else {
+            return "";
         }
     }
 }

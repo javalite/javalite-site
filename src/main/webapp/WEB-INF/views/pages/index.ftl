@@ -1,16 +1,64 @@
 
 
-${page}
 
-<#--<h2>All pages</h2>-->
+<header class="jumbotron subhead" id="overview">
+    <h1>JavaLite</h1>
+    <p class="lead">Java, light as a feather...</p>
+</header>
 
 
 
-<#--<hr>-->
+<!-- Headings & Paragraph Copy -->
+<div class="row">
+    <div class="span6">
+        <div class="well">
+            <h1><a  href="/activejdbc">ActiveJDBC</a></h1>
 
-<#--<ul>-->
-<#--<#list pages as page>-->
-    <#--<li><@link_to id=page.seo_id>${page.seo_id}</@link_to>  | <@link_to id="${page.seo_id}/edit_form">Edit</@link_to></li>-->
-<#--</#list>-->
-<#--</ul>-->
+            <h3>ActiveJDBC is a lightweight and fast Java ORM</h3>
+
+            <p></p>
+            <h5>If you:</h5>
+
+            <ul>
+                <li>want to write a <em>lot less</em> code</li>
+                <li>are tired of configuring ORMs</li>
+                <li>do not like to write a ton of persistent code</li>
+                <li>like conventions over configuration</li>
+                <li>do not want to learn another query language</li>
+                <li>want your persistent code to run fast</li>
+                <li>want to simply understand your code better...</li>
+            </ul>
+
+            <h5>... then ActiveJDBC is your ORM!</h5>
+            <h5 style="float: right"><a href="/activejdbc">find out more...</a></h5>
+        </div>
+    </div>
+
+    <div class="span6">
+
+        <div class="well">
+            <h1><a href="/activeweb">ActiveWeb</a></h1>
+
+            <h3>Full stack Java web framework for agile development</h3>
+
+
+            <p></p>
+            <h5>If you:</h5>
+
+            <ul>
+                <li>do not like piece-mealing solutions for days</li>
+                <li>like conventions over configuration</li>
+                <li>want to be productive the first minute</li>
+                <li>want to see your code changes reflected immediately</li>
+                <li>want beautiful REST-like URLs</li>
+                <li>want to use the same standard Java project structure</li>
+                <li>want to easily write high quality tests</li>
+            </ul>
+            <h5>... then ActiveWeb is your Web framework!</h5>
+            <h5 style="float: right;" ><a href="/activeweb">find out more...</a></h5>
+        </div>
+    </div>
+
+
+</div>
 

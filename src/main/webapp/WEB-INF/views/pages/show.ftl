@@ -1,29 +1,5 @@
-<#--<@content for="title">${(page.title)!""}</@content>-->
-
-<#--Library from: http://www.webdevelopers.eu/shop/10/doc/index-->
-<script type="text/javascript">
-    $(function() {
-        $("#toc").toc("h2, h3, h4", "simple:nohilite", 50);
-    });
-</script>
-
-
-
 <@content for="title">${title!}</@content>
 
-
-<#if breadcrumbs ??>
-<ul class="breadcrumb">
-    <li><a href="/">Home</a> <span class="divider">/</span></li>
-    <#list breadcrumbs as br>
-        <#if br_has_next >
-            <li>${br}<span class="divider">/</span></li>
-        <#else>
-            <li>${br}</li>
-        </#if>
-    </#list>
-</ul>
-</#if>
 
 
 ${page}
