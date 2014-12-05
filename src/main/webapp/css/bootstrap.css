@@ -1340,7 +1340,7 @@ samp {
 code {
     padding: 2px 4px;
     font-size: 90%;
-    color: #c7254e;
+    color: #000000;
     background-color: #f9f2f4;
     border-radius: 4px;
 }
@@ -3860,10 +3860,17 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     top: 0;
     border-width: 0 0 1px;
 }
+.navbar-fixed-bottom a{
+    color:#ffffff;
+}
 .navbar-fixed-bottom {
     bottom: 0;
     margin-bottom: 0;
     border-width: 1px 0 0;
+    background-color: #dd4814;
+    padding: 10px;
+    color: #ffffff;
+
 }
 .navbar-brand {
     float: left;

@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="${context_path}/css/bootstrap.css" media="screen">
     <link rel="stylesheet" href="${context_path}/css/bootswatch.css">
     <link rel="stylesheet" href="${context_path}/css/main.css">
+    <link rel="stylesheet" href="${context_path}/css/jquery.ui.all.css">
+    <link rel="stylesheet" href="${context_path}/css/jquery.tocify.css">
+    <link rel="stylesheet" href="${context_path}/css/prettify.css">
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="${context_path}/js/html5shiv.js"></script>
@@ -35,7 +39,13 @@
 <div class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <a href="../" class="navbar-brand">JavaLite</a>
+            <a href="/" class="navbar-brand">
+                <div><strong>Java</strong>Lite
+                    <img src="/images/javalite_feather.png" width="40px" height="40px" class="right">
+                </div>
+            </a>
+
+
             <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -82,21 +92,68 @@
                 <li><a href="/support">Support</a></li>
             </ul>
 
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <div id="twitter" style="margin-top: 13px;">
+                        <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true"
+                                src="http://platform.twitter.com/widgets/tweet_button.2df3b13213b70e6d91180bf64c17db20.en.html#_=1413385541881&amp;count=horizontal&amp;id=twitter-widget-0&amp;lang=en&amp;original_referer=http%3A%2F%2Fjavalite.io%2F&amp;size=m&amp;text=JavaLite%3A&amp;url=http%3A%2F%2Fjavalt.org&amp;via=ipolevoy"
+                                class="twitter-share-button twitter-tweet-button twitter-share-button"
+                                title="Twitter Tweet Button" data-twttr-rendered="true"
+                                style="width: 108px; height: 20px;"></iframe>
+                        <script>!function (d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0];
+                            if (!d.getElementById(id)) {
+                                js = d.createElement(s);
+                                js.id = id;
+                                js.src = "//platform.twitter.com/widgets.js";
+                                fjs.parentNode.insertBefore(js, fjs);
+                            }
+                        }(document, "script", "twitter-wjs");</script>
+                    </div>
+                </li>
+                <li>
+                    <div style="margin-top: 13px;">
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                        <input type="hidden" name="cmd" value="_donations">
+                        <input type="hidden" name="business" value="igor@polevoy.org">
+                        <input type="hidden" name="lc" value="US">
+                        <input type="hidden" name="item_name" value="Igor Polevoy">
+                        <input type="hidden" name="no_note" value="0">
+                        <input type="hidden" name="currency_code" value="USD">
+                        <input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_SM.gif:NonHostedGuest">
+                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                    </form>
+
+                        </div>
+                </li>
+
+            </ul>
 
         </div>
     </div>
 </div>
 
 
-<div class="container">
-
-    ${page_content}
-
-
-</div>
-
-<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="${context_path}/js/jquery-1.8.3.min.js"></script>
 <script src="${context_path}/js/bootstrap.min.js"></script>
 <script src="${context_path}/js/bootswatch.js"></script>
+<script src="${context_path}/js/jquery-ui-1.9.1.custom.min.js"></script>
+<script src="${context_path}/js/jquery.tocify.js"></script>
+<script src="${context_path}/js/prettify.js"></script>
+
+<div class="container">
+${page_content}
+</div>
+
+<div class="footer navbar-fixed-bottom">
+    <div class="container">
+        <span>
+            © 2009 - 2014 Igor Polevoy. All JavaLite projects are released under <a
+                href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License, Version 2.0</a>
+         </span>
+        <span class="pull-right"><a href="#top">Back to top &#8593;</a></span>
+    </div>
+</div>
 </body>
 </html>

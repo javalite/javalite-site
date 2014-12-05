@@ -2,22 +2,32 @@
     color:red;
 }
 
-.kw{
-    color: #ff8500;
+.sourceCode .kw{
+    color: #b58819;
+    /*font-weight:bold ;*/
+
 }
 
-.dt{
-    color: #07ccff;
-    font-weight:bold ;
+.sourceCode .dt{
+    color: #839496;
+
 }
 
-.st{
-    color: #ffec01;
+
+.sourceCode .dv{
+    color: #df5000;
+    /*font-weight:bold ;*/
 }
 
-.fu{
-    color: #ffffff;
-    font-weight:bold ;
+.sourceCode .st{
+    color: #28a196;
+    /*font-weight:bold ;*/
+}
+
+.sourceCode .fu{
+    color: #839496;
+
+
 }
 
 .sp-code-number{
@@ -36,7 +46,11 @@
 }
 
 .sourceCode{
-    background-color: #505050;
+    background-color: #002a35;
+    color: #839496;
     font-size:large;
-    color: #ffffff;
+/*
+    TODO: would be nice to have these colors:
+    http://ethanschoonover.com/solarized/img/dejavusans18
+*/
 }

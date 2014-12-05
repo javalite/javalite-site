@@ -2,15 +2,16 @@
 
 
 <header class="jumbotron subhead" id="overview">
-    <h1>JavaLite</h1>
-    <p class="lead">Java, light as a feather...</p>
+    <h1><strong>Java</strong>Lite</h1>
+    <p class="lead">Java, light as a feather. Grab the </p>
+
 </header>
 
 
 
 <!-- Headings & Paragraph Copy -->
 <div class="row">
-    <div class="span6">
+    <div class="col-md-6">
         <div class="well">
             <h1><a  href="/activejdbc">ActiveJDBC</a></h1>
 
@@ -30,16 +31,16 @@
             </ul>
 
             <h5>... then ActiveJDBC is your ORM!</h5>
-            <h5 style="float: right"><a href="/activejdbc">find out more...</a></h5>
+            <a href="/activejdbc">find out more...</a>
         </div>
     </div>
 
-    <div class="span6">
+    <div class="col-md-6">
 
         <div class="well">
             <h1><a href="/activeweb">ActiveWeb</a></h1>
 
-            <h3>Full stack Java web framework for agile development</h3>
+            <h3>Agile web development framework</h3>
 
 
             <p></p>
@@ -55,7 +56,7 @@
                 <li>want to easily write high quality tests</li>
             </ul>
             <h5>... then ActiveWeb is your Web framework!</h5>
-            <h5 style="float: right;" ><a href="/activeweb">find out more...</a></h5>
+            <a href="/activeweb">find out more...</a>
         </div>
     </div>
 
