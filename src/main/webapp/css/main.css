@@ -1,11 +1,23 @@
+body {
+    padding-top: 70px;
+}
+.navbar-brand{
+    padding: 7px;
+}
+.tocify{
+    background-color: #ffffff;
+}
 .error{
     color:red;
 }
 
-.sourceCode .kw{
+.sourceCode .kw {
     color: #b58819;
     /*font-weight:bold ;*/
+}
 
+.sourceCode code{
+    white-space: pre !important;
 }
 
 .sourceCode .dt{
@@ -26,6 +38,9 @@
 
 .sourceCode .fu{
     color: #839496;
+}
+.sourceCode code{
+    white-space: pre-wrap;
 }
 
 .sp-code-number{
@@ -51,4 +66,7 @@
     TODO: would be nice to have these colors:
     http://ethanschoonover.com/solarized/img/dejavusans18
 */
+}
+.sourceCode pre{
+    /*background-color: #002a35;*/
 }
