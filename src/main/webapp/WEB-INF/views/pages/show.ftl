@@ -34,6 +34,9 @@
         $("ul[class='tocify-subheader nav nav-list']").prev().children().each(function (index, el) {
             $(el).html($(el).html() + " &#8594;");
         });
+
+        //pandoc cannot do it!
+        $("table").each(function(index, el){ $(el).addClass("table table-border")});
     });
 
 

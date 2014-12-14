@@ -65,38 +65,18 @@
 
                 <li class="divider-vertical"></li>
 
-                <li><a href="/documentation">Documentation</a></li>
-            <#--<li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">JavaDoc<b-->
-            <#--class="caret"></b></a>-->
-            <#--<ul class="dropdown-menu">-->
-            <#--<li><a href="http://ipsolutionsdev.com/activejdbc/">ActiveJDBC</a></li>-->
-            <#--<li><a href="http://ipsolutionsdev.com/activejdbc/">ActiveWeb</a></li>-->
-            <#--<li><a href="http://ipsolutionsdev.com/activejdbc/org/javalite/test/jspec/Expectation.html">JSpec</a></li>-->
-            <#--<li><a href="http://ipsolutionsdev.com/activejdbc/org/javalite/http/package-summary.html">Http</a></li>-->
-
-            <#--</ul>-->
-            <#--</li>-->
-
+                <#--<li><a href="/documentation">Documentation</a></li>-->
                 <li><a href="/sources">Sources</a></li>
-
-            <#--<li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Sources<b-->
-            <#--class="caret"></b></a>-->
-            <#--<ul class="dropdown-menu">-->
-            <#--<li><a href="http://github/activejdbc/">ActiveJDBC</a></li>-->
-            <#--<li><a href="http://github/activeweb/">ActiveWeb</a></li>-->
-            <#--<li><a href="http://github/activeweb/jspec">JSpec</a></li>-->
-            <#--<li><a href="http://github/activeweb/http">Http</a></li>-->
-            <#--</ul>-->
-            <#--</li>-->
 
                 <li><a href="/support">Support</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
                 <li>
+
                     <div id="twitter" style="margin-top: 13px;">
                         <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true"
-                                src="http://platform.twitter.com/widgets/tweet_button.2df3b13213b70e6d91180bf64c17db20.en.html#_=1413385541881&amp;count=horizontal&amp;id=twitter-widget-0&amp;lang=en&amp;original_referer=http%3A%2F%2Fjavalite.io%2F&amp;size=m&amp;text=JavaLite%3A&amp;url=http%3A%2F%2Fjavalt.org&amp;via=ipolevoy"
+                                src="http://platform.twitter.com/widgets/tweet_button.2df3b13213b70e6d91180bf64c17db20.en.html#_=1413385541881&amp;count=horizontal&amp;id=twitter-widget-0&amp;lang=en&amp;original_referer=http%3A%2F%2Fjavalite.io%2F&amp;size=m&amp;text=JavaLite%3AJava, light as a feather...&amp;url=http%3A%2F%2Fjavalite.io&amp;via=ipolevoy"
                                 class="twitter-share-button twitter-tweet-button twitter-share-button"
                                 title="Twitter Tweet Button" data-twttr-rendered="true"
                                 style="width: 108px; height: 20px;"></iframe>
@@ -110,6 +90,7 @@
                             }
                         }(document, "script", "twitter-wjs");</script>
                     </div>
+
                 </li>
                 <li>
                     <div style="margin-top: 13px;">
