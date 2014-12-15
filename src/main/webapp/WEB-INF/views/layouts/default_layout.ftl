@@ -4,17 +4,17 @@
     <meta charset="utf-8">
     <title>JavaLite - <@yield to="title"/></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="${context_path}/css/bootstrap.css" media="screen">
-    <link rel="stylesheet" href="${context_path}/css/bootswatch.css">
-    <link rel="stylesheet" href="${context_path}/css/main.css">
-    <link rel="stylesheet" href="${context_path}/css/jquery.ui.all.css">
-    <link rel="stylesheet" href="${context_path}/css/jquery.tocify.css">
-    <link rel="stylesheet" href="${context_path}/css/prettify.css">
+    <link rel="stylesheet" href="/css/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="/css/bootswatch.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/jquery.ui.all.css">
+    <link rel="stylesheet" href="/css/jquery.tocify.css">
+    <link rel="stylesheet" href="/css/prettify.css">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-    <script src="${context_path}/js/html5shiv.js"></script>
-    <script src="${context_path}/js/respond.min.js"></script>
+    <script src="/js/html5shiv.js"></script>
+    <script src="/js/respond.min.js"></script>
     <![endif]-->
     <script>
 
@@ -36,8 +36,13 @@
     </script>
 </head>
 <body>
+
+
+
 <div class="navbar navbar-default navbar-fixed-top">
+
     <div class="container">
+
         <div class="navbar-header">
             <a href="/" class="navbar-brand">
                 <div><strong>Java</strong>Lite
@@ -71,7 +76,7 @@
                 <li><a href="/support">Support</a></li>
             </ul>
 
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-left">
                 <li>
 
                     <div id="twitter" style="margin-top: 13px;">
@@ -93,35 +98,27 @@
 
                 </li>
                 <li>
-                    <div style="margin-top: 13px;">
-                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                        <input type="hidden" name="cmd" value="_donations">
-                        <input type="hidden" name="business" value="igor@polevoy.org">
-                        <input type="hidden" name="lc" value="US">
-                        <input type="hidden" name="item_name" value="Igor Polevoy">
-                        <input type="hidden" name="no_note" value="0">
-                        <input type="hidden" name="currency_code" value="USD">
-                        <input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_SM.gif:NonHostedGuest">
-                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-                        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-                    </form>
 
-                        </div>
+
                 </li>
 
             </ul>
+            <a href="https://github.com/javalite"><img style="position: absolute; top: 0; right: 0; border: 0;"
+                                                  src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67"
+                                                  alt="Fork me on GitHub"
+                                                  data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
 
         </div>
     </div>
 </div>
 
 
-<script src="${context_path}/js/jquery-1.8.3.min.js"></script>
-<script src="${context_path}/js/bootstrap.min.js"></script>
-<script src="${context_path}/js/bootswatch.js"></script>
-<script src="${context_path}/js/jquery-ui-1.9.1.custom.min.js"></script>
-<script src="${context_path}/js/jquery.tocify.js"></script>
-<script src="${context_path}/js/prettify.js"></script>
+<script src="/js/jquery-1.8.3.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/bootswatch.js"></script>
+<script src="/js/jquery-ui-1.9.1.custom.min.js"></script>
+<script src="/js/jquery.tocify.js"></script>
+<script src="/js/prettify.js"></script>
 
 <div class="container">
 ${page_content}
@@ -129,10 +126,28 @@ ${page_content}
 
 <div class="footer navbar-fixed-bottom">
     <div class="container">
-        <span>
+        <span class="pull-left">
             © 2009 - 2014 Igor Polevoy. All JavaLite projects are released under <a
                 href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License, Version 2.0</a>
+
+
          </span>
+
+        <span class="pull-left" style="margin-left: 20px">
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                    <input type="hidden" name="cmd" value="_donations">
+                    <input type="hidden" name="business" value="igor@polevoy.org">
+                    <input type="hidden" name="lc" value="US">
+                    <input type="hidden" name="item_name" value="Igor Polevoy">
+                    <input type="hidden" name="no_note" value="0">
+                    <input type="hidden" name="currency_code" value="USD">
+                    <input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_SM.gif:NonHostedGuest">
+                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif"
+                           border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1"
+                         height="1">
+                </form>
+        </span>
         <span class="pull-right"><a href="#top">Back to top &#8593;</a></span>
     </div>
 </div>
