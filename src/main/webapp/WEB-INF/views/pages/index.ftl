@@ -3,7 +3,7 @@
 
 <header class="jumbotron subhead" id="overview">
     <h1><strong>Java</strong>Lite</h1>
-    <p class="lead">Java, light as a feather. Grab the </p>
+    <p class="lead">Java, light as a feather...</p>
 
 </header>
 
