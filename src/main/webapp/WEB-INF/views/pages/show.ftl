@@ -4,20 +4,23 @@
 <div class="row" id="top">
 
     <div class="col-md-9">
-    ${page}
+        ${page}
         <div id="disquss"></div>
+        <div id="disqus_thread"></div>
     </div>
 
 
     <div class="col-md-3">
         <div id="toc"></div>
     </div>
+
+
 </div>
 
 
 
 
-<div id="disqus_thread"></div>
+
 <script type="text/javascript">
 
     <#--See: http://gregfranko.com/jquery.tocify.js/-->
