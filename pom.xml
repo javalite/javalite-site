@@ -9,6 +9,10 @@
     <version>1.1-SNAPSHOT</version>
     <name>JavaLite Site</name>
 
+    <properties>
+        <activejdbc.version>1.4.10</activejdbc.version>
+        <activeweb.version>1.11</activeweb.version>
+    </properties>
     <build>
         <finalName>javalt</finalName>
         <plugins>
@@ -62,30 +66,25 @@
         <dependency>
             <groupId>org.javalite</groupId>
             <artifactId>activeweb</artifactId>
-            <version>1.11-SNAPSHOT</version>
+            <version>${activeweb.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.javalite</groupId>
-            <artifactId>javalite-common</artifactId>
-            <version>1.4.10-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.javalite</groupId>
             <artifactId>activeweb-testing</artifactId>
-            <version>1.11-SNAPSHOT</version>
+            <version>${activeweb.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
-            <version>1.7.6</version>
+            <version>1.7.9</version>
         </dependency>
 
         <dependency>
             <groupId>org.javalite</groupId>
             <artifactId>app-config</artifactId>
-            <version>1.4.10-SNAPSHOT</version>
+            <version>${activejdbc.version}</version>
         </dependency>
 
         <dependency>
@@ -100,8 +99,8 @@
     <repositories>
         <repository>
             <id>snapshots1</id>
-            <name>Sonatype Snapshots</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <name>JavaLite Snapshots</name>
+            <url>http://repo.javalite.io/</url>
             <snapshots>
                 <enabled>true</enabled>
                 <updatePolicy>always</updatePolicy>

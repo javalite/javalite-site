@@ -60,23 +60,18 @@
         <div class="navbar-collapse collapse" id="navbar-main">
             <ul class="nav navbar-nav">
 
-                <li><a href="/activejdbc">ActiveJDBC</a></li>
-
-                <li><a href="/activeweb">ActiveWeb</a></li>
-                <li><a href="/jspec">JSpec</a></li>
-
-                <li><a href="/http">Http</a></li>
+                <li><a href="/documentation">Documentation</a></li>
 
 
                 <li class="divider-vertical"></li>
 
-                <#--<li><a href="/documentation">Documentation</a></li>-->
+                <li><a href="/javadoc">JavaDocs</a></li>
                 <li><a href="/sources">Sources</a></li>
 
                 <li><a href="/support">Support</a></li>
             </ul>
 
-            <ul class="nav navbar-nav navbar-left">
+            <ul class="nav navbar-nav navbar-right">
                 <li>
 
                     <div id="twitter" style="margin-top: 13px;">

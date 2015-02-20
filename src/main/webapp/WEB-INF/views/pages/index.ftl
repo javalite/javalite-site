@@ -4,7 +4,7 @@
 <header class="jumbotron subhead" id="overview">
     <h1><strong>Java</strong>Lite</h1>
     <p class="lead">Java, light as a feather...</p>
-
+    JavaLite is a cohesive collection of frameworks designed from ground up to add pleasure back to your daily life
 </header>
 
 
@@ -15,48 +15,51 @@
         <div class="well">
             <h1><a  href="/activejdbc">ActiveJDBC</a></h1>
 
-            <h3>ActiveJDBC is a lightweight and fast Java ORM</h3>
+            <h3>Lightweight and fast Java ORM</h3>
 
-            <p></p>
-            <h5>If you:</h5>
 
-            <ul>
-                <li>want to write a <em>lot less</em> code</li>
-                <li>are tired of configuring ORMs</li>
-                <li>do not like to write a ton of persistent code</li>
-                <li>like conventions over configuration</li>
-                <li>do not want to learn another query language</li>
-                <li>want your persistent code to run fast</li>
-                <li>want to simply understand your code better...</li>
-            </ul>
-
-            <h5>... then ActiveJDBC is your ORM!</h5>
+            <p>Write the least amount of code you will actually understand</p>
             <a href="/activejdbc">find out more...</a>
         </div>
     </div>
 
     <div class="col-md-6">
-
         <div class="well">
             <h1><a href="/activeweb">ActiveWeb</a></h1>
 
             <h3>Agile web development framework</h3>
+            <p>
+                Full stack Java framework for rapid web application development
+            </p>
 
 
-            <p></p>
-            <h5>If you:</h5>
-
-            <ul>
-                <li>do not like piece-mealing solutions for days</li>
-                <li>like conventions over configuration</li>
-                <li>want to be productive the first minute</li>
-                <li>want to see your code changes reflected immediately</li>
-                <li>want beautiful REST-like URLs</li>
-                <li>want to use the same standard Java project structure</li>
-                <li>want to easily write high quality tests</li>
-            </ul>
-            <h5>... then ActiveWeb is your Web framework!</h5>
             <a href="/activeweb">find out more...</a>
+        </div>
+    </div>
+
+
+
+    <div class="col-md-6">
+        <div class="well">
+            <h1><a href="/jspec">JSpec</a></h1>
+            <h3>Natural language assertions</h3>
+            <p>
+                Write test assertions that sound like English sentences
+            </p>
+
+            <a href="/jspec">find out more...</a>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="well">
+            <h1><a href="/http">Http</a></h1>
+            <h3>Tiny HTTP request library</h3>
+            <p>
+                Lightweight library to send HTTP requests
+            </p>
+
+            <a href="/http">find out more...</a>
         </div>
     </div>
 
