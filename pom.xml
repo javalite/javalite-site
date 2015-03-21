@@ -14,7 +14,7 @@
         <activeweb.version>1.11</activeweb.version>
     </properties>
     <build>
-        <finalName>javalt</finalName>
+        <finalName>ROOT</finalName>
         <plugins>
             <plugin>
                 <groupId>org.mortbay.jetty</groupId>
