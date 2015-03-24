@@ -69,6 +69,7 @@
                 <li><a href="/sources">Sources</a></li>
 
                 <li><a href="/support">Support</a></li>
+                <li><a href="/contributors">How to contribute</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
