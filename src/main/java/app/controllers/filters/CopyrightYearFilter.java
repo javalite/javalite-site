@@ -11,6 +11,6 @@ import java.util.GregorianCalendar;
 public class CopyrightYearFilter extends HttpSupportFilter {
     @Override
     public void before() {
-        view("year", new GregorianCalendar().get(GregorianCalendar.YEAR));
+        view("year", Integer.valueOf(new GregorianCalendar().get(GregorianCalendar.YEAR)).toString());
     }
 }

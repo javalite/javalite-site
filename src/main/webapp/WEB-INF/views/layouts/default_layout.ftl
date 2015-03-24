@@ -123,7 +123,7 @@ ${page_content}
 <div class="footer navbar-fixed-bottom">
     <div class="container">
         <span class="pull-left">
-            © 2009 - 2014 Igor Polevoy. All JavaLite projects are released under <a
+            © 2009 - ${year} Igor Polevoy. All JavaLite projects are released under <a
                 href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License, Version 2.0</a>
 
 
