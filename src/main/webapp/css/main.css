@@ -74,6 +74,7 @@ body {
 
 .sourceCode{
     background-color: #f7f7f9;
+    overflow-wrap: normal;
     /*font-size: large;*/
     /*color: #839496;*/
     /*font-size: large;*/
