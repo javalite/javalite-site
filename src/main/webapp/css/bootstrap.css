@@ -3841,8 +3841,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
         border-radius: 0;
     }
 }
-.navbar-fixed-top,
-.navbar-fixed-bottom {
+.navbar-fixed-top{
     position: fixed;
     right: 0;
     left: 0;
