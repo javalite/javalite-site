@@ -66,7 +66,7 @@
     <div class="col-md-12">
         <div class="well">
             <h1>IntelliJ Idea</h1>
-            <h3>Developed with live using IntelliJ IDEA</h3>
+            <h3>Developed with love using IntelliJ IDEA</h3>
             <p>Special thanks to good folks from IntelliJ JDEA for their continuous support of JavaLite OSS Projects!</p>
             <a href="https://www.jetbrains.com/idea/"><img src="https://www.jetbrains.com/idea/docs/logo_intellij_idea.png"/></a>
         </div>
