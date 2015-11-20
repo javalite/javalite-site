@@ -4,33 +4,36 @@
 <div class="row" id="top">
 
     <div class="col-md-9">
-        ${page}
+
+    ${page}
+
+        <hr>
+        <div class="alert alert-danger bs-alert-old-docs">
+            <strong>How to comment:</strong> <br>
+            The comment section below is to discuss documentation on this page. <strong>If you have an issue, or
+            discover bug </strong>, please follow instructions on the <a href="/support">Support page</a>
+        </div>
+
         <div id="disquss"></div>
         <div id="disqus_thread"></div>
     </div>
-
-
     <div class="col-md-3">
         <div id="toc"></div>
     </div>
-
-
 </div>
-
-
-
 
 
 <script type="text/javascript">
 
     <#--See: http://gregfranko.com/jquery.tocify.js/-->
     $(document).ready(function () {
-        $("#toc").tocify({ hashGenerator: function (text, element) {
-            return $(element).attr("id");
-        },
+        $("#toc").tocify({
+            hashGenerator: function (text, element) {
+                return $(element).attr("id");
+            },
             hideEffect: "none",
-            scrollTo:40,
-            selectors:"h2,h3"
+            scrollTo: 40,
+            selectors: "h2,h3"
         });
 
         //add arrows to parent elements
@@ -39,9 +42,10 @@
         });
 
         //pandoc cannot do it!
-        $("table").each(function(index, el){ $(el).addClass("table table-border")});
+        $("table").each(function (index, el) {
+            $(el).addClass("table table-border")
+        });
     });
-
 
     var disqus_shortname = 'javalite';
 
