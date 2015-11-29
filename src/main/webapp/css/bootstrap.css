@@ -2069,11 +2069,13 @@ th {
     padding: 8px;
     line-height: 1.42857143;
     vertical-align: top;
-    border-top: 1px solid #dddddd;
+    border: 1px solid #dddddd;
+    font-family: monospace;
 }
 .table > thead > tr > th {
     vertical-align: bottom;
-    border-bottom: 2px solid #dddddd;
+    border: 2px solid #aaaaaa;
+    background-color: #dddddd;
 }
 .table > caption + thead > tr:first-child > th,
 .table > colgroup + thead > tr:first-child > th,
@@ -2081,7 +2083,7 @@ th {
 .table > caption + thead > tr:first-child > td,
 .table > colgroup + thead > tr:first-child > td,
 .table > thead:first-child > tr:first-child > td {
-    border-top: 0;
+    /*border-top: 0;*/
 }
 .table > tbody + tbody {
     border-top: 2px solid #dddddd;
