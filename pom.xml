@@ -10,8 +10,8 @@
     <name>JavaLite Site</name>
 
     <properties>
-        <activejdbc.version>1.4.10</activejdbc.version>
-        <activeweb.version>1.11</activeweb.version>
+        <activejdbc.version>1.4.12-SNAPSHOT</activejdbc.version>
+        <activeweb.version>1.14-SNAPSHOT</activeweb.version>
     </properties>
     <build>
         <finalName>ROOT</finalName>
@@ -51,6 +51,37 @@
                 <configuration>
                     <source>1.7</source>
                     <target>1.7</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.javalite</groupId>
+                <artifactId>activeweb-lessc-maven-plugin</artifactId>
+                <version>${activeweb.version}</version>
+                <configuration>
+                    <lesscMain>${basedir}/src/main/webapp/less/bootstrap.less</lesscMain>
+                    <targetDirectory>${basedir}/target/web</targetDirectory>
+                    <targetFileName>bootstrap.css</targetFileName>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <!--TODO: exclude is not working-->
+                    <excludes>less</excludes>
+                    <webResources>
+                        <resource>
+                            <directory>target/web</directory>
+                        </resource>
+                    </webResources>
                 </configuration>
             </plugin>
         </plugins>
