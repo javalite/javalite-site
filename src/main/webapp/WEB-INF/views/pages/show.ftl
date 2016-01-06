@@ -1,24 +1,39 @@
 <@content for="title">${title!}</@content>
 
-
-<div class="row" id="top">
-
-    <div class="col-md-9">
-
-    ${page}
-
-        <hr>
-        <div class="alert alert-danger bs-alert-old-docs">
-            <strong>How to comment:</strong> <br>
-            The comment section below is to discuss documentation on this page. <strong>If you have an issue, or
-            discover bug </strong>, please follow instructions on the <a href="/support">Support page</a>
-        </div>
-
-        <div id="disquss"></div>
-        <div id="disqus_thread"></div>
+<div class="breadcrumbs">
+    <div class="container">
+        <ol>
+            <li>
+                <a href="#">JavaLite</a>
+            </li>
+            <li>
+                <a href="/documentation">Documentation</a>
+            </li>
+            <li class="active">
+                ActiveJDBC
+            </li>
+        </ol>
     </div>
-    <div class="col-md-3">
-        <div id="toc"></div>
+</div>
+
+<div class="container content-wr">
+    <div class="row" id="top">
+        <div class="col-md-8 content-styles">
+        ${page}
+
+            <hr>
+            <div class="alert alert-danger bs-alert-old-docs">
+                <strong>How to comment:</strong> <br>
+                The comment section below is to discuss documentation on this page. <strong>If you have an issue, or
+                discover bug </strong>, please follow instructions on the <a href="/support">Support page</a>
+            </div>
+
+            <div id="disquss"></div>
+            <div id="disqus_thread"></div>
+        </div>
+        <div class="col-md-4 h-sm-40">
+            <div class="right-menu" id="toc"></div>
+        </div>
     </div>
 </div>
 
@@ -38,7 +53,7 @@
 
         //add arrows to parent elements
         $("ul[class='tocify-subheader nav nav-list']").prev().children().each(function (index, el) {
-            $(el).html($(el).html() + " &#8594;");
+            $(el).html($(el).html() + " &#43;");
         });
 
         //pandoc cannot do it!
