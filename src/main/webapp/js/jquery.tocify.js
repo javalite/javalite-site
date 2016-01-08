@@ -618,15 +618,15 @@
                                     lastElemOffset = lastElem.offset().top;
 
                                     // Appends a div to the bottom of the page and sets the height to the difference of the window scrollTop and the last element's position top offset
-                                    $(self.options.context).append($("<div />", {
+                                    // $(self.options.context).append($("<div />", {
 
-                                        "class": extendPageClassName,
+                                    //    "class": extendPageClassName,
 
-                                        "height": Math.abs(lastElemOffset - winScrollTop) + "px",
+                                    //    "height": Math.abs(lastElemOffset - winScrollTop) + "px",
 
-                                        "data-unique": extendPageClassName
+                                    //    "data-unique": extendPageClassName
 
-                                    }));
+                                    //}));
 
                                     if(self.extendPageScroll) {
 

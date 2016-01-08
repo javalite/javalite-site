@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <title>JavaLite - <@yield to="title"/></title>
     <link href="${context_path}/bootstrap.css" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:600,400,300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700&subset=latin-ext' rel='stylesheet' type='text/css'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
@@ -58,7 +59,7 @@ ${page_content}
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <h2 class="block-h">JavaLite has been used by over 20K customers, including</h2>
+                <h4 class="block-h">JavaLite has been used by over 20K customers, including</h4>
             </div>
         </div>
         <div class="row">
@@ -129,7 +130,22 @@ ${page_content}
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-6">
-                <h2 class="block-h block-h-icon"><a href="#">Help us</a> to improve this page</h2>
+                <h4 class="block-h">We are supported by best tools companies</h4>
+                <div class="row">
+                    <div class="col-xxs-12 col-xs-6">
+                        <a href="https://www.jetbrains.com/idea/">
+                            <img src="/images/support/intellij-idea.png" alt="IntelliJ JDEA">
+                        </a>
+                    </div>
+                    <div class="col-xxs-12 col-xs-6 h-xxs-20">
+                        <a href="https://www.yourkit.com/">
+                            <img src="/images/support/yourkit.png" alt="Yourkit">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6 h-sm-40">
+                <h4 class="block-h block-h-icon"><a href="#">Help us</a> to improve this page</h4>
                 <span class="footer-donate">
                     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                         <input type="hidden" name="cmd" value="_donations">
@@ -144,28 +160,31 @@ ${page_content}
                     </form>
                 </span>
                 <p>
-                    © 2009 - ${year} Igor Polevoy.<br/>
+                    &#169; 2009 - ${year} Igor Polevoy.<br/>
                     All JavaLite projects are released under <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License, Version 2.0</a>
                 </p>
             </div>
-            <div class="col-xs-12 col-md-6 h-sm-40">
-                <h2 class="block-h">We are supported by best tools companies</h2>
-                <div class="row">
-                    <div class="col-xxs-12 col-xs-6">
-                        <a href="https://www.jetbrains.com/idea/">
-                            <img src="/images/support/intellij-idea.png" alt="IntelliJ JDEA">
-                        </a>
-                    </div>
-                    <div class="col-xxs-12 col-xs-6 h-xxs-20">
-                        <a href="https://www.yourkit.com/">
-                            <img src="/images/support/yourkit.png" alt="Yourkit">
-                        </a>
-                    </div>
-                </div>
-            </div>
         </div>
-<#--        <span class="pull-right"><a href="#top">Back to top &#8593;</a></span>-->
     </div>
+    <div class="to-top" id="scroller">&#9650;</div>
 </footer>
 </body>
 </html>
+
+<script>
+    $(document).ready(function(){
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 0) {
+                $('#scroller').fadeIn();
+            } else {
+                $('#scroller').fadeOut();
+            }
+        });
+        $('#scroller').click(function () {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 400);
+            return false;
+        });
+    });
+</script>

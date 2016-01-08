@@ -74,7 +74,7 @@
                     <a href="/http">Database migrator</a>
                 </h2>
                 <h3>Transferring data</h3>
-                <p>Supports migrations written in both PHP and SQL</p>
+                <p>Making changes to database schema during a development process</p>
             </div>
         </div>
         <div class="col-xs-12 col-md-6 home-li">
@@ -83,10 +83,10 @@
             </span>
             <div class="home-li-txt">
                 <h2 class="block-h">
-                    <a href="/http">Less compile</a>
+                    <a href="/http">Less compiler</a>
                 </h2>
-                <h3>CSS pre-processor</h3>
-                <p>CSS that is more maintainable, themable and extendable</p>
+                <h3>Better way to write CSS</h3>
+                <p>Generate CSS file on the fly with a use of a Less compiler</p>
             </div>
         </div>
     </div>
