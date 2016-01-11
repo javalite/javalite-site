@@ -18,8 +18,9 @@
 @red: #ef5350;
 @red-dark: #F44336;
 @gray-code: #3f515a;
+@gray-dark-code: #324048;
 @gray: #484848;
-@gray-dark: #353535;
+@gray-dark: #323232;
 @gray-light: #f1f1f1;
 @teal: #26a69a;
 @green: #4CAF50;
@@ -55,6 +56,10 @@ body { font-family: 'Roboto', sans-serif; font-weight: 300; ._text(14px,1.5); pa
   h3 { ._text(@font-h3,1.3); }
   h2 + div { margin-top: -8px; }
   a { color: @red-dark; }
+  td.lineNumbers { width: 60px; }
+  td.lineNumbers pre { background: @gray-dark-code; color: darken(@gray-light,12%); }
+  td.lineNumbers,
+  td.sourceCode { padding: 10px 0; border: none; }
   ul {
     & { list-style: none; padding: 0; }
     li { padding: 2px 0 2px 37px; position: relative; }
@@ -62,7 +67,7 @@ body { font-family: 'Roboto', sans-serif; font-weight: 300; ._text(14px,1.5); pa
   }
   strong { font-weight: 600; }
   pre { border-radius: 0; border-color: @gray-code; background: @gray-code; color: #fff; padding: 10px 15px; overflow: auto; white-space: pre; word-wrap: normal; }
-  code { font-family: 'Inconsolata', monospace; font-size: 16px; white-space: pre; }
+  code, kbd, pre, samp { font-family: 'Inconsolata', monospace; font-size: 16px; white-space: pre; }
   li code,
   p code { background: @gray-code; border-radius: 0; color: white; padding: 1px 4px 2px 4px; white-space: normal; }
   h2 code,
