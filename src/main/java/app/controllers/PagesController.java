@@ -25,31 +25,15 @@ public class PagesController extends AppController {
 
     public void show() throws IOException {
         try {
-            view("title", getTitle());
-            view("page", readFile(p("content_dir") + "/" + getId() + ".md.html"));
+
+
+            logWarning("READING FILE: " + p("content_dir") + "/" + getId() + ".properties");
+            view("page", new Page(getId()));
         } catch (Exception e) {
             e.printStackTrace();
             render("/system/404");
         }
     }
 
-    private String getTitle() {
 
-        if (getId() != null) {
-            try {
-                Properties props = new Properties();
-                props.load(new FileInputStream(p("content_dir") + "/" + getId() + ".properties"));
-                return props.getProperty("title") != null ? props.getProperty("title") : "";
-
-            } catch (Exception e) {
-
-                Pattern pattern = Pattern.compile("_", Pattern.CASE_INSENSITIVE);
-                Matcher matcher = pattern.matcher(getId());
-                return matcher.find() ? Inflector.capitalize(matcher.replaceAll(" ")) : getId();
-            }
-
-        } else {
-            return "";
-        }
-    }
 }

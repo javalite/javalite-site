@@ -38,7 +38,7 @@
                     <a href="/activeweb">ActiveWeb</a>
                 </h2>
                 <h3>Agile web development framework</h3>
-                <p>Full stack Java framework for rapid web application development</p>
+                <p>Full stack Java Web Framework for rapid application development</p>
             </div>
         </div>
         <div class="col-xs-12 col-md-6 home-li">
@@ -61,7 +61,7 @@
                 <h2 class="block-h">
                     <a href="/http">Http</a>
                 </h2>
-                <h3>Tiny HTTP request library</h3>
+                <h3>Tiny HTTP client library</h3>
                 <p>Lightweight library to send HTTP requests</p>
             </div>
         </div>
@@ -71,10 +71,10 @@
             </span>
             <div class="home-li-txt">
                 <h2 class="block-h">
-                    <a href="/http">Database migrator</a>
+                    <a href="/database_migrations">DB Migrator</a>
                 </h2>
-                <h3>Transferring data</h3>
-                <p>Making changes to database schema during a development process</p>
+                <h3>Grow DB schema with your project</h3>
+                <p>Easy way to manipulate database schema</p>
             </div>
         </div>
         <div class="col-xs-12 col-md-6 home-li">
@@ -83,10 +83,83 @@
             </span>
             <div class="home-li-txt">
                 <h2 class="block-h">
-                    <a href="/http">Less compiler</a>
+                    <a href="/lessc">LESS compiler</a>
                 </h2>
                 <h3>Better way to write CSS</h3>
                 <p>Generate CSS file on the fly with a use of a Less compiler</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="subfooter">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h4 class="block-h">JavaLite is in active use by many brands you know:</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xxs-12 col-xs-4 col-md-2">
+                <a href="http://www.amazon.com/">
+                    <img src="/images/partners/logo-amazon.png" alt="Amazon">
+                </a>
+            </div>
+            <div class="col-xxs-12 col-xs-4 col-md-2">
+                <a href="http://www.yahoo.com/">
+                    <img src="/images/partners/logo-yahoo.png" alt="Yahoo">
+                </a>
+            </div>
+            <div class="col-xxs-12 col-xs-4 col-md-2">
+                <a href="http://www.ebay.com/">
+                    <img src="/images/partners/logo-ebay.png" alt="Ebay">
+                </a>
+            </div>
+            <div class="col-xxs-12 col-xs-4 col-md-2">
+                <a href="http://www.edovo.com/">
+                    <img src="/images/partners/logo-edovo.png" alt="Edovo">
+                </a>
+            </div>
+            <div class="col-xxs-12 col-xs-4 col-md-2">
+                <a href="http://www.godaddy.com/">
+                    <img src="/images/partners/logo-go-daddy.png" alt="Go Daddy">
+                </a>
+            </div>
+            <div class="col-xxs-12 col-xs-4 col-md-2">
+                <a href="https://www.groupon.com/">
+                    <img src="/images/partners/logo-groupon.png" alt="Groupon">
+                </a>
+            </div>
+            <div class="col-xxs-12 col-xs-4 col-md-2">
+                <a href="http://www.realnetworks.com/">
+                    <img src="/images/partners/logo-realnetworks.png" alt="Realnetworks">
+                </a>
+            </div>
+            <div class="col-xxs-12 col-xs-4 col-md-2">
+                <a href="http://www.hp-enterprisesolutions.com/">
+                    <img src="/images/partners/logo-hp.png" alt="Hewlett Packard Enterprise">
+                </a>
+            </div>
+            <div class="col-xxs-12 col-xs-4 col-md-2">
+                <a href="http://www.barclays.co.uk/">
+                    <img src="/images/partners/logo-barclays.png" alt="Barclays">
+                </a>
+            </div>
+            <div class="col-xxs-12 col-xs-4 col-md-2">
+                <a href="http://www.navy.mil/">
+                    <img src="/images/partners/logo-us-navy.png" alt="U.S. Navy">
+                </a>
+            </div>
+            <div class="col-xxs-12 col-xs-4 col-md-2">
+                <a href="https://www.humana.com/">
+                    <img src="/images/partners/logo-humana.png" alt="Humana">
+                </a>
+            </div>
+            <div class="col-xxs-12 col-xs-4 col-md-2">
+                <a href="http://www.flipkart.com/">
+                    <img src="/images/partners/logo-flipkart.png" alt="Flipkart">
+                </a>
             </div>
         </div>
     </div>

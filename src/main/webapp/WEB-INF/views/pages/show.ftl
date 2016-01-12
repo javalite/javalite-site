@@ -1,28 +1,28 @@
 <@content for="title">${title!}</@content>
 
+<#if (page.breadCrumbs?size > 0) >
 <div class="breadcrumbs">
     <div class="container">
         <ol>
+            <#list page.breadCrumbs as bc>
+                <li>
+                    <a href="${bc.href}">${bc.text}</a>
+                </li>
+            </#list>
             <li>
-                <a href="#">JavaLite</a>
-            </li>
-            <li>
-                <a href="/documentation">Documentation</a>
-            </li>
-            <li class="active">
-                ActiveJDBC
+            ${page.title}
             </li>
         </ol>
     </div>
 </div>
 
-
+</#if>
 
 <div class="container content-wr">
     <div class="row" id="top">
         <div class="col-md-4" id="right-menu">
             <a href="#" class="right-menu-a">
-                Navigation menu
+                Page menu
                 <span class="right-menu-lines">
                     <span>&nbsp;</span>
                     <span>&nbsp;</span>
@@ -32,7 +32,7 @@
             <div class="right-menu" id="toc"></div>
         </div>
         <div class="col-md-8 content-styles" id="main-content">
-            ${page}
+            ${page.content}
             <hr class="hr">
             <div class="alert bs-alert-old-docs">
                 <h4 class="block-h">How to comment</h4>
