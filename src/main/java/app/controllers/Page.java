@@ -9,7 +9,6 @@ import java.util.Properties;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static com.sun.javafx.Utils.split;
 import static org.javalite.app_config.AppConfig.p;
 import static org.javalite.common.Util.readFile;
 
@@ -49,9 +48,9 @@ public class Page {
         List<BreadCrumb> breadCrumbs = new ArrayList<>();
         if (props.containsKey("breadcrumbs")) {
             //breadcrubms=JavaLite -> / , ActiveJDBC -> /activejdbc
-            String[] parts = split(props.getProperty("breadcrumbs"), ",");
+            String[] parts = org.javalite.common.Util.split(props.getProperty("breadcrumbs"), ",");
             for (String part : parts) {
-                String[] bc = split(part, "->");
+                String[] bc = org.javalite.common.Util.split(part, "->");
                 breadCrumbs.add(new BreadCrumb(bc[0].trim(), bc[1].trim()));
             }
         }
