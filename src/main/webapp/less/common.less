@@ -66,10 +66,11 @@ body { font-family: 'Roboto', sans-serif; font-weight: 300; ._text(14px,1.5); pa
     li:before { content: "\25a0 "; color: @red; font-size: 11px; position: absolute; left: 15px; top: 4px; }
   }
   strong { font-weight: 600; }
+  blockquote { ._text(@font-menu,1.3); border-left: 3px solid @red; margin: 20px 0; }
   pre { border-radius: 0; border-color: @gray-code; background: @gray-code; color: #fff; padding: 10px 15px; overflow: auto; white-space: pre; word-wrap: normal; }
   code, kbd, pre, samp { font-family: 'Inconsolata', monospace; font-size: 16px; white-space: pre; }
   li code,
-  p code { background: @gray-code; border-radius: 0; color: white; padding: 1px 4px 2px 4px; white-space: normal; }
+  p code { background: @gray-light; border-radius: 0; border: 1px solid #e0e0e0; font-weight: 600; color: #000; padding: 1px 4px 2px 4px; white-space: normal; }
   h2 code,
   h3 code { background: @gray-light; border-radius: 0; border: 1px solid #e0e0e0; color: #000; padding: 1px 4px 2px 4px; }
   h2 code { font-size: @font-h2; }
@@ -82,7 +83,7 @@ body { font-family: 'Roboto', sans-serif; font-weight: 300; ._text(14px,1.5); pa
 }
 
 .block-h { ._text(@font-h2,1.3); font-weight: 300; margin: 0 0 30px 0; }
-.block-h-icon { padding: 0 0 3px 51px; background: url(/images/svg/lifebuoy.svg) 0 0 no-repeat; background-size: 39px; }
+.block-h-icon { padding: 0 0 3px 51px; background: url(/images/svg/lifebuoy.svg) 0 0 no-repeat; background-size: 39px 39px; }
 
 .to-top { position: fixed; right: 15px; bottom: 15px; text-align: center; ._text(32px,53px); background: @red; ._size(60px); cursor: pointer; display: none; }
 .to-top:hover { background: darken(@red,4%); }
@@ -149,7 +150,7 @@ body { font-family: 'Roboto', sans-serif; font-weight: 300; ._text(14px,1.5); pa
 }
 
 .home-banner {
-  & { background: @gray-light; padding: 50px 0; }
+  & { background: @gray-light; padding: 50px 0; box-sizing: border-box; }
   h1 {
     & { font-weight: 300; ._text(70px,1.1); margin: 30px 0 40px 0; }
     strong { font-weight: 400; }
@@ -157,10 +158,18 @@ body { font-family: 'Roboto', sans-serif; font-weight: 300; ._text(14px,1.5); pa
   h2 { ._text(@font-h1,1.4); font-weight: 300; margin: 0; }
   p { ._text(@font-h2,1.6); }
   .svg {
-    & { max-width: 330px; }
-    path { fill: @red; }
+    & { ._size(330px); }
   }
+  a { color: @red-dark; }
 }
+
+
+body.not-found { background-color: @gray-dark; }
+.home-banner-404 { height: 600px; }
+.home-banner:not(.home-banner-404){
+  .svg path { fill: @red; }
+}
+
 
 .home-l { padding: 40px 0 80px 0; }
 .home-li-img {
@@ -207,7 +216,15 @@ body { font-family: 'Roboto', sans-serif; font-weight: 300; ._text(14px,1.5); pa
 }
 
 .content-wr { margin-bottom: 65px; }
+.support-idea {
+  a { display: inline-block; }
+  img { height: 30px; margin-top: 5px; }
+}
 
+.support-yourkit {
+  a { display: inline-block; }
+  img { height: 36px; }
+}
 
 @media (max-width: 1500px){
   .github { display: none; }
@@ -215,8 +232,12 @@ body { font-family: 'Roboto', sans-serif; font-weight: 300; ._text(14px,1.5); pa
 
 @media (max-width: 1199px){
   .navbar-default .navbar-nav > li > a { ._text(18px,1.1); padding: 18px 15px 23px; }
-  .home-banner h1 { margin-top: 0; }
+  .home-banner {
+    h1 { margin-top: 0; }
+    .svg { ._size(300px); }
+  }
   .right-menu { width: 293px; }
+  .support-yourkit { text-align: right; }
 }
 
 @media (min-width: 992px){
@@ -235,6 +256,9 @@ body { font-family: 'Roboto', sans-serif; font-weight: 300; ._text(14px,1.5); pa
   }
   .right-menu-a { display: block; }
   .footer .col-xs-12.col-md-6:nth-child(1) { float: left; }
+  .home-banner .svg { ._size(222px); }
+  .support-yourkit { text-align: left; }
+  .home-banner-404 { height: 450px; }
 }
 
 @media (max-width: 991px) and (min-width: 768px){
@@ -256,6 +280,7 @@ body { font-family: 'Roboto', sans-serif; font-weight: 300; ._text(14px,1.5); pa
     h1 { ._text(40px,1.1); margin-bottom: 20px; }
     h2 { ._text(@font-h2,1.2); }
     p { ._text(14px,1.5); }
+    .svg { ._size(auto); max-width: 160px; }
   }
   .navbar-nav { margin: 0; }
   .navbar-collapse { float: left; clear: both; margin: 20px 0 !important; border: none !important; box-shadow: none; width: 100%; padding: 0 !important; }
@@ -263,6 +288,7 @@ body { font-family: 'Roboto', sans-serif; font-weight: 300; ._text(14px,1.5); pa
   .home-l { padding: 0 0 40px 0; }
   .subfooter { padding: 40px 0; }
   .right-menu-a { margin-top: 17px; }
+  .home-banner-404 { height: auto; }
 }
 
 @media (max-width: 600px){

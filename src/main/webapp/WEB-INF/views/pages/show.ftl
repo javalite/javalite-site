@@ -10,12 +10,11 @@
                 </li>
             </#list>
             <li>
-            ${page.title}
+                ${page.title}
             </li>
         </ol>
     </div>
 </div>
-
 </#if>
 
 <div class="container content-wr">

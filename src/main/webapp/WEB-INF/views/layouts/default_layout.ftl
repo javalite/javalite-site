@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>JavaLite - <@yield to="title"/></title>
-    <link href="${context_path}/bootstrap.css" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Roboto:600,400,300' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700&subset=latin-ext' rel='stylesheet' type='text/css'>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-
+    <head>
+        <meta charset="utf-8">
+        <title>JavaLite - <@yield to="title"/></title>
+        <link href="${context_path}/bootstrap.css" rel="stylesheet">
+        <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+        <link href='https://fonts.googleapis.com/css?family=Roboto:600,400,300' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700&subset=latin-ext' rel='stylesheet' type='text/css'>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+<body class="<@yield to='body_class' />">
 
 <header class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -59,14 +59,14 @@ ${page_content}
             <div class="col-xs-12 col-md-6">
                 <h4 class="block-h">We are supported by best tools companies</h4>
                 <div class="row">
-                    <div class="col-xxs-12 col-xs-6">
+                    <div class="col-xxs-12 col-xs-6 support-idea">
                         <a href="https://www.jetbrains.com/idea/">
-                            <img src="/images/support/intellij-idea.png" alt="IntelliJ JDEA">
+                            <img src="/images/support/intellij-idea.svg" alt="IntelliJ JDEA">
                         </a>
                     </div>
-                    <div class="col-xxs-12 col-xs-6 h-xxs-20">
+                    <div class="col-xxs-12 col-xs-6 h-xxs-20 support-yourkit">
                         <a href="https://www.yourkit.com/">
-                            <img src="/images/support/yourkit.png" alt="Yourkit">
+                            <img src="/images/support/yourkit.svg" alt="Yourkit">
                         </a>
                     </div>
                 </div>

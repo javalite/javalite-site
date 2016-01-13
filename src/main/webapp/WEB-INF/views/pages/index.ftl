@@ -97,7 +97,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <h4 class="block-h">JavaLite is in active use by many brands you know:</h4>
+                <h4 class="block-h">JavaLite is in active use by many brands you know</h4>
             </div>
         </div>
         <div class="row">
