@@ -21,19 +21,19 @@ import static org.javalite.common.Util.readFile;
 public class PagesController extends AppController {
 
     public void index() {
+        view("id", "");
     }
 
     public void show() throws IOException {
         try {
-
-
-            logWarning("READING FILE: " + p("content_dir") + "/" + getId() + ".properties");
             view("page", new Page(getId()));
+
+            view("id", getId());
+
         } catch (Exception e) {
             e.printStackTrace();
             render("/system/404");
         }
     }
-
 
 }

@@ -28,13 +28,13 @@
         </button>
         <div class="navbar-collapse collapse" id="navbar-main">
             <ul class="nav navbar-nav">
-                <li><a href="/documentation">Documentation</a></li>
+                <li <#if id == "documentation">class="active"</#if>><a href="/documentation">Documentation</a></li>
                 <li class="divider-vertical"></li>
-                <li><a href="/javadoc">JavaDocs</a></li>
-                <li><a href="/sources">Sources</a></li>
-                <li><a href="/support">Support</a></li>
-                <li><a href="/contributors">How to contribute</a></li>
-                <li><a href="/blog">Blog</a></li>
+                <li <#if id == "javadoc">class="active"</#if>><a href="/javadoc">JavaDocs</a></li>
+                <li <#if id == "sources">class="active"</#if>><a href="/sources">Sources</a></li>
+                <li <#if id == "support">class="active"</#if>><a href="/support">Support</a></li>
+                <li <#if id == "contributors">class="active"</#if>><a href="/contributors">How to contribute</a></li>
+                <#--<li><a href="/blog">Blog</a></li>-->
             </ul>
             <a class="github" href="https://github.com/javalite">
                 <img style="position: absolute; top: 0; right: 0; border: 0;" src="/images/github.png" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png">

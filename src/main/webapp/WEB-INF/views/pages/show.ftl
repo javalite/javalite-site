@@ -17,6 +17,7 @@
 </div>
 </#if>
 
+
 <div class="container content-wr">
     <div class="row" id="top">
         <div class="col-md-4" id="right-menu">
@@ -132,6 +133,12 @@
             $(this).next('.right-menu').toggle('normal');
             return false;
         });
+
+        if($("h2").size() == 0 && $("h2").size() == 0){
+            $("#right-menu").hide();
+        }
+
+
     });
 </script>
 
