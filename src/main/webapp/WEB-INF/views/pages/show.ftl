@@ -137,8 +137,6 @@
         if($("h2").size() == 0 && $("h2").size() == 0){
             $("#right-menu").hide();
         }
-
-
     });
 </script>
 
