@@ -58,15 +58,27 @@ body { font-family: 'Roboto', sans-serif; font-weight: 300; ._text(14px,1.5); pa
   a { color: @red-dark; }
   td.lineNumbers { width: 60px; }
   td.lineNumbers pre { background: @gray-dark-code; color: darken(@gray-light,12%); }
-  td.lineNumbers,
-  td.sourceCode { padding: 10px 0; border: none; }
+  table:not(.numberLines){
+    td.lineNumbers,
+    td.sourceCode { padding: 10px 0; border: none; }
+  }
+  table.numberLines {
+    margin: 0;
+    pre { margin: 0; }
+    td.lineNumbers,
+    td.sourceCode { padding: 0; border: none; }
+  }
   ul {
     & { list-style: none; padding: 0; }
     li { padding: 2px 0 2px 37px; position: relative; }
     li:before { content: "\25a0 "; color: @red; font-size: 11px; position: absolute; left: 15px; top: 4px; }
   }
   strong { font-weight: 600; }
-  pre { border-radius: 0; border-color: @gray-code; background: @gray-code; color: #fff; padding: 10px 15px; overflow: auto; white-space: pre; word-wrap: normal; }
+  div.sourceCode > {
+    overflow: auto; white-space: pre; word-wrap: normal; border: 1px solid @gray-code; margin-bottom: 10px;
+    pre { margin-bottom: 0; border: none; }
+  }
+  pre { border-radius: 0; border-color: @gray-code; background: @gray-code; color: #fff; padding: 10px 15px; }
   code, kbd, pre, samp { font-family: 'Inconsolata', monospace; font-size: 16px; white-space: pre; }
   li code,
   p code { background: @gray-light; border-radius: 0; border: 1px solid #e0e0e0; font-weight: 600; color: #000; padding: 1px 4px 2px 4px; white-space: normal; }
