@@ -38,7 +38,7 @@
 
 <@render partial="header"/>
 ${page_content}
-<@render partial="header"/>
+<@render partial="footer"/>
 
 </body>
 </html>
