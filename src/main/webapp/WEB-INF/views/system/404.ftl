@@ -10,7 +10,7 @@
             <div class="col-xxs-12 col-xs-9 col-sm-8">
                 <h1><strong>Not found</strong></h1>
                 <p>Sorry, we can't find the page you're looking for.</p>
-                <p>Please, try starting from <a href="#">home</a>.</p>
+                <p>Please, try starting from <a href="/">home</a>.</p>
             </div>
         </div>
     </div>

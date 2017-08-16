@@ -10,8 +10,7 @@
     <name>JavaLite Site</name>
 
     <properties>
-        <activejdbc.version>1.4.12-SNAPSHOT</activejdbc.version>
-        <activeweb.version>1.14-SNAPSHOT</activeweb.version>
+        <javalite.version>2.0-SNAPSHOT</javalite.version>
     </properties>
     <build>
         <finalName>ROOT</finalName>
@@ -56,7 +55,7 @@
             <plugin>
                 <groupId>org.javalite</groupId>
                 <artifactId>activeweb-lessc-maven-plugin</artifactId>
-                <version>${activeweb.version}</version>
+                <version>${javalite.version}</version>
                 <configuration>
                     <lesscMain>${basedir}/src/main/webapp/less/bootstrap.less</lesscMain>
                     <targetDirectory>${basedir}/target/web</targetDirectory>
@@ -97,13 +96,13 @@
         <dependency>
             <groupId>org.javalite</groupId>
             <artifactId>activeweb</artifactId>
-            <version>${activeweb.version}</version>
+            <version>${javalite.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.javalite</groupId>
             <artifactId>activeweb-testing</artifactId>
-            <version>${activeweb.version}</version>
+            <version>${javalite.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -115,7 +114,7 @@
         <dependency>
             <groupId>org.javalite</groupId>
             <artifactId>app-config</artifactId>
-            <version>${activejdbc.version}</version>
+            <version>${javalite.version}</version>
         </dependency>
 
         <dependency>

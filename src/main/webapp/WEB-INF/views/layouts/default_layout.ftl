@@ -40,6 +40,9 @@
 ${page_content}
 <@render partial="footer"/>
 
+
+<@render partial="google_analytics"/>
+
 </body>
 </html>
 
