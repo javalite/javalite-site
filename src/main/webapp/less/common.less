@@ -26,8 +26,10 @@
 @teal: #26a69a;
 @green: #4CAF50;
 @blue: #00BCD4;
+@darkblue: #1a81aa;
 @orange: #FF7043;
 @pink: #ec407a;
+@purple: #9f4da2;
 @kw: #B9FCFF;
 @dt: #52D273;
 @dv: #E5C453;
@@ -42,8 +44,10 @@
 .bg-teal { background: @teal; }
 .bg-green { background: @green; }
 .bg-blue { background: @blue; }
+.bg-darkblue { background: @darkblue; }
 .bg-orange { background: @orange; }
 .bg-pink { background: @pink; }
+.bg-purple { background: @purple; }
 .bg-red { background: @red; }
 
 
@@ -114,7 +118,7 @@ body { font-family: 'Roboto', sans-serif; font-weight: 300; ._text(14px,1.5); pa
 .block-h { ._text(@font-h2,1.3); font-weight: 300; margin: 0 0 30px 0; }
 .block-h-icon { padding: 0 0 3px 51px; background: url(/images/svg/lifebuoy.svg) 0 0 no-repeat; background-size: 39px 39px; }
 
-.to-top { position: fixed; right: 15px; bottom: 15px; text-align: center; ._text(32px,53px); background: @red; ._size(60px); cursor: pointer; display: none; }
+.to-top { position: fixed; right: 15px; bottom: 15px; text-align: center; ._text(26px,51px); background: @red; ._size(55px); cursor: pointer; display: none; }
 .to-top:hover { background: darken(@red,4%); }
 
 .hr { border-width: 2px; border-color: @gray; margin: 35px 0; }
@@ -146,7 +150,7 @@ body { font-family: 'Roboto', sans-serif; font-weight: 300; ._text(14px,1.5); pa
 
 .navbar-default {
   & { background: @gray; border: none; box-shadow: 0 1px 7px #353535; }
-  .navbar-nav > li > a { color: #fff !important; ._text(@font-menu,1.1); padding: 16px 20px 22px; }
+  .navbar-nav > li > a { color: #fff !important; ._text(@font-menu,1.1); padding: 18px 20px 20px; }
   .navbar-nav > li.active > a,
   .navbar-nav > li.active > a:hover,
   .navbar-nav > li > a:hover { background: @red; color: #fff; }
@@ -210,10 +214,11 @@ body.error { background-color: @gray-dark; }
   & { ._size(85px); display: block; box-sizing: border-box; margin-top: 5px; padding: 20px; float: left; margin-right: 20px; }
   .svg { display: block; margin: 0 auto; }
 }
-.home-li:last-child .home-li-img { padding: 25px 15px; }
 .home-li-txt { overflow: hidden; }
 .home-li {
   & { padding-top: 40px; }
+  &:nth-child(4) .home-li-img { padding: 22px 16px; }
+  &:nth-child(6) .home-li-img { padding: 25px 15px; }
   &:nth-child(2n+1){ clear: both; }
   h2 {
     & { margin: 0 0 10px; line-height: 1.2; }
@@ -269,7 +274,7 @@ body.error { background-color: @gray-dark; }
 }
 
 @media (max-width: 1199px){
-  .navbar-default .navbar-nav > li > a { ._text(18px,1.1); padding: 18px 15px 23px; }
+  .navbar-default .navbar-nav > li > a { ._text(18px,1.1); padding: 20px 15px 21px; }
   .home-banner {
     h1 { margin-top: 0; }
     .svg { ._size(300px); }

@@ -55,7 +55,7 @@
         </div>
         <div class="col-xs-12 col-md-6 home-li">
             <span class="home-li-img bg-red">
-                <img src="/images/svg/repair.svg" alt="Http" class="svg">
+                <img src="/images/svg/http.svg" alt="Http" class="svg">
             </span>
             <div class="home-li-txt">
                 <h2 class="block-h">
@@ -87,6 +87,30 @@
                 </h2>
                 <h3>Better way to write CSS</h3>
                 <p>Generate CSS file on the fly with a use of a Less compiler</p>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-6 home-li">
+            <span class="home-li-img bg-darkblue">
+                <img src="/images/svg/async.svg" alt="Database migrator" class="svg">
+            </span>
+            <div class="home-li-txt">
+                <h2 class="block-h">
+                    <a href="/">Async</a>
+                </h2>
+                <h3>Code doesn't have to wait</h3>
+                <p>Keep your site or app responsive, reducing waiting time for the user</p>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-6 home-li">
+            <span class="home-li-img bg-purple">
+                <img src="/images/svg/app-config.svg" alt="Less compile" class="svg">
+            </span>
+            <div class="home-li-txt">
+                <h2 class="block-h">
+                    <a href="/">App Config</a>
+                </h2>
+                <h3>Store your configuration</h3>
+                <p>Allows users/administrators to easily change settings</p>
             </div>
         </div>
     </div>
