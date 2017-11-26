@@ -12,5 +12,9 @@ public class CopyrightYearFilter extends HttpSupportFilter {
     @Override
     public void before() {
         view("year", Integer.valueOf(new GregorianCalendar().get(GregorianCalendar.YEAR)).toString());
+
+        if(getRoute().getController().getClass().getName().contains("Blog")){
+            view("id", "blog");
+        }
     }
 }

@@ -15,16 +15,21 @@ limitations under the License.
 */
 package app.config;
 
+import app.services.WebModule;
+import com.google.inject.Guice;
+import com.google.inject.Injector;
 import org.javalite.activeweb.AppContext;
 import org.javalite.activeweb.Bootstrap;
-
-import com.google.inject.Guice;
 
 /**
  * @author Igor Polevoy
  */
 public class AppBootstrap extends Bootstrap {
-    public void init(AppContext context) {        
 
+    public void init(AppContext context) {}
+
+    @Override
+    public Injector getInjector() {
+        return Guice.createInjector(new WebModule());
     }
 }

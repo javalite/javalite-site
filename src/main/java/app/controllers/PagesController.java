@@ -27,7 +27,7 @@ public class PagesController extends AppController {
     public void show() throws IOException {
         try {
             view("page", new Page(getId()));
-
+            view("title", getId().replaceAll("_", " "));
             view("id", getId());
 
         } catch (Exception e) {

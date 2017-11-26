@@ -1,4 +1,4 @@
-<@content for="title">Java - light as a feather...</@content>
+<@content for="title">Java, light as a feather...</@content>
 
 <div class="home-banner">
     <div class="container">

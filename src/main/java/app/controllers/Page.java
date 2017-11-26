@@ -24,7 +24,7 @@ public class Page {
         if (id != null) {
             try {
                 Properties props = new Properties();
-                props.load(new FileInputStream(p("content_dir") + "/" + id + ".properties"));
+                props.load(new FileInputStream(p("pages_dir") + "/" + id + ".properties"));
                 breadCrumbs = readBreadrumbs(props);
                 title = props.getProperty("title") != null ? props.getProperty("title") : inferTitle(id);
             } catch (Exception e) {
@@ -35,7 +35,7 @@ public class Page {
         } else {
             title = inferTitle(id);
         }
-        content = readFile(p("content_dir") + "/" + id + ".md.html");
+        content = readFile(p("pages_dir") + "/" + id + ".md.html");
     }
 
     String inferTitle(String id){

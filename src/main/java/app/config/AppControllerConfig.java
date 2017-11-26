@@ -25,7 +25,8 @@ import org.javalite.activeweb.controller_filters.TimingFilter;
  * @author Igor Polevoy
  */
 public class AppControllerConfig extends AbstractControllerConfig {
+
     public void init(AppContext context) {
-        addGlobalFilters(new TimingFilter(), new CopyrightYearFilter());
+        add(new CopyrightYearFilter());
     }
 }

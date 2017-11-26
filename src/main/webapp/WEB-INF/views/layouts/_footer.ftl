@@ -32,7 +32,7 @@
                     </form>
                 </span>
                 <p>
-                    &#169; 2009 - ${year} Igor Polevoy.<br/>
+                    &#169; 2009 - ${year!} Igor Polevoy.<br/>
                     All JavaLite projects are released under <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License, Version 2.0</a>
                 </p>
             </div>
