@@ -3,44 +3,34 @@
 
 <div class="container">
     <div class="blog blog-single">
+        <div class="page-header">
+            <h1>${post.title!""}</h1>
+        </div>
+        <div class="blog-data">
+            <img src="https://media.licdn.com/media/p/8/000/1d2/391/13e9e58.jpg" alt="${post.authorName!""}">
+            <h5>
+                <a href="/blog/author/${post.authorId!""}">${post.authorName!""}</a>
+            </h5>
+            <p>
+                Created
+                ${post.published?string["MMM"]}
+                ${post.published?string["dd"]}
+                ${post.published?string["yyyy"]}
+            </p>
+        </div>
+        <div class="content-styles">
+            ${post.content!""}
+        </div>
+
         <div class="row">
-            <div class="col-xs-12 col-sm-10 col-md-8 col-xs-offset-0 col-sm-offset-1 col-md-offset-2">
-                <article>
-                    <header>
-                        <div class="clearfix">
-                            <h5 class="pull-left">
-                                ${post.published?string["MMM"]}
-                                ${post.published?string["dd"]}
-                                ${post.published?string["yyyy"]}
-                            </h5>
-
-                        </div>
-                        <h1>${post.title!""}</h1>
-                    </header>
-
-                    <div class="blog-cnt">
-                        ${post.content!""}
-                    </div>
-                    <div class="blog-autor-wr">
-                        <div class="blog-autor">
-                            <div class="blog-autor-txt">
-                                <span>Posted By</span>
-                                <a href="/blog/author/${post.authorId!""}">${post.authorName!""}</a>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <div class="row">
-                    <div class="all-posts col-xs-12 col-sm-12 col-md-8 col-md-offset-2" style="margin-top:0;">
-                        <#if next??>
-                            <a href="/blog/${next.year}/${next.month}/${next.day}/${next.slug}">Previous</a>
-                        </#if>
-                        <#if prev?has_content && next?has_content>|</#if>
-                        <#if prev??>
-                            <a href="/blog/${prev.year}/${prev.month}/${prev.day}/${prev.slug}">Next</a>
-                        </#if>
-                    </div>
-                </div>
+            <div class="all-posts col-xs-12 col-sm-12 col-md-8 col-md-offset-2" style="margin-top:0;">
+                <#if next??>
+                    <a href="/blog/${next.year}/${next.month}/${next.day}/${next.slug}">Previous</a>
+                </#if>
+                <#if prev?has_content && next?has_content>|</#if>
+                <#if prev??>
+                    <a href="/blog/${prev.year}/${prev.month}/${prev.day}/${prev.slug}">Next</a>
+                </#if>
             </div>
         </div>
     </div>
@@ -49,14 +39,7 @@
         <@render partial="subscription"/>
     </div>
 
-    <div class="blog">
-        <div class="row">
-            <div class="col-xs-12 col-sm-10 col-md-8 col-xs-offset-0 col-sm-offset-1 col-md-offset-2">
-                <div id="disqus_thread"></div>
-
-            </div>
-        </div>
-    </div>
+    <div id="disqus_thread"></div>
 </div>
 
 <@render partial="disquss"/>
