@@ -33,7 +33,7 @@
         </div>
         <div class="col-md-8 content-styles" id="main-content">
             ${page.content}
-            <hr class="hr">
+            <hr class="hr"/>
             <div class="alert bs-alert-old-docs">
                 <h4 class="block-h">How to comment</h4>
                 <p>The comment section below is to discuss documentation on this page.</p>

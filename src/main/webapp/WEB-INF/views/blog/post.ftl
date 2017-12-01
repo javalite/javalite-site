@@ -11,7 +11,7 @@
             <h5>
                 <a href="/blog/author/${post.authorId!""}">${post.authorName!""}</a>
             </h5>
-            <p>
+            <p class="m-b-0">
                 Created
                 ${post.published?string["MMM"]}
                 ${post.published?string["dd"]}
@@ -22,24 +22,25 @@
             ${post.content!""}
         </div>
 
-        <div class="row">
-            <div class="all-posts col-xs-12 col-sm-12 col-md-8 col-md-offset-2" style="margin-top:0;">
+        <#if prev?has_content || next?has_content>
+            <hr class="hr" />
+            <div class="blog-footer">
                 <#if next??>
                     <a href="/blog/${next.year}/${next.month}/${next.day}/${next.slug}">Previous</a>
                 </#if>
-                <#if prev?has_content && next?has_content>|</#if>
+                <#if prev?has_content && next?has_content><span>|</span></#if>
                 <#if prev??>
                     <a href="/blog/${prev.year}/${prev.month}/${prev.day}/${prev.slug}">Next</a>
                 </#if>
             </div>
-        </div>
+        </#if>
     </div>
 
-    <div class="blog">
-        <@render partial="subscription"/>
-    </div>
-
+    <hr class="hr" />
     <div id="disqus_thread"></div>
+    <hr class="hr" />
+
+    <@render partial="subscription"/>
 </div>
 
 <@render partial="disquss"/>

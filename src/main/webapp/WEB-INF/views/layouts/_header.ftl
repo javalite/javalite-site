@@ -14,6 +14,9 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
+        <div class="navbar-search visible-xs">
+            <a href="#" id="search-short1">&nbsp;</a>
+        </div>
         <div class="navbar-collapse collapse" id="navbar-main">
             <ul class="nav navbar-nav">
                 <li <#if id == "documentation">class="active"</#if>><a href="/documentation">Documentation</a></li>
@@ -23,13 +26,23 @@
                 <li <#if id == "sources">class="active"</#if>><a href="/sources">Sources</a></li>
                 <li <#if id == "support">class="active"</#if>><a href="/support">Support</a></li>
                 <li <#if id == "contributors">class="active"</#if>><a href="/contributors">How to contribute</a></li>
-            <#--<li><a href="/blog">Blog</a></li>-->
+                <li class="navbar-search hidden-xs">
+                    <a href="#" id="search-short">&nbsp;</a>
+                </li>
             </ul>
-            <a class="github" href="https://github.com/javalite">
-                <img style="position: absolute; top: 0; right: 0; border: 0;" src="/images/github.png" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png">
+        </div>
+        <div id="search-full" class="search-full">
+            <@form>
+                <input type="text" name="query" class="form-control" placeholder="Search..." value="">
+            </@form>
+            <a id="close-search" class="close-search">
+                <span>&times;</span>
             </a>
         </div>
     </div>
+    <a class="github" href="https://github.com/javalite">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="/images/github.png" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png">
+    </a>
 </header>
 
 <script src="/js/jquery-1.8.3.min.js"></script>
@@ -39,3 +52,21 @@
 <script src="/js/jquery.tocify.js"></script>
 <script src="/js/prettify.js"></script>
 <script src="/js/svg_convert.js"></script>
+
+<script type="text/javascript">
+    $("#search-short").click(function () {
+        var search = $("#search-full");
+        search.show();
+        search.find("input").focus();
+    });
+
+    $("#search-short1").click(function () {
+        var search = $("#search-full");
+        search.show();
+        search.find("input").focus();
+    });
+
+    $("#close-search").click(function () {
+        $("#search-full").hide();
+    });
+</script>

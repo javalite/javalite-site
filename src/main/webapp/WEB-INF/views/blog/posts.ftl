@@ -5,21 +5,22 @@
         <h1>Blog</h1>
     </div>
 
-    <@render partial="post" collection=posts spacer="spacer"/>
     <div class="row">
-        <div class="all-posts col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
+        <@render partial="post" collection=posts spacer="spacer"/>
+    </div>
+
+    <#if prev_page?has_content || next_page?has_content>
+        <div class="blog-footer">
             <#if prev_page ??>
                 <a href="?page=${prev_page}">Older posts</a>
             </#if>
-            <#if prev_page?has_content && next_page?has_content>|</#if>
+            <#if prev_page?has_content && next_page?has_content><span>|</span></#if>
             <#if next_page ??>
                 <a href="?page=${next_page}">Newer posts</a>
             </#if>
         </div>
-    </div>
+        <hr class="hr"/>
+    </#if>
 
-    <hr class="visible-xs" />
+    <@render partial="subscription"/>
 </div>
-
-
-<@render partial="subscription"/>
