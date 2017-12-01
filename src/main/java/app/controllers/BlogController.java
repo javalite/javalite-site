@@ -101,4 +101,10 @@ public class BlogController extends AppController {
             render("post");
         }
     }
+
+    public void reload(){
+
+        service.loadData();
+        respond("ok");
+    }
 }

@@ -20,3 +20,6 @@
 
     <hr class="visible-xs" />
 </div>
+
+
+<@render partial="subscription"/>

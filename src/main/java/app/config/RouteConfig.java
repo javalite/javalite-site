@@ -13,6 +13,7 @@ public class RouteConfig extends AbstractRouteConfig{
         route("/bootstrap").to(BootstrapController.class);
 
         route("/blog").to(BlogController.class).action("index");
+        route("/blog/reload").to(BlogController.class).action("reload");
         route("/blog/author/{author}").to(BlogController.class).action("author");
         route("/blog/{year_or_slug}").to(BlogController.class).action("year-or-slug");
         route("/blog/{year}/{month}").to(BlogController.class).action("year-month");
