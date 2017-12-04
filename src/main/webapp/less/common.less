@@ -131,6 +131,14 @@ body { font-family: 'Roboto', sans-serif; font-weight: 300; ._text(14px,1.5); pa
   div.sourceCode > {
     overflow: auto; white-space: pre; word-wrap: normal; border: 1px solid @gray-code; margin-bottom: 10px; display: block;
     pre { margin-bottom: 0; border: none; }
+    .table-responsive {
+      width: auto;
+      margin-bottom: 0;
+      overflow-y: auto;
+      overflow-x: auto;
+      -ms-overflow-style: auto;
+      border: none;
+    }
     table {
       width: 100%;
     }
@@ -185,7 +193,7 @@ body { font-family: 'Roboto', sans-serif; font-weight: 300; ._text(14px,1.5); pa
   height: 44px;
   &:focus {
     -webkit-box-shadow: none;
-    border-color: @gray;
+    border-color: @red-dark;
   }
 }
 
@@ -219,6 +227,26 @@ body { font-family: 'Roboto', sans-serif; font-weight: 300; ._text(14px,1.5); pa
   }
 }
 
+.bgm-red {
+  background: @red;
+  ._text(@font-menu,1.3);
+  padding: 8px 12px;
+  height: 44px;
+  color: #fff;
+  border-radius: 0;
+  -webkit-transition: ease-in-out .15s;
+  -o-transition: ease-in-out .15s;
+  transition: ease-in-out .15s;
+  &:active,
+  &:hover,
+  &:focus {
+    box-shadow: none;
+    outline: none !important;
+    color: #fff;
+    background: @red-dark;
+  }
+}
+
 .blog-data {
   overflow: hidden;
   img {
@@ -240,6 +268,12 @@ body { font-family: 'Roboto', sans-serif; font-weight: 300; ._text(14px,1.5); pa
       color: #000;
     }
   }
+}
+
+.blog-subscription {
+  background: @gray;
+  padding: 40px 0;
+  margin-top: 30px;
 }
 
 .blog-cnt {
@@ -349,9 +383,6 @@ body { font-family: 'Roboto', sans-serif; font-weight: 300; ._text(14px,1.5); pa
   form {
     margin-top: 7px;
     margin-right: 55px;
-    .form-control:focus {
-      border-color: @red-dark;
-    }
   }
   .close-search {
     position: absolute;
@@ -378,7 +409,7 @@ body { font-family: 'Roboto', sans-serif; font-weight: 300; ._text(14px,1.5); pa
 }
 
 .footer {
-  & { background: @gray-dark; padding: 38px 0 30px; color: #fff; margin-top: 30px; }
+  & { background: @gray-dark; padding: 38px 0 30px; color: #fff; }
   a {
     &{ color: #fff; text-decoration: underline; }
     &:hover { text-decoration: none; }
@@ -392,6 +423,12 @@ body { font-family: 'Roboto', sans-serif; font-weight: 300; ._text(14px,1.5); pa
       & { outline: none !important; }
       &:hover { opacity: 0.85; }
     }
+  }
+}
+
+body:not(.homepage):not(.subscription){
+  .footer {
+    margin-top: 30px;
   }
 }
 

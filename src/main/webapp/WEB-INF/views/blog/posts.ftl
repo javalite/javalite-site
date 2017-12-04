@@ -19,8 +19,9 @@
                 <a href="?page=${next_page}">Newer posts</a>
             </#if>
         </div>
-        <hr class="hr"/>
     </#if>
-
-    <@render partial="subscription"/>
 </div>
+
+<@render partial="subscription"/>
+
+<@render partial="script"/>

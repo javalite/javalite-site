@@ -38,9 +38,9 @@
 
     <hr class="hr" />
     <div id="disqus_thread"></div>
-    <hr class="hr" />
-
-    <@render partial="subscription"/>
 </div>
 
+<@render partial="subscription"/>
+
 <@render partial="disquss"/>
+<@render partial="script"/>

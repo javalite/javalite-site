@@ -1,4 +1,5 @@
 <@content for="title">Java, light as a feather...</@content>
+<@content for="body_class">homepage</@>
 
 <div class="home-banner">
     <div class="container">
