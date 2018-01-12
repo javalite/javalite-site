@@ -21,14 +21,14 @@
             <ul class="nav navbar-nav">
                 <li <#if id == "documentation">class="active"</#if>><a href="/documentation">Documentation</a></li>
                 <li class="divider-vertical"></li>
-                <li <#if id == "blog">class="active"</#if>><a href="/blog">Blog</a></li>
+                <#--<li <#if id == "blog">class="active"</#if>><a href="/blog">Blog</a></li>-->
                 <li <#if id == "javadoc">class="active"</#if>><a href="/javadoc">JavaDocs</a></li>
                 <li <#if id == "sources">class="active"</#if>><a href="/sources">Sources</a></li>
                 <li <#if id == "support">class="active"</#if>><a href="/support">Support</a></li>
                 <li <#if id == "contributors">class="active"</#if>><a href="/contributors">How to contribute</a></li>
-                <li class="navbar-search hidden-xs">
-                    <a href="#" id="search-short">&nbsp;</a>
-                </li>
+                <#--<li class="navbar-search hidden-xs">-->
+                    <#--<a href="#" id="search-short">&nbsp;</a>-->
+                <#--</li>-->
             </ul>
         </div>
         <div id="search-full" class="search-full">
