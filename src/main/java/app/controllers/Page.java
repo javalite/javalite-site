@@ -1,8 +1,13 @@
 package app.controllers;
 
 import org.javalite.common.Inflector;
+import org.javalite.common.RuntimeUtil;
 
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -20,7 +25,7 @@ public class Page {
     private String title, content;
     private List<BreadCrumb> breadCrumbs;
 
-    public Page(String id) {
+    public Page(String id) throws UnknownHostException, FileNotFoundException {
         if (id != null) {
             try {
                 Properties props = new Properties();
@@ -34,6 +39,22 @@ public class Page {
 
         } else {
             title = inferTitle(id);
+        }
+
+        if(getClass().getResource("/org/junit/Before.class") == null && InetAddress.getLocalHost().toString().contains("igorslaptop")){
+            File ajFile = new File("/home/igor/projects/javalite/site-content/src/activejdbc/" + id + ".md");
+            File awFile = new File("/home/igor/projects/javalite/site-content/src/activeweb/" + id + ".md");
+
+            File file;
+            if(ajFile.exists()){
+                file = ajFile;
+            }else if(awFile.exists()){
+                file = awFile;
+            }else {
+                throw new FileNotFoundException("id");
+            }
+            content = RuntimeUtil.execute("pandoc", "-f", "markdown", "-t", "html", file.toString()).out;
+            return;
         }
         content = readFile(p("pages_dir") + "/" + id + ".md.html");
     }

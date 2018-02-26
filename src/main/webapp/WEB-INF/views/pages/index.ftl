@@ -96,7 +96,7 @@
             </span>
             <div class="home-li-txt">
                 <h2 class="block-h">
-                    <a href="/">Async</a>
+                    <a href="/async">Async</a>
                 </h2>
                 <h3>Code doesn't have to wait</h3>
                 <p>Keep your site or app responsive, reducing waiting time for the user</p>
@@ -108,10 +108,10 @@
             </span>
             <div class="home-li-txt">
                 <h2 class="block-h">
-                    <a href="/">App Config</a>
+                    <a href="/app-config">App Config</a>
                 </h2>
-                <h3>Store your configuration</h3>
-                <p>Allows users/administrators to easily change settings</p>
+                <h3>Configure your apps</h3>
+                <p>Load different properties depending on location of your app</p>
             </div>
         </div>
     </div>

@@ -20,7 +20,7 @@ public class RouteConfig extends AbstractRouteConfig{
         route("/blog/{year}/{month}/{slug}").to(BlogController.class).action("slug");
         route("/blog/{year}/{month}/{day}/{slug}").to(BlogController.class).action("slug");
 
-
+        route("/search").to(SearchController.class);
         route("/{id}").to(PagesController.class).action("show").get();
         ignore("/bootstrap.css").exceptIn("development");
     }
