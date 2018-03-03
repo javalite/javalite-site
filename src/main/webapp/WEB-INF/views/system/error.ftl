@@ -1,7 +1,6 @@
 <@content for="title">505 Error</@content>
 <@content for="body_class">error</@content>
 
-<@wrap with="/layouts/default_layout">
 <div class="home-banner home-banner-error">
     <div class="container">
         <div class="row">
@@ -19,4 +18,3 @@
         </div>
     </div>
 </div>
-</@>
