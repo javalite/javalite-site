@@ -383,6 +383,10 @@ body { font-family: 'Roboto', sans-serif; font-weight: 300; ._text(14px,1.5); pa
   form {
     margin-top: 7px;
     margin-right: 55px;
+    position: relative;
+  }
+  .form-control {
+    padding-right: 40px;
   }
   .close-search {
     position: absolute;
@@ -396,6 +400,62 @@ body { font-family: 'Roboto', sans-serif; font-weight: 300; ._text(14px,1.5); pa
     &:hover {
       color: #fff;
     }
+  }
+}
+
+.search-input {
+  margin-bottom: 35px;
+  .cmp-search {
+    position: relative;
+    .form-control {
+      padding-right: 40px;
+    }
+  }
+}
+
+.search-b {
+  h2 {
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
+
+.search-icon {
+  display: block;
+  width: 22px;
+  height: 22px;
+  box-sizing: border-box;
+  position: absolute;
+  right: 10px;
+  top: 11px;
+}
+
+.search {
+  .highlighted{
+    background: #f1f1f1;
+    border-radius: 0;
+    border: 1px solid #e0e0e0;
+    font-weight: 600;
+    color: #000;
+    padding: 1px 4px 2px 4px;
+    white-space: normal;
+    font-family: 'Inconsolata', monospace;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  @media (min-width: 992px) {
+    .content-wr {
+      min-height: ~'calc(100vh - 345px)';
+    }
+  }
+  @media (max-width: 991px) {
+    .content-wr {
+      min-height: ~'calc(100vh - 487px)';
+    }
+  }
+  .hr {
+    margin: 35px 0 25px;
+    border-color: rgb(221, 221, 221);
   }
 }
 

@@ -35,7 +35,8 @@
         </div>
         <div id="search-full" class="search-full">
             <@form controller="search">
-                <input type="text" name="query" class="form-control" placeholder="Search..." value="">
+                <input type="text" name="query" class="form-control" placeholder="Search..." value="" />
+                <img src="/images/svg/search-b.svg" class="search-icon svg" alt="Search" />
             </@form>
             <a id="close-search" class="close-search">
                 <span>&times;</span>
