@@ -345,7 +345,7 @@ body { font-family: 'Roboto', sans-serif; font-weight: 300; ._text(14px,1.5); pa
   & { padding-top: 0; padding-bottom: 0; .clearfix; height: 60px; }
   span { display: block; background: @red; ._size(60px); float: left; margin-right: 8px; }
   span .svg { display: block; ._size(48px); margin: 5px 6px; }
-  span + .svg { display: block; ._size(130px,48px); float: left; margin-top: 5px; }
+  span + .svg { display: block; ._size(110px,48px); float: left; margin-top: 5px; }
   &:hover {
     span { background: darken(@red,4%); }
   }
@@ -356,7 +356,7 @@ body { font-family: 'Roboto', sans-serif; font-weight: 300; ._text(14px,1.5); pa
 
 .navbar-default {
   & { background: @gray; border: none; box-shadow: 0 1px 7px #353535; }
-  .navbar-nav > li > a { color: #fff !important; ._text(@font-menu,1.1); padding: 18px 20px 20px; }
+  .navbar-nav > li > a { color: #fff !important; ._text(@font-menu,1.1); padding: 18px 18px 20px; }
   .navbar-nav > li.active > a,
   .navbar-nav > li.active > a:hover,
   .navbar-nav > li:not(.navbar-search) > a:focus,
@@ -482,6 +482,19 @@ body { font-family: 'Roboto', sans-serif; font-weight: 300; ._text(14px,1.5); pa
     input {
       & { outline: none !important; }
       &:hover { opacity: 0.85; }
+    }
+  }
+}
+
+.header-donate {
+  display: none; position: absolute; right: -88px; top: 19px;
+  input {
+    & { outline: none !important; }
+    &:hover { opacity: 0.85; }
+  }
+  @media (min-width: 1750px){
+    & {
+      display: block;
     }
   }
 }
