@@ -10,7 +10,7 @@
     <name>JavaLite Site</name>
 
     <properties>
-        <javalite.version>2.0-SNAPSHOT</javalite.version>
+        <javalite.version>2.2</javalite.version>
     </properties>
     <build>
         <finalName>ROOT</finalName>
