@@ -233,4 +233,4 @@ If you are using Maven, add these repositories to your pom:
 ~~~~
 
 If you are not using Maven, you can pull down the latest snapshots from here:
-<a href="http://repo.javalite.io">JavaLite Repo</a>
+<a href="https://oss.sonatype.org/content/repositories/snapshots">Sonatype Snapshots</a>

@@ -10,7 +10,7 @@
 * [JSpec Docs](http://javalite.github.io/activejdbc/snapshot/org/javalite/test/jspec/JSpec.html)
 * [Http Docs](http://javalite.github.io/activejdbc/snapshot/org/javalite/http/Http.html)
 
-Current snapshots are available from our repo: [http://repo.javalite.io/](http://repo.javalite.io/).
+Current snapshots are available from: [https://oss.sonatype.org/content/repositories/snapshots](https://oss.sonatype.org/content/repositories/snapshots).
 
 ## Latest release (available from Maven Central)
 

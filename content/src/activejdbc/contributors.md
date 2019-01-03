@@ -34,7 +34,7 @@ Implement a new feature in your fork, and when all tests pass, submit a new Pull
  your implementation, potentially provide some feedback and then  will accept a new pull request.
 
 New code will be built into the master and will become available in a current snapshot from our
-Snapshot repo: [http://repo.javalite.io/](http://repo.javalite.io/).
+Snapshot repo: [https://oss.sonatype.org/content/repositories/snapshots](https://oss.sonatype.org/content/repositories/snapshots).
 
 Once the new code is in the snapshot, it will make it into a new release.
 
