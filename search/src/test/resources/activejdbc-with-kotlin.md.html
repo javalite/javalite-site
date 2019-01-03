@@ -1,0 +1,39 @@
+<div class="page-header">
+<h1>
+ActiveJDBC &amp; Kotlin
+</h1>
+</div>
+<h2 id="dependency-setup">Dependency Setup</h2>
+<p>In order to setup ActiveJDBC with Kotlin, add the <a href="/activejdbc#getting-the-latest-version">ActiveJDBC dependency</a> as well as the Kotlin module:</p>
+<div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;dependency&gt;</span>
+    <span class="kw">&lt;groupId&gt;</span>org.javalite<span class="kw">&lt;/groupId&gt;</span>
+    <span class="kw">&lt;artifactId&gt;</span>activejdbc-kt<span class="kw">&lt;/artifactId&gt;</span>
+    <span class="kw">&lt;version&gt;</span>LATEST_VERSION<span class="kw">&lt;/version&gt;</span>
+<span class="kw">&lt;/dependency&gt;</span></code></pre></div>
+<h2 id="instrumentation">Instrumentation</h2>
+<p>Setting up instrumentation is not any different, please follow instructions <a href="instrumentation">here</a>.</p>
+<h2 id="usage">Usage</h2>
+<p>Unlike the Java layer, the Kotlin layer offers two similar ways of setting up a model.</p>
+<h3 id="approach-1">Approach #1</h3>
+<p>First define an entity</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">import org.javalite.activejdbc.Model;</span>
+<span class="kw">import org.javalite.activejdbc.CompanionModel;</span>
+
+open <span class="kw">class</span> <span class="fu">Person</span>():<span class="fu">Model</span>() {
+    companion object:CompanionModel&lt;Person&gt;(Person::<span class="kw">class</span>)
+}</code></pre></div>
+<p>Then use it as in Java</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">val person:Person = Person.<span class="fu">findById</span>(<span class="dv">1</span>)</code></pre></div>
+<h3 id="approach-2-with-english-inflections">Approach #2 (with English inflections)</h3>
+<p>The first class is only for the entity itself</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">import org.javalite.activejdbc.Model;</span>
+
+open <span class="kw">class</span> <span class="fu">Person</span>():<span class="fu">Model</span>()</code></pre></div>
+<p>The second class stands for the table and its name matches English inflection (Person =&gt; People)</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">import org.javalite.activejdbc.CompanionModel;</span>
+
+open <span class="kw">class</span> People {
+    companion object:CompanionModel&lt;Person&gt;(Person::<span class="kw">class</span>)
+}</code></pre></div>
+<p>Usage:</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">val person:Person = People.<span class="fu">findById</span>(1L)</code></pre></div>

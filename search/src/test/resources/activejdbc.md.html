@@ -1,0 +1,221 @@
+<div class="page-header">
+<h1>
+ActiveJDBC
+</h1>
+<h4>
+Fast ORM for agile development
+</h4>
+</div>
+<h2 id="documentation">Documentation</h2>
+<p>Follow to: <a href="documentation#activejdbc">ActiveJDBC documentation</a></p>
+<h2 id="minute-introduction">5 minute introduction</h2>
+<p>For a simple example we will use a table called PEOPLE created with this MySQL DDL:</p>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">CREATE</span> <span class="kw">TABLE</span> people (
+  <span class="kw">id</span>  <span class="dt">int</span>(<span class="dv">11</span>) <span class="kw">NOT</span> <span class="kw">NULL</span> auto_increment <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,
+  first_name <span class="dt">VARCHAR</span>(<span class="dv">56</span>) <span class="kw">NOT</span> <span class="kw">NULL</span>,
+  last_name <span class="dt">VARCHAR</span>(<span class="dv">56</span>),
+  created_at DATETIME,
+  updated_at DATETIME
+  );</code></pre></div>
+<blockquote>
+<p>ActiveJDBC infers DB schema parameters from a database. This means you do not have to provide it in code.</p>
+</blockquote>
+<p>The corresponding model looks like this:</p>
+<div class="sourceCode"><table class="sourceCode java numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+</pre></td><td class="sourceCode"><pre><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> Person <span class="kw">extends</span> Model {}</code></pre></td></tr></table></div>
+<p>There is no code in the body of the class, and yet it is fully functional and will map to a table called <code>PEOPLE</code> <em>automatically</em>. Read more on <a href="english_inflections">English Inflections</a>.</p>
+<h3 id="how-to-query">How to query</h3>
+<p>Simplest query example:</p>
+<div class="sourceCode"><table class="sourceCode java numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+</pre></td><td class="sourceCode"><pre><code class="sourceCode java">List&lt;Person&gt; people = Person.<span class="fu">where</span>(<span class="st">&quot;first_name = &#39;John&#39;&quot;</span>);
+Person aJohn = people.<span class="fu">get</span>(<span class="dv">0</span>);
+String johnsLastName = aJohn.<span class="fu">get</span>(<span class="st">&quot;last_name&quot;</span>);</code></pre></td></tr></table></div>
+<p>The <code>where()</code> method takes a snippet of real SQL. The first line above will generate this statement: <code>SELECT * FROM people WHERE first_name = 'John'</code>.</p>
+<p>Finder methods can also be parametrized:</p>
+<div class="sourceCode"><table class="sourceCode java numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+</pre></td><td class="sourceCode"><pre><code class="sourceCode java">List&lt;Person&gt; people = Person.<span class="fu">where</span>(<span class="st">&quot;first_name = ?&quot;</span>, <span class="st">&quot;John&quot;</span>);
+Person aJohn = people.<span class="fu">get</span>(<span class="dv">0</span>);
+String johnsLastName = aJohn.<span class="fu">get</span>(<span class="st">&quot;last_name&quot;</span>);</code></pre></td></tr></table></div>
+<p>The <code>where()</code> method takes a vararg, allowing unlimited any number of parameters to be passed into a statement.</p>
+<h3 id="paging-through-data">Paging through data</h3>
+<div class="sourceCode"><table class="sourceCode java numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+</pre></td><td class="sourceCode"><pre><code class="sourceCode java">List&lt;Employee&gt; people = Employee.<span class="fu">where</span>(<span class="st">&quot;department = ? and hire_date &gt; ? &quot;</span>, <span class="st">&quot;IT&quot;</span>, hireDate)
+    .<span class="fu">offset</span>(<span class="dv">21</span>)
+    .<span class="fu">limit</span>(<span class="dv">10</span>)
+    .<span class="fu">orderBy</span>(<span class="st">&quot;hire_date asc&quot;</span>);</code></pre></td></tr></table></div>
+<p>This query will ensure that the returned result set will start at the 21st record and will return only 10 records, according to the <code>orderBy</code>. The ActiveJDBC has a built in facility for various database flavors and it will generate appropriate SQL statement that is specific for a DB (Oracle, MySQL, etc) and is efficient. It will not fetch all records, starting with 1.</p>
+<h3 id="creating-new-records">Creating new records</h3>
+<p>There are several ways to do this, and the simplest is:</p>
+<div class="sourceCode"><table class="sourceCode java numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+</pre></td><td class="sourceCode"><pre><code class="sourceCode java">Person p = <span class="kw">new</span> <span class="fu">Person</span>();
+p.<span class="fu">set</span>(<span class="st">&quot;first_name&quot;</span>, <span class="st">&quot;Marilyn&quot;</span>);
+p.<span class="fu">set</span>(<span class="st">&quot;last_name&quot;</span>, <span class="st">&quot;Monroe&quot;</span>);
+p.<span class="fu">set</span>(<span class="st">&quot;dob&quot;</span>, <span class="st">&quot;1935-12-06&quot;</span>);
+p.<span class="fu">saveIt</span>();</code></pre></td></tr></table></div>
+<p>There is also a shorthand version of doing the same:</p>
+<div class="sourceCode"><table class="sourceCode java numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+</pre></td><td class="sourceCode"><pre><code class="sourceCode java"><span class="kw">new</span> <span class="fu">Person</span>().<span class="fu">set</span>(<span class="st">&quot;first_name&quot;</span>, <span class="st">&quot;Marilyn&quot;</span>).<span class="fu">set</span>(<span class="st">&quot;last_name&quot;</span>, <span class="st">&quot;Monroe&quot;</span>).<span class="fu">set</span>(<span class="st">&quot;dob&quot;</span>, <span class="st">&quot;1935-12-06&quot;</span>).<span class="fu">saveIt</span>();</code></pre></td></tr></table></div>
+<p>and yet shorter one :</p>
+<div class="sourceCode"><table class="sourceCode java numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+</pre></td><td class="sourceCode"><pre><code class="sourceCode java">Person.<span class="fu">createIt</span>(<span class="st">&quot;first_name&quot;</span>, <span class="st">&quot;Marilyn&quot;</span>, <span class="st">&quot;last_name&quot;</span>, <span class="st">&quot;Monroe&quot;</span>, <span class="st">&quot;dob&quot;</span>, <span class="st">&quot;1935-12-06&quot;</span>);</code></pre></td></tr></table></div>
+<h3 id="updating-a-record">Updating a record</h3>
+<div class="sourceCode"><table class="sourceCode java numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+</pre></td><td class="sourceCode"><pre><code class="sourceCode java">Employee e = Employee.<span class="fu">findFirst</span>(<span class="st">&quot;first_name = ?&quot;</span>, <span class="st">&quot;John&quot;</span>);
+e.<span class="fu">set</span>(<span class="st">&quot;last_name&quot;</span>, <span class="st">&quot;Steinbeck&quot;</span>).<span class="fu">saveIt</span>();</code></pre></td></tr></table></div>
+<h3 id="deleting-a-record">Deleting a record</h3>
+<div class="sourceCode"><table class="sourceCode java numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+</pre></td><td class="sourceCode"><pre><code class="sourceCode java">Employee e = Employee.<span class="fu">findFirst</span>(<span class="st">&quot;first_name = ?&quot;</span>, <span class="st">&quot;John&quot;</span>);
+e.<span class="fu">delete</span>();</code></pre></td></tr></table></div>
+<p>There are more ways to delete, follow <a href="delete_cascade">Delete cascade</a> to learn more.</p>
+<h2 id="getting-started">Getting started</h2>
+<p>If you want to get started, follow these links:</p>
+<p>Please, see <a href="getting_started">Getting Started</a> for a working example.</p>
+<p>Look through these:</p>
+<ul>
+<li>See <a href="#minute-introduction">5 minute introduction</a></li>
+<li>Familiarize yourself with <a href="instrumentation">Instrumentation</a></li>
+</ul>
+<p>Other working examples:</p>
+<ul>
+<li><a href="https://github.com/javalite/simple-example">Maven example</a></li>
+<li><a href="https://github.com/javalite/ant-example">Ant example</a></li>
+<li><a href="https://github.com/javalite/standalone-example">Standalone example</a> - neither Maven nor Ant</li>
+</ul>
+<p>Here is the <a href="http://javalite.github.io/activejdbc/snapshot">JavaDoc for ActiveJDBC</a></p>
+<h2 id="design-principles">Design principles</h2>
+<ul>
+<li>Infers metadata from DB</li>
+<li>Convention-based configuration.</li>
+<li>No need to learn another QL. SQL is sufficient</li>
+<li>Code often reads like English</li>
+<li>No sessions, no &quot;attaching, re-attaching&quot;</li>
+<li>No persistence managers.</li>
+<li>Models are lightweight, simple POJOs</li>
+<li>No proxy-ing. What you write is what you get (WYWIWYG :))</li>
+<li>No getters and setters. You can still write them if you like.</li>
+<li>No DAOs and DTOs</li>
+<li>No <a href="http://www.martinfowler.com/bliki/AnemicDomainModel.html">Anemic Domain Model</a></li>
+</ul>
+<h2 id="supported-databases">Supported databases</h2>
+<p>Currently the following databases are supported:</p>
+<ul>
+<li>SQLServer</li>
+<li>MySQL</li>
+<li>Oracle</li>
+<li>PostgreSQL</li>
+<li>H2</li>
+<li>SQLite3</li>
+<li>DB2</li>
+</ul>
+<p>Adding a new dialect is relatively easy. Just look at commits on this branch: <a href="https://github.com/javalite/activejdbc/tree/h2integration">h2integration</a></p>
+<h2 id="releases">Releases</h2>
+<p>Please, refer to the <a href="releases">Releases</a> page.</p>
+<h2 id="getting-the-latest-version">Getting the latest version</h2>
+<p>For the latest version refer to <a href="http://search.maven.org/#search%7Cga%7C1%7Corg.javalite.activejdbc">ActiveJDBC on Maven Central</a>. If you use Maven add this to your pom:</p>
+<div class="sourceCode"><table class="sourceCode xml numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+</pre></td><td class="sourceCode"><pre><code class="sourceCode xml"><span class="kw">&lt;dependency&gt;</span>
+    <span class="kw">&lt;groupId&gt;</span>org.javalite<span class="kw">&lt;/groupId&gt;</span>
+    <span class="kw">&lt;artifactId&gt;</span>activejdbc<span class="kw">&lt;/artifactId&gt;</span>
+    <span class="kw">&lt;version&gt;</span>LATEST_VERSION<span class="kw">&lt;/version&gt;</span>
+<span class="kw">&lt;/dependency&gt;</span></code></pre></td></tr></table></div>
+<p>Do not forget to replace LATEST_VERSION with the latest version deployed to Maven Central (see above)</p>
+<p>Additionally, configure Instrumentation plugin:</p>
+<div class="sourceCode"><table class="sourceCode xml numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="sourceCode"><pre><code class="sourceCode xml"><span class="kw">&lt;plugin&gt;</span>
+    <span class="kw">&lt;groupId&gt;</span>org.javalite<span class="kw">&lt;/groupId&gt;</span>
+    <span class="kw">&lt;artifactId&gt;</span>activejdbc-instrumentation<span class="kw">&lt;/artifactId&gt;</span>
+    <span class="kw">&lt;version&gt;</span>LATEST_VERSION<span class="kw">&lt;/version&gt;</span>
+    <span class="kw">&lt;executions&gt;</span>
+        <span class="kw">&lt;execution&gt;</span>
+            <span class="kw">&lt;phase&gt;</span>process-classes<span class="kw">&lt;/phase&gt;</span>
+            <span class="kw">&lt;goals&gt;</span>
+                <span class="kw">&lt;goal&gt;</span>instrument<span class="kw">&lt;/goal&gt;</span>
+            <span class="kw">&lt;/goals&gt;</span>
+        <span class="kw">&lt;/execution&gt;</span>
+    <span class="kw">&lt;/executions&gt;</span>
+<span class="kw">&lt;/plugin&gt;</span></code></pre></td></tr></table></div>
+<p>Or download from: <a href="http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22activejdbc-instrumentation%22">ActiveJDBC Instrumentation plugin on Maven Central</a></p>
+<h2 id="getting-latest-snapshot-versions">Getting latest snapshot versions</h2>
+<p>If you are using Maven, add these repositories to your pom:</p>
+<div class="sourceCode"><table class="sourceCode xml numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+</pre></td><td class="sourceCode"><pre><code class="sourceCode xml"><span class="kw">&lt;repositories&gt;</span>
+    <span class="kw">&lt;repository&gt;</span>
+        <span class="kw">&lt;id&gt;</span>javalite-snapshots<span class="kw">&lt;/id&gt;</span>
+        <span class="kw">&lt;name&gt;</span>JavaLite Snapshots<span class="kw">&lt;/name&gt;</span>
+        <span class="kw">&lt;url&gt;</span>http://repo.javalite.io/<span class="kw">&lt;/url&gt;</span>
+        <span class="kw">&lt;releases&gt;</span>
+            <span class="kw">&lt;enabled&gt;</span>false<span class="kw">&lt;/enabled&gt;</span>
+        <span class="kw">&lt;/releases&gt;</span>
+        <span class="kw">&lt;snapshots&gt;</span>
+            <span class="kw">&lt;enabled&gt;</span>true<span class="kw">&lt;/enabled&gt;</span>
+        <span class="kw">&lt;/snapshots&gt;</span>
+    <span class="kw">&lt;/repository&gt;</span>
+<span class="kw">&lt;/repositories&gt;</span>
+<span class="kw">&lt;pluginRepositories&gt;</span>
+    <span class="kw">&lt;pluginRepository&gt;</span>
+        <span class="kw">&lt;id&gt;</span>javalite-plugin-snapshots<span class="kw">&lt;/id&gt;</span>
+        <span class="kw">&lt;name&gt;</span>JavaLite Plugin Snapshots<span class="kw">&lt;/name&gt;</span>
+        <span class="kw">&lt;url&gt;</span>http://repo.javalite.io/<span class="kw">&lt;/url&gt;</span>
+        <span class="kw">&lt;releases&gt;</span>
+            <span class="kw">&lt;enabled&gt;</span>false<span class="kw">&lt;/enabled&gt;</span>
+        <span class="kw">&lt;/releases&gt;</span>
+        <span class="kw">&lt;snapshots&gt;</span>
+            <span class="kw">&lt;enabled&gt;</span>true<span class="kw">&lt;/enabled&gt;</span>
+        <span class="kw">&lt;/snapshots&gt;</span>
+    <span class="kw">&lt;/pluginRepository&gt;</span>
+<span class="kw">&lt;/pluginRepositories&gt;</span></code></pre></td></tr></table></div>
+<p>If you are not using Maven, you can pull down the latest snapshots from here: <a href="http://repo.javalite.io">JavaLite Repo</a></p>

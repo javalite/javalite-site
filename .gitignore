@@ -1,5 +1,5 @@
-javalite-site.iml
-javalite-site.iws
-javalite-site*.ipr
+*.iml
+*.iws
+*.ipr
 target
 .idea/

@@ -2,158 +2,119 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-
     <groupId>org.javalite</groupId>
-    <artifactId>javalite-site</artifactId>
-    <packaging>war</packaging>
-    <version>1.1-SNAPSHOT</version>
-    <name>JavaLite Site</name>
+    <artifactId>javalite-site-root</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>JavaLite Site Root</name>
 
     <properties>
-        <javalite.version>2.2</javalite.version>
+        <javalite.version>2.3-SNAPSHOT</javalite.version>
+        <lucene.version>7.5.0</lucene.version>
     </properties>
+
+    <modules>
+        <module>app</module>
+        <module>content</module>
+        <module>search</module>
+    </modules>
+
     <build>
-        <finalName>ROOT</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.eclipse.jetty</groupId>
-                <artifactId>jetty-maven-plugin</artifactId>
-                <configuration>
-                    <httpConnector>
-                        <port>8080</port>
-                    </httpConnector>
-
-                    <systemProperties>
-                        <systemProperty>
-                            <name>active_reload</name>
-                            <value>true</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>activeweb.log.request</name>
-                            <value>true</value>
-                        </systemProperty>
-                    </systemProperties>
-
-                </configuration>
-                <dependencies>
-
-                    <dependency>
-                        <groupId>com.sun</groupId>
-                        <artifactId>tools</artifactId>
-                        <version>1.8.0</version>
-                        <scope>system</scope>
-                        <systemPath>${java.home}/../lib/tools.jar</systemPath>
-                    </dependency>
-                </dependencies>
-            </plugin>
-            <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.7.0</version>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.javalite</groupId>
-                <artifactId>activeweb-lessc-maven-plugin</artifactId>
-                <version>${javalite.version}</version>
-                <configuration>
-                    <lesscMain>${basedir}/src/main/webapp/less/bootstrap.less</lesscMain>
-                    <targetDirectory>${basedir}/target/web</targetDirectory>
-                    <targetFileName>bootstrap.css</targetFileName>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>compile</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>3.1.0</version>
-                <configuration>
-
-                    <webResources>
-                        <resource>
-                            <directory>target/web</directory>
-                        </resource>
-                    </webResources>
-                </configuration>
-            </plugin>
-        </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.7.0</version>
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
+    <dependencyManagement>
 
-    <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.8.1</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.javalite</groupId>
-            <artifactId>activeweb</artifactId>
-            <version>${javalite.version}</version>
-        </dependency>
+        <dependencies>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.8.1</version>
+                <scope>test</scope>
+            </dependency>
 
-        <dependency>
-            <groupId>org.javalite</groupId>
-            <artifactId>activeweb-testing</artifactId>
-            <version>${javalite.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
-            <version>1.7.9</version>
-        </dependency>
+            <dependency>
+                <groupId>org.javalite</groupId>
+                <artifactId>activeweb</artifactId>
+                <version>${javalite.version}</version>
+            </dependency>
 
-        <dependency>
-            <groupId>org.javalite</groupId>
-            <artifactId>app-config</artifactId>
-            <version>${javalite.version}</version>
-        </dependency>
+            <dependency>
+                <groupId>org.javalite</groupId>
+                <artifactId>activeweb-testing</artifactId>
+                <version>${javalite.version}</version>
+                <scope>test</scope>
+            </dependency>
 
-        <dependency>
-            <groupId>org.apache.lucene</groupId>
-            <artifactId>lucene-core</artifactId>
-            <version>4.10.3</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.lucene</groupId>
-            <artifactId>lucene-queryparser</artifactId>
-            <version>4.10.3</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.lucene</groupId>
-            <artifactId>lucene-highlighter</artifactId>
-            <version>4.10.3</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.lucene</groupId>
-            <artifactId>lucene-analyzers-common</artifactId>
-            <version>4.10.3</version>
-        </dependency>
+            <dependency>
+                <groupId>org.javalite</groupId>
+                <artifactId>app-config</artifactId>
+                <version>${javalite.version}</version>
+            </dependency>
 
+            <dependency>
+                <groupId>org.javalite</groupId>
+                <artifactId>javalite-common</artifactId>
+                <version>${javalite.version}</version>
+            </dependency>
 
-        <dependency>
-            <groupId>com.sun</groupId>
-            <artifactId>tools</artifactId>
-            <version>1.7.0</version>
-            <scope>system</scope>
-            <systemPath>${java.home}/../lib/tools.jar</systemPath>
-        </dependency>
-    </dependencies>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-simple</artifactId>
+                <version>1.7.9</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.lucene</groupId>
+                <artifactId>lucene-core</artifactId>
+                <version>${lucene.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.lucene</groupId>
+                <artifactId>lucene-queryparser</artifactId>
+                <version>${lucene.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.lucene</groupId>
+                <artifactId>lucene-highlighter</artifactId>
+                <version>${lucene.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.lucene</groupId>
+                <artifactId>lucene-analyzers-common</artifactId>
+                <version>${lucene.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sun</groupId>
+                <artifactId>tools</artifactId>
+                <version>1.7.0</version>
+                <scope>system</scope>
+                <systemPath>${java.home}/../lib/tools.jar</systemPath>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
 
     <repositories>
         <repository>
             <id>snapshots1</id>
-            <name>JavaLite Snapshots</name>
-            <url>http://repo.javalite.io/</url>
+            <name>Sonatype Snapshots</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
             <snapshots>
                 <enabled>true</enabled>
                 <updatePolicy>always</updatePolicy>
