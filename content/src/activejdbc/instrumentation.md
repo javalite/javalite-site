@@ -78,10 +78,9 @@ Add the plugin to your `build.gradle` file like this:
 buildscript {
     repositories {
         mavenCentral()
-        maven { url 'http://repo.javalite.io' }
     }
     dependencies {
-        classpath group: 'org.javalite', name: 'activejdbc-gradle-plugin', version: '1.4.13-SNAPSHOT'
+        classpath group: 'org.javalite', name: 'activejdbc-gradle-plugin', version: '2.2'
     }
 }
 
@@ -144,9 +143,9 @@ Maven takes a few seconds to startup, but this barebones script is almost instan
     <property name="out.dir" value="target/test-classes"/>
     <path id="instrument_classpath">
         <pathelement location="${out.dir}"/>
-        <path location="${user.home}/.m2/repository/org/javalite/activejdbc-instrumentation/1.4.13/activejdbc-instrumentation-1.4.13.jar"/>
+        <path location="${user.home}/.m2/repository/org/javalite/activejdbc-instrumentation/2.2/activejdbc-instrumentation-2.2.jar"/>
         <path location="${user.home}/.m2/repository/javassist/javassist/3.8.0.GA/javassist-3.18.2-GA.jar"/>
-        <path location="${user.home}/.m2/repository/org/javalite/activejdbc/1.4.13/activejdbc-1.4.13.jar"/>
+        <path location="${user.home}/.m2/repository/org/javalite/activejdbc/2.2/activejdbc-2.2.jar"/>
     </path>
     <target name="instrument">
         <java classname="org.javalite.instrumentation.Main">

@@ -209,25 +209,22 @@ If you are using Maven, add these repositories to your pom:
 ~~~~ {.xml  .numberLines}
 <repositories>
     <repository>
-        <id>javalite-snapshots</id>
-        <name>JavaLite Snapshots</name>
-        <url>http://repo.javalite.io/</url>
-        <releases>
-            <enabled>false</enabled>
-        </releases>
+        <id>snapshots1</id>
+        <name>Sonatype Snapshots</name>
+        <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
         <snapshots>
             <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+            <checksumPolicy>warn</checksumPolicy>
         </snapshots>
     </repository>
 </repositories>
+
 <pluginRepositories>
     <pluginRepository>
-        <id>javalite-plugin-snapshots</id>
-        <name>JavaLite Plugin Snapshots</name>
-        <url>http://repo.javalite.io/</url>
-        <releases>
-            <enabled>false</enabled>
-        </releases>
+        <id>sonatype_plugin_snapshots</id>
+        <name>Sonatype Plugin Snapshots</name>
+        <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
         <snapshots>
             <enabled>true</enabled>
         </snapshots>

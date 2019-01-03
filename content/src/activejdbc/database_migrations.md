@@ -164,7 +164,7 @@ Here is a simple plugin element for the plugin:
 
 ~~~~{.xml .numberLines}
 <properties>
-    <activejdbc.version>1.4.13</activejdbc.version>
+    <activejdbc.version>2.2</activejdbc.version>
     <environments>development.test,development</environments>
 </properties>
 <build>
@@ -276,7 +276,7 @@ Here is an example of simple configuration:
 <plugin>
     <groupId>org.javalite</groupId>
     <artifactId>db-migrator-maven-plugin</artifactId>
-    <version>1.4.13</version>
+    <version>2.2</version>
     <configuration>
         <driver>com.mysql.jdbc.Driver</driver>
         <url>jdbc:mysql://localhost/test_project</url>
@@ -304,7 +304,7 @@ First, configure the plugin in `pluginManagement`:
         <plugin>
             <groupId>org.javalite</groupId>
             <artifactId>db-migrator-maven-plugin</artifactId>
-            <version>1.4.13</version>
+            <version>2.2</version>
             <configuration>
                 <username>${jdbc.user}</username>
                 <password>${jdbc.password}</password>
@@ -447,7 +447,7 @@ $mvn db-migrator:migrate
 [INFO] Building ActiveWeb Example WebApp 1.1-SNAPSHOT
 [INFO] ------------------------------------------------------------------------
 [INFO] 
-[INFO] --- db-migrator-maven-plugin:1.4.13:migrate (default-cli) @ activeweb-simple ---
+[INFO] --- db-migrator-maven-plugin:2.2:migrate (default-cli) @ activeweb-simple ---
 [INFO] Sourcing database configuration from file: /home/igor/projects/javalite/activeweb-simple/src/main/resources/database.properties
 [INFO] Environment: test
 [INFO] Migrating jdbc:mysql://localhost/simple_test using migrations at /home/igor/projects/javalite/activeweb-simple/src/migrations/
