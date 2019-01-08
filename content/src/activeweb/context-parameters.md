@@ -32,7 +32,7 @@ Currently these parameters are set on every view by the framework:
 
 This a value of the environment variable `environment`. Normally, it has such values as `development`, `test`, `staging`, `production`. 
 
-Most of the time tt is used to configure different database connection parameters for different execution environments. 
+Most of the time it is used to configure different database connection parameters for different execution environments. 
 For more information, refer to [AppConfig](app-config), [Database Connection Management](database_connection_management), [Database Configuration](database_configuration).
 
   
@@ -70,6 +70,26 @@ Generally you might use the `environment` parameter to expose a special feature 
 ```
 
 Using other parameters might be considered a hack - you decide.
+
+## The `context_path` parameter
+
+The `context_path` parameter defines the path to context for a web application. 
+You can use it to dynamically define the root of the app for your web resources that is transparent 
+to your environment. If you are  deploying multiple pplication on your container, then each app will have a defined context. 
+This parameter  is to get a direct value passed into the app by the container. See more: [HttpServletRequest.html#getContextPath()](https://docs.oracle.com/javaee/6/api/javax/servlet/http/HttpServletRequest.html#getContextPath()).
+  
+> Always use `context_path` as a base for your resources, such as below: 
+
+`<script src="${context_path}/js/jquery-3.1.min.js" type="text/javascript"></script>`. 
+ 
+## The `request_props` parameter
+ 
+ This is an obscure parameter, which is a map. At the time of this writing, it holds a single value named `url`, which is a URL of a current request. 
+ for instance, if you are accessing a page on your app at `http://localhost:8080/books`, then that will be the value of this parameter.
+ 
+ In the future, more parameters describing various properties of a current request might be added here as well. 
+  
+
  
 ## Session parameters
 
