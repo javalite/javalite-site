@@ -24,7 +24,11 @@ you will see the following output:
 ## ActiveWeb parameters
 
 Currently these parameters are set on every view by the framework:
-`activeweb.environment`, `activeweb.controller`, `activeweb.action`, `activeweb.restful`. 
+
+* `activeweb.environment`
+* `activeweb.controller` 
+* `activeweb.action` 
+* `activeweb.restful`. 
   
 > The ActiveWeb parameters are always present in a view. 
  
