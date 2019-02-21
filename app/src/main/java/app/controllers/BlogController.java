@@ -107,4 +107,8 @@ public class BlogController extends AppController {
         service.loadData();
         respond("ok");
     }
+
+    public void thanksForSubscription(){
+
+    }
 }

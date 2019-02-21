@@ -1,13 +1,30 @@
 <@content for="title">${post.title!""}</@content>
 <@content for="body_class">blog-page</@>
 
+
+<div class="breadcrumbs">
+    <div class="container">
+        <ol>
+            <li>
+                <a href="/">JavaLite</a>
+            </li>
+            <li>
+                <a href="/blog">Blog</a>
+            </li>
+            <li>
+                ${post.title!""}
+            </li>
+        </ol>
+    </div>
+</div>
+
 <div class="container">
     <div class="blog blog-single">
         <div class="page-header">
             <h1>${post.title!""}</h1>
         </div>
         <div class="blog-data">
-            <img src="https://media.licdn.com/media/p/8/000/1d2/391/13e9e58.jpg" alt="${post.authorName!""}">
+            <#--<img src="https://media.licdn.com/media/p/8/000/1d2/391/13e9e58.jpg" alt="${post.authorName!""}">-->
             <h5>
                 <a href="/blog/author/${post.authorId!""}">${post.authorName!""}</a>
             </h5>
@@ -40,7 +57,7 @@
     <div id="disqus_thread"></div>
 </div>
 
-<@render partial="subscription"/>
+<#--<@render partial="subscription"/>-->
 
 <@render partial="disquss"/>
 <@render partial="script"/>

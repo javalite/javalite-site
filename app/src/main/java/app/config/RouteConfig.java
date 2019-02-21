@@ -13,12 +13,14 @@ public class RouteConfig extends AbstractRouteConfig{
         route("/bootstrap").to(BootstrapController.class);
 
         route("/blog").to(BlogController.class).action("index");
+        route("/blog/thanks-for-subscription").to(BlogController.class).action("thanks-for-subscription");
         route("/blog/reload").to(BlogController.class).action("reload");
         route("/blog/author/{author}").to(BlogController.class).action("author");
         route("/blog/{year_or_slug}").to(BlogController.class).action("year-or-slug");
         route("/blog/{year}/{month}").to(BlogController.class).action("year-month");
         route("/blog/{year}/{month}/{slug}").to(BlogController.class).action("slug");
         route("/blog/{year}/{month}/{day}/{slug}").to(BlogController.class).action("slug");
+
 
         route("/search").to(SearchController.class);
         route("/{id}").to(PagesController.class).action("show").get();

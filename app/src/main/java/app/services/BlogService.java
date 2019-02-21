@@ -81,11 +81,8 @@ public class BlogService {
         Map<String, Post> postBySlug = new HashMap<>();
         Files.walkFileTree(postsRoot, new SimpleFileVisitor<Path>() {
             @Override
-            public FileVisitResult visitFile(Path path, BasicFileAttributes attrs) throws IOException {
+            public FileVisitResult visitFile(Path path, BasicFileAttributes attrs) {
                 File file = path.toFile();
-                if (file.getAbsolutePath().contains("svn") || file.getAbsolutePath().contains("bi")) {
-                    return FileVisitResult.CONTINUE;
-                }
                 String slug = file.getName().substring(0, file.getName().indexOf("."));
                 Post post = postBySlug.computeIfAbsent(slug, k -> new Post());
 
