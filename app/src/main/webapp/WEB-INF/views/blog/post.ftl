@@ -57,7 +57,7 @@
     <div id="disqus_thread"></div>
 </div>
 
-<#--<@render partial="subscription"/>-->
+<@render partial="subscription"/>
 
 <@render partial="disquss"/>
 <@render partial="script"/>

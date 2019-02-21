@@ -108,7 +108,7 @@ public class BlogController extends AppController {
         respond("ok");
     }
 
-    public void thanksForSubscription(){
+    public void thanksForSubscription(){}
 
-    }
+    public void thanksForConfirming(){}
 }

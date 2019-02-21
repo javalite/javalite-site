@@ -22,6 +22,6 @@
     </#if>
 </div>
 
-<#--<@render partial="subscription"/>-->
+<@render partial="subscription"/>
 
 <@render partial="script"/>
