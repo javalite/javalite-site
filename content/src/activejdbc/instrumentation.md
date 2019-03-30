@@ -5,7 +5,7 @@
 
 
 ActiveJDBC requires instrumentation of class files after they are compiled. This is accomplished with an Instrumentation
-tool provided by the project. There are three ways to use it: with a Maven plugin, Ant, and as a standalone Java
+tool provided by the project. There are four ways to use it: with a Maven plugin, Gradle plugin, Ant, and as a standalone Java
 class (no Ant or Maven)
 
 ## What is instrumentation?
@@ -75,20 +75,16 @@ The instrumentation step is also available as a Gradle plugin, an example projec
 Add the plugin to your `build.gradle` file like this:
 
 ~~~~ {.groovy .numberLines}
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath group: 'org.javalite', name: 'activejdbc-gradle-plugin', version: '2.2'
-    }
+plugins {
+    id "java"
+    id "de.schablinski.activejdbc-gradle-plugin" version "1.1"
 }
 
-apply plugin: 'java'
-apply plugin: 'org.javalite.activejdbc'
+activejdbc.toolVersion = '2.2'
 ~~~~
 
-The plugin will insert an instrumentation task between the `compileJava` and `classes` tasks that are provided by default with the java plugin.
+The plugin will create an instrumentation task and adds it as doLast-action to the `compileJava` task that is provided by default with the java plugin.
+The ActiveJDBC plugin property `activejdbc.toolVersion` tells it which version of ActiveJDBC to use.
 
 ## Ant instrumentation
 
