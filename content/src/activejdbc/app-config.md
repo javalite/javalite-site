@@ -29,7 +29,7 @@ file_storage=/opt/project1/files
 First, import a static `import AppConfig.p(...)` method:
 
 ~~~~ {.java  .numberLines}
-import static org.javalite.app_configAppConfig.p;
+import static org.javalite.app_config.AppConfig.p;
 ~~~~ 
 
 then, simply call it as: `p(..)` in places where you need to inject a property:

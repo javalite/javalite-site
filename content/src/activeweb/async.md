@@ -134,7 +134,7 @@ ErrorCommand errorCommand = (ErrorCommand)receiveCommand("ERROR_QUEUE");
 
 Since the underlying technology is [JMS - Java Messaging Service](https://en.wikipedia.org/wiki/Java_Message_Service), 
 the communication protocol is limited to the types of messages supported by JMS. 
-JavaLite Async may use one of two: `javax.jms.TextMessage` or `javax.jms.TextMessage`. In both cases, the serialization of a command is 
+JavaLite Async may use one of two: `javax.jms.TextMessage` or `javax.jms.BytesMessage`. In both cases, the serialization of a command is 
 first done to XML with the use of [XStream](http://x-stream.github.io/). 
 
 If your command has a tranient field that cannot/should not be serialized, use the XStream annotation to ignore it: 

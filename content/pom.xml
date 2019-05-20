@@ -48,6 +48,7 @@
                             <goal>execute</goal>
                         </goals>
                         <configuration>
+                            
                             <source>${env.JAVALITE_SITE_PROJECT}/content/src/main/groovy/ProcessMarkdown.groovy</source>
                         </configuration>
                     </execution>

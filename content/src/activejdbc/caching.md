@@ -328,7 +328,7 @@ Configuration needs to be provided in a file called `ehcache.xml` found at the r
 Please, note that ActiveJDBC does not create named caches in EHCache, but only uses default configuration specified by
 `defaultCache` element in this file.
 
-## EHCache configuration (v 3.x)
+## EHCache configuration (v 3.6.3)
 
 Name of the cache manager class: `org.javalite.activejdbc.cache.EHCache3Manager`. 
 Set the following in the file `activejdbc.properties`: 
@@ -340,15 +340,13 @@ cache.manager=org.javalite.activejdbc.cache.EHCache3Manager
 In addition,  you will need to configure EHCache itself. For that, add a file called `activejdbc-ehcache.xml`. Here is  simple EHCache v3 configuration: 
 
 ~~~~ {.xml .numberLines}
-<ehcache:config xmlns:ehcache="http://www.ehcache.org/v3">
-    <ehcache:cache-template name="activejdbc">
-        <ehcache:expiry>
-            <ehcache:none/>
-        </ehcache:expiry>
-        <ehcache:eviction-prioritizer>LFU</ehcache:eviction-prioritizer>
-        <ehcache:heap size="5000" unit="entries" />
-    </ehcache:cache-template>
-</ehcache:config>
+<config xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns='http://www.ehcache.org/v3' xsi:schemaLocation="http://www.ehcache.org/v3 ../../../main/resources/ehcache-core.xsd">
+    <cache-template name="activejdbc">
+        <key-type>java.lang.String</key-type>
+        <value-type>java.lang.Object</value-type>
+        <heap unit="entries">200</heap>           
+    </cache-template>
+</config>
 ~~~~
 For more involved configuration options, refer to EHCache v3 documentation. 
 
