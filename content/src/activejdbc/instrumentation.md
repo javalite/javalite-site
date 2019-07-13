@@ -80,7 +80,7 @@ plugins {
     id "de.schablinski.activejdbc-gradle-plugin" version "1.2"
 }
 
-// activejdbc.toolVersion = '2.2'
+// activejdbc.toolVersion = '2.3'
 ~~~~
 
 The plugin will create an instrumentation task and adds it as doLast-action to the `compileJava` task that is provided by default with the java plugin.
