@@ -72,19 +72,21 @@ For more, see [IntelliJ Integration](intellij_idea_integration)
 
 The instrumentation step is also available as a Gradle plugin, an example project can be found here: [Gradle Plugin Example](https://github.com/javalite/activejdbc-gradle).
 
-Add the plugin to your `build.gradle` file like this:
+Add the [ActiveJDBC Gradle plugin](https://github.com/cschabl/activejdbc-gradle-plugin) to your `build.gradle` file like this:
 
 ~~~~ {.groovy .numberLines}
 plugins {
     id "java"
-    id "de.schablinski.activejdbc-gradle-plugin" version "1.1"
+    id "de.schablinski.activejdbc-gradle-plugin" version "1.2"
 }
 
-activejdbc.toolVersion = '2.2'
+// activejdbc.toolVersion = '2.2'
 ~~~~
 
 The plugin will create an instrumentation task and adds it as doLast-action to the `compileJava` task that is provided by default with the java plugin.
-The ActiveJDBC plugin property `activejdbc.toolVersion` tells it which version of ActiveJDBC to use.
+The ActiveJDBC plugin property `activejdbc.toolVersion` tells it which version of ActiveJDBC to use. 
+As of version 1.2 of the plugin, ActiveJDBC 2.3 is the default. 
+It also has been tested with ActiveJDBC 2.0 and 2.2.
 
 ## Ant instrumentation
 
