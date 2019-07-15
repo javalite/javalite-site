@@ -22,7 +22,10 @@ public class RouteConfig extends AbstractRouteConfig {
 }
 ~~~~
 
-## Create controler for development environment
+This way, your app will ignoring the `/bootstrap.css` request in all environments except development. The goal is for 
+all other environments to have your web server serve this file, which will be created during the build. 
+
+## Create controller for development environment
 
 Then, create a new controller:
 
@@ -37,9 +40,16 @@ public class BootstrapController extends AbstractLesscController {
 
 And override the `getLessFile()` method to return a location of your main Less file.
 
-Additionally, add a Maven plugin to your pom file:
+> This controller will be called every time your browser hits `/bootstrap.css` route, and will recompile all LESS files on the fly.
+> This approach will allow you to rapidly work with LESS files without having to recompile manually 
 
-## Configuration for a Single LESS file
+
+
+## Maven Plugin with a Single LESS file
+
+
+> Use LessC maven Plugin in order to compile a static CSS file from your LESS files.   
+
 
 ~~~~ {.xml  .numberLines}
 <plugin>
@@ -59,7 +69,7 @@ Additionally, add a Maven plugin to your pom file:
 </plugin>
 ~~~~
 
-## Configuration for Multiple LESS files 
+## Maven Plugin with Multiple LESS files 
 
 If your project has more than one LESS files, you can use alternative configuration to compile multiple files during the build: 
 
@@ -122,7 +132,3 @@ During the build, the plugin fully compiles all Less files into a single target 
 into the war file. The file `bootstrap.css` is then served from container, because this path is ignored in any
 environment except development. In fact, in a real production system this file like any other static files will
 be served by a web server or a CDN.
-
-
-
-

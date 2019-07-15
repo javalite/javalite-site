@@ -9,7 +9,7 @@
     <name>JavaLite Site Root</name>
 
     <properties>
-        <javalite.version>2.3-SNAPSHOT</javalite.version>
+        <javalite.version>2.3</javalite.version>
         <lucene.version>7.5.0</lucene.version>
     </properties>
 
