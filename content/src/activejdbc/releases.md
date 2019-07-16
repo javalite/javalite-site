@@ -10,9 +10,9 @@ The latest current release version is 2.3 and can be downloaded from [Maven Cent
 
 Please, see [2.3 release notes](release-notes-23).
 
-## Current snapshot 2.3-SNAPSHOT
+## Current snapshot 3.0-SNAPSHOT
 
-Can be downloaded from the Sonatype Repo: [https://oss.sonatype.org/content/repositories/snapshots/](https://oss.sonatype.org/content/repositories/snapshots/).
+Can be downloaded from the Sonatype Repo: [https://oss.sonatype.org/content/repositories/snapshots/org/javalite/](https://oss.sonatype.org/content/repositories/snapshots/org/javalite/).
 
 If you feel adventurous, you can automatically download snapshots from our repo by adding this config to your pom file:  
 
