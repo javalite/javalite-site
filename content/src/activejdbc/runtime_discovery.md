@@ -229,8 +229,27 @@ Association found: patients  ----------<  doctors_patients, type: has-many
 
 ### Polimorphic Associations
 
-Polymorphic Association information is not sourced from the schem, but rather configured in code using annotations. 
+Polymorphic Association information is not sourced from the schema, but rather configured in code using annotations. 
 
 Please, see: [Polimorphic Associations](polymorphic_associations).
 
+### Static Metadata Generation
 
+
+Dynamic runtime discovery is great, since you do not need to configure anything and the 
+database serves the role of the only record of truth. 
+   
+This means that whenever  ou use any model for the first time, your program needs access to the database  so that the metadata could be pulled out.
+Unfortunately this is not possible or convenient in all cases. Imagine you have serialized your entire process due to 
+your cloud instance being put to "sleep" or suspended. Another case is adding a model to a web session and serialized by a container. When de-serialized,
+the container, in its thread will try to revive the models, and that can lead to nasty exceptions.   
+
+The Static Generation allows to generate metadata at *the time of the build* and store it as  file `activejdbc_metadata.json`. 
+If such file is found at run time, it is  sourced for metadata. If it is not found, the standard approach triggers: a trip to a database.
+
+Please, see an example project with this configuration: [Static Metadata Test](https://github.com/javalite/activejdbc/blob/7b202943fe5c4d40e8c793666f6499866d05e3c5/activejdbc-static-metadata-test/pom.xml#L73).
+     
+* **Advantage**: this is obvious, as you can use this to eliminate a necessity for a database connection when your system needs metadata
+* **Disadvantage**: the generation of the metadata  file happens at build time against a local developers database (or CI server). 
+It is possible then that your development process does not track database changes resulting in the DB schemas being  out of sync, which will lead to a difference in schemas between the prod database 
+and the generated metadata file. A special attention must be paid to ensure the same database schema version used.      

@@ -4,43 +4,111 @@
 
 Oracle JDK v 8.x
 
-
 ### ActiveJDBC Repo Changelog
 
-2019-06-10 15:45:51 -0500 ipolevoy #862 Specify execution directory for RuntimeUtils
-2019-06-01 12:03:42 -0400 creatorfromhell Make the properties file configurable.
-2019-03-24 10:21:12 +0100 Michael Sell Allow calling 'scope' on an existing ScopeBuilder object.
-2019-01-16 18:03:02 -0600 ipolevoy #833 Improve Util.createTree() method
-2019-01-15 21:23:20 +0100 Fadi Shawki Only create schema version table if non-existent
-2019-01-09 21:28:52 +0300 andrey@expresspigeon.com #479 Add ability to use model classes without connecting to the DB
-2019-01-08 16:25:27 -0600 ipolevoy #821 JdbcPropertiesOverride: alternative properties processing error
-2019-01-03 13:16:56 -0600 Igor Polevoy Merge pull request #823 from benhc123/patch-1
-2018-12-29 23:53:50 +0000 snyk-bot fix: pom.xml to reduce vulnerabilities
-2018-12-13 22:29:09 -0600 ipolevoy #813 Implement ability to create and delete directories recursively
-2018-12-13 14:54:12 +0100 cschabli #819: Make inefficient log filtering efficient
-2018-11-27 22:56:15 -0600 ipolevoy #815 Error on accessing Model in Android + SQLite JDBC
-2018-11-07 14:00:30 -0800 David Siegal And updated the call from one to the other...
-2018-11-07 13:56:28 -0800 David Siegal Rename closeBatch() to closePreparedStatement
-2018-11-06 16:06:12 -0800 David Siegal Quietly close prepared statements.
-2018-11-06 08:58:46 -0600 ipolevoy #808 - INSERT_INTO_PATTERN in QueryExecutionEvent is prone to StackOverflowError
-2018-11-05 13:09:21 -0600 ipolevoy #807 - Collection of statistics on large queries causes large memory issues
-2018-11-05 11:41:30 -0600 ipolevoy #796 Regression of #795: activejdbc_models.properties in Jar of War not found anymore - restoring ability to search for multiple activejdbc_models/properties file
-2018-10-22 13:20:31 +0200 cschabli #800: Fixed missing double-checked locking in EHCacheManager
-2018-10-18 01:57:17 -0500 ipolevoy #797 - Fix FasterXML vulnerability
-2018-10-15 10:29:26 -0500 ipolevoy #795 - ActiveJDBC is unable to find activejdbc_models.properties in all cases
-2018-10-02 00:32:26 -0500 ipolevoy #701 Setting an attribute to the same value should not set model as dirty - fixed tests, remove data conversion
-2018-09-23 23:04:36 -0500 ipolevoy #742 - Allow RuntimeUtil.execute return more than 2048 chars
-2018-09-15 01:06:37 +0100 João Francisco Almeida #788 - Upgrade to the latest PostgreSQL driver + fix build
-2018-09-13 08:58:38 -0500 ipolevoy #787 Case sensitivity in Postgres - upgrading the driver to latest recommended
-2018-09-10 00:11:49 +0100 João Francisco Almeida #785 - db-migrator-integration-test not passing on Travis due to security
-2018-09-05 11:54:58 -0500 ipolevoy #784 - Implement support for JUnit 5
-2018-09-02 09:45:48 +0200 rivella50 #701 Setting an attribute to the same value should not set model as dirty - finishing first version of better handling dirty attribute names
-2018-08-28 23:34:42 -0500 ipolevoy #774 - NPE in Paginator.pageCount
+* 2019-06-10 17:00:17 -0500 ipolevoy [#863 Switch DB-Migrator Integration tests from MavenCLI to RuntimeUtil](https://github.com/javalite/activejdbc/commit/9de7efb4)
+* 2019-06-10 15:45:51 -0500 ipolevoy [#862 Specify execution directory for RuntimeUtils](https://github.com/javalite/activejdbc/commit/f4fad488)
+* 2019-06-05 17:15:59 -0500 Igor Polevoy [Merge pull request #859 from TheNewEconomy/master](https://github.com/javalite/activejdbc/commit/14108eee)
+* 2019-06-05 16:42:08 -0400 creatorfromhell [Add JavaDoc Warnings to setModelFile.](https://github.com/javalite/activejdbc/commit/9da87ba7)
+* 2019-06-04 17:48:13 -0500 ipolevoy [#860 Travis build broken in MojoIntegrationEnvironmentsSpec - adding debug info](https://github.com/javalite/activejdbc/commit/4c632fa3)
+* 2019-06-01 12:10:32 -0400 creatorfromhell [Fix Styling issues.](https://github.com/javalite/activejdbc/commit/b83f7590)
+* 2019-06-01 12:09:27 -0400 creatorfromhell [Fix Project Import Settings.](https://github.com/javalite/activejdbc/commit/18f6fe35)
+* 2019-06-01 12:03:42 -0400 creatorfromhell [Let's make the properties file configurable.](https://github.com/javalite/activejdbc/commit/9c402bd0)
+* 2019-05-23 16:18:20 -0500 ipolevoy [#858 Upgrade com.fasterxml.jackson.core:jackson-databind to 2.9.9 due to a security issue](https://github.com/javalite/activejdbc/commit/8978a1fc)
+* 2019-05-03 09:17:38 -0500 Igor Polevoy [Merge pull request #854 from cschabl/gradle-plugin-removal](https://github.com/javalite/activejdbc/commit/25c5ac92)
+* 2019-04-01 18:26:29 +0200 cschabl [Merge remote-tracking branch 'origin/gradle-plugin-removal' into gradle-plugin-removal](https://github.com/javalite/activejdbc/commit/39c01fe3)
+* 2019-04-01 18:25:54 +0200 cschabl [#545: removed gradle-plugin module because of replacement by new gradle-plugin de.schablinski.activejdbc-gradle-plugin](https://github.com/javalite/activejdbc/commit/c1135fdb)
+* 2019-03-30 22:23:27 +0100 cschabl [#545: removed gradle-plugin module because of replacement by new gradle-plugin de.schablinski.activejdbc-gradle-plugin](https://github.com/javalite/activejdbc/commit/8717edce)
+* 2019-03-28 23:37:48 -0500 Igor Polevoy [Merge pull request #852 from mdsell/multiple_scope_calls](https://github.com/javalite/activejdbc/commit/ffcf5457)
+* 2019-03-24 10:21:12 +0100 Michael Sell [Allow calling 'scope' on an existing ScopeBuilder object.](https://github.com/javalite/activejdbc/commit/63633371)
+* 2019-03-24 00:45:26 -0500 Igor Polevoy [Merge pull request #851 from cschabl/broken-kdoc-of-companion-model](https://github.com/javalite/activejdbc/commit/0a2f3650)
+* 2019-03-22 14:02:42 +0100 cschabli [#850: fixed broken class-doc-comment of CompanionModel.kt](https://github.com/javalite/activejdbc/commit/a636cc10)
+* 2019-02-26 17:18:55 -0600 ipolevoy [rolling back 39207bc1838d66859ee09879fa14be99b77d584b because it broke the build](https://github.com/javalite/activejdbc/commit/1d3f8161)
+* 2019-02-23 16:13:10 -0600 Igor Polevoy [Merge pull request #847 from javalite/snyk-fix-706jus](https://github.com/javalite/activejdbc/commit/ed3379ab)
+* 2019-02-23 16:12:29 -0600 Igor Polevoy [Merge pull request #846 from javalite/snyk-fix-vdxiej](https://github.com/javalite/activejdbc/commit/fd584692)
+* 2019-02-23 16:11:56 -0600 Igor Polevoy [Merge pull request #845 from javalite/snyk-fix-y8521t](https://github.com/javalite/activejdbc/commit/bf635f6a)
+* 2019-02-23 07:17:32 +0000 snyk-bot [fix: pom.xml to reduce vulnerabilities](https://github.com/javalite/activejdbc/commit/39207bc1)
+* 2019-02-23 06:36:10 +0000 snyk-bot [fix: pom.xml to reduce vulnerabilities](https://github.com/javalite/activejdbc/commit/00b974e1)
+* 2019-02-23 01:37:46 +0000 snyk-bot [fix: pom.xml to reduce vulnerabilities](https://github.com/javalite/activejdbc/commit/39fa488d)
+* 2019-02-20 22:10:35 -0600 ipolevoy [#840 Revisit and upgrade all dependencies](https://github.com/javalite/activejdbc/commit/be879fa2)
+* 2019-02-12 17:22:00 -0600 ipolevoy [#841 Update copyright notice](https://github.com/javalite/activejdbc/commit/e91ebdd1)
+* 2019-02-04 16:08:25 -0600 Igor Polevoy [Merge pull request #839 from javalite/bugfix/835](https://github.com/javalite/activejdbc/commit/4eda65d1)
+* 2019-02-03 21:46:28 +0000 João Francisco Almeida [#835 - Travis CI - Restore Oracle tests](https://github.com/javalite/activejdbc/commit/bf80d4c7)
+* 2019-01-28 17:40:19 -0600 Igor Polevoy [Merge pull request #836 from javalite/835-travisci-disable-oracle-temporarilly](https://github.com/javalite/activejdbc/commit/c1f3164b)
+* 2019-01-28 23:23:10 +0000 João Francisco Almeida [#835 - TravisCI - temporarily disable Oracle](https://github.com/javalite/activejdbc/commit/5aa618c4)
+* 2019-01-26 12:43:03 -0600 ipolevoy [#784 Implement support for JUnit 5 -  setting the same versions on deps](https://github.com/javalite/activejdbc/commit/b65dc3c0)
+* 2019-01-16 18:08:47 -0600 Igor Polevoy [Merge pull request #832 from javalite/issue_479](https://github.com/javalite/activejdbc/commit/4628e018)
+* 2019-01-16 18:03:02 -0600 ipolevoy [#833 Improve Util.createTree() method](https://github.com/javalite/activejdbc/commit/f55bc9f9)
+* 2019-01-16 17:37:36 -0600 ipolevoy [merging  from master](https://github.com/javalite/activejdbc/commit/81f89fa8)
+* 2019-01-16 17:31:33 -0600 ipolevoy [#479 Add ability to use model classes without connecting to the DB - minor changes following a code review](https://github.com/javalite/activejdbc/commit/b3137bbc)
+* 2019-01-15 16:57:43 -0600 ipolevoy [added exec permission](https://github.com/javalite/activejdbc/commit/1a523ed8)
+* 2019-01-15 16:57:20 -0600 Igor Polevoy [Merge pull request #831 from FadiDev/only-create-schema-version-table-when-non-existent](https://github.com/javalite/activejdbc/commit/7312bba0)
+* 2019-01-15 23:38:20 +0300 andrey@---.com [ #479 Add ability to use model classes without connecting to the DB - allow connection without password](https://github.com/javalite/activejdbc/commit/85f20c2d)
+* 2019-01-15 21:23:20 +0100 Fadi Shawki [Only create schema version table if non-existent](https://github.com/javalite/activejdbc/commit/6d1741cb)
+* 2019-01-15 21:21:58 +0100 Fadi Shawki [Revert changes to CreateMojo class](https://github.com/javalite/activejdbc/commit/ac624dfa)
+* 2019-01-15 21:19:58 +0100 Fadi Shawki [Revert changes to CreateMojo class](https://github.com/javalite/activejdbc/commit/a5a19250)
+* 2019-01-15 13:51:27 -0600 ipolevoy [script to check out pull requests](https://github.com/javalite/activejdbc/commit/1252d64f)
+* 2019-01-15 18:57:26 +0100 Fadi Shawki [Only create schema version table if non-existent](https://github.com/javalite/activejdbc/commit/918026ef)
+* 2019-01-09 08:40:06 -0600 Igor Polevoy [Merge pull request #828 from benhc123/patch-3](https://github.com/javalite/activejdbc/commit/60a3fefc)
+* 2019-01-09 12:06:47 +0000 Ben Holden-Crowther [Added HTTPS where possible](https://github.com/javalite/activejdbc/commit/b389a27e)
+* 2019-01-08 16:25:27 -0600 ipolevoy [#821 JdbcPropertiesOverride: alternative properties processing error](https://github.com/javalite/activejdbc/commit/49ca3db1)
+* 2019-01-06 17:18:06 -0600 ipolevoy [#827 DBSpecTest may break because the DB was not initialized yet](https://github.com/javalite/activejdbc/commit/49f77c56)
+* 2019-01-06 17:13:39 -0600 ipolevoy [small case fix, thanks Andrey](https://github.com/javalite/activejdbc/commit/ba9d374c)
+* 2019-01-05 17:52:59 -0600 Igor Polevoy [Merge pull request #822 from javalite/snyk-fix-3erpzf](https://github.com/javalite/activejdbc/commit/76c532b6)
+* 2019-01-05 17:52:20 -0600 Igor Polevoy [Merge pull request #826 from javalite/snyk-fix-beyfty](https://github.com/javalite/activejdbc/commit/2e114446)
+* 2019-01-05 17:51:06 -0600 Igor Polevoy [Merge pull request #825 from benhc123/patch-2](https://github.com/javalite/activejdbc/commit/26b6feba)
+* 2019-01-05 22:33:32 +0000 snyk-bot [fix: pom.xml to reduce vulnerabilities](https://github.com/javalite/activejdbc/commit/e9961500)
+* 2019-01-05 21:23:37 +0000 Ben Holden-Crowther [Minor README improvements](https://github.com/javalite/activejdbc/commit/d627d24d)
+* 2019-01-05 01:41:14 -0600 Igor Polevoy [Merge pull request #824 from javalite/snyk-fix-8yg0kp](https://github.com/javalite/activejdbc/commit/1dd8bc43)
+* 2019-01-05 06:41:43 +0000 snyk-bot [fix: db-migrator/pom.xml to reduce vulnerabilities](https://github.com/javalite/activejdbc/commit/d41597c3)
+* 2019-01-03 13:16:56 -0600 Igor Polevoy [Merge pull request #823 from benhc123/patch-1](https://github.com/javalite/activejdbc/commit/f6a3823c)
+* 2019-01-03 18:43:18 +0000 Ben Holden-Crowther [improved english](https://github.com/javalite/activejdbc/commit/f2316baf)
+* 2018-12-29 23:53:50 +0000 snyk-bot [fix: pom.xml to reduce vulnerabilities](https://github.com/javalite/activejdbc/commit/83140e2a)
+* 2018-12-20 22:29:34 +0300 andrey@----.com [ #479 Add ability to use model classes without connecting to the DB - Core code refactored](https://github.com/javalite/activejdbc/commit/cbb898ad)
+* 2018-12-14 12:49:05 -0600 Igor Polevoy [Merge pull request #820 from cschabl/efficient-log-filtering](https://github.com/javalite/activejdbc/commit/68501ca8)
+* 2018-12-13 22:29:09 -0600 ipolevoy [#813 Implement ability to create and delete directories recursively](https://github.com/javalite/activejdbc/commit/711280fc)
+* 2018-12-13 14:54:12 +0100 cschabli [#819: Make inefficient log filtering efficient](https://github.com/javalite/activejdbc/commit/3b375034)
+* 2018-11-27 22:56:15 -0600 ipolevoy [#815 Error on accessing Model in Android + SQLite JDBC](https://github.com/javalite/activejdbc/commit/17752a09)
+* 2018-11-12 11:28:38 -0600 Igor Polevoy [Merge pull request #812 from dsiegal/master](https://github.com/javalite/activejdbc/commit/5f9a19a7)
+* 2018-11-07 14:00:30 -0800 David Siegal [And updated the call from one to the other...](https://github.com/javalite/activejdbc/commit/2a519b2b)
+* 2018-11-07 13:56:28 -0800 David Siegal [Rename closeBatch() to closePreparedStatement](https://github.com/javalite/activejdbc/commit/a778486a)
+* 2018-11-06 16:06:12 -0800 David Siegal [Quietly close prepared statements.](https://github.com/javalite/activejdbc/commit/0e1c9d10)
+* 2018-11-06 08:58:46 -0600 ipolevoy [#808 - INSERT_INTO_PATTERN in QueryExecutionEvent is prone to StackOverflowError](https://github.com/javalite/activejdbc/commit/ed875841)
+* 2018-11-05 14:19:09 -0600 Igor Polevoy [Merge pull request #806 from cschabl/Bugfix-666](https://github.com/javalite/activejdbc/commit/0244d5c6)
+* 2018-11-05 13:09:21 -0600 ipolevoy [#807 - Collection of statistics on large queries causes large memory issues](https://github.com/javalite/activejdbc/commit/b3a19a3e)
+* 2018-11-05 11:41:30 -0600 ipolevoy [#796 Regression of #795: activejdbc_models.properties in Jar of War not found anymore - restoring ability to search for multiple `activejdbc_models/properties` file](https://github.com/javalite/activejdbc/commit/ea27f934)
+* 2018-11-05 09:10:15 +0100 cschabli [#666: fixed last remaining broken @see tag](https://github.com/javalite/activejdbc/commit/b79fc1e2)
+* 2018-10-27 19:51:43 +0100 João Francisco Almeida [#804 - Attempt to speedup TravisCI by changing the DBMSs order](https://github.com/javalite/activejdbc/commit/fc4c0306)
+* 2018-10-22 12:13:25 -0500 ipolevoy [#798 Skip RuntimeUtilSpec on Window - added a comment](https://github.com/javalite/activejdbc/commit/ddc3b888)
+* 2018-10-22 12:10:15 -0500 Igor Polevoy [Merge pull request #799 from cschabl/bugfix-798-RuntimeUtilSpec](https://github.com/javalite/activejdbc/commit/f3cee43c)
+* 2018-10-22 12:07:35 -0500 Igor Polevoy [Merge pull request #801 from cschabl/bug-fix-800-EHCacheManager-locking](https://github.com/javalite/activejdbc/commit/5c6fa029)
+* 2018-10-22 13:20:31 +0200 cschabli [#800: Fixed missing double-checked locking in EHCacheManager](https://github.com/javalite/activejdbc/commit/702d8ab2)
+* 2018-10-19 09:28:38 +0200 cschabli [#798: skip RuntimeUtilSpec on Windows](https://github.com/javalite/activejdbc/commit/15f7cc2f)
+* 2018-10-18 01:57:17 -0500 ipolevoy [#797 - Fix FasterXML vulnerability](https://github.com/javalite/activejdbc/commit/03b38a29)
+* 2018-10-15 10:29:26 -0500 ipolevoy [#795 - ActiveJDBC is unable to find activejdbc_models.properties in all cases](https://github.com/javalite/activejdbc/commit/dc3ef7b0)
+* 2018-10-09 13:36:00 -0500 Igor Polevoy [Merge pull request #793 from javalite/pr-783](https://github.com/javalite/activejdbc/commit/4d44cf16)
+* 2018-10-02 00:32:26 -0500 ipolevoy [#701 Setting an attribute to the same value should not set model as dirty - fixed tests, remove data conversion](https://github.com/javalite/activejdbc/commit/0b0be0d1)
+* 2018-09-23 23:04:36 -0500 ipolevoy [#742 - Allow RuntimeUtil.execute return more than 2048 chars](https://github.com/javalite/activejdbc/commit/68534eea)
+* 2018-09-20 23:06:42 -0500 ipolevoy [#785 - db-migrator-integration-test not passing on Travis due to security](https://github.com/javalite/activejdbc/commit/93c32d5f)
+* 2018-09-19 23:18:20 -0500 Igor Polevoy [Merge pull request #789 from javalite/bugfix/788](https://github.com/javalite/activejdbc/commit/8e32bcd9)
+* 2018-09-15 01:06:37 +0100 João Francisco Almeida [#788 - Upgrade to the latest PostgreSQL driver + fix build](https://github.com/javalite/activejdbc/commit/37560b24)
+* 2018-09-13 08:58:38 -0500 ipolevoy [#787 Case sensitivity in Postgres - upgrading the driver to latest recommended](https://github.com/javalite/activejdbc/commit/f7acda1a)
+* 2018-09-09 19:48:58 -0500 Igor Polevoy [Merge pull request #786 from javalite/bugfix/785](https://github.com/javalite/activejdbc/commit/878454c5)
+* 2018-09-10 00:11:49 +0100 João Francisco Almeida [#785 - db-migrator-integration-test not passing on Travis due to security](https://github.com/javalite/activejdbc/commit/b480be4a)
+* 2018-09-05 11:03:43 -0500 ipolevoy [#784 - Implement support for JUnit 5 - initial commit, will need  to add a JUnit5 test](https://github.com/javalite/activejdbc/commit/34e7058b)
+* 2018-09-02 09:45:48 +0200 rivella50 [#701 Setting an attribute to the same value should not set model as dirty - finishing first version of better handling dirty attribute names](https://github.com/javalite/activejdbc/commit/20c53888)
+* 2018-09-01 17:57:07 +0100 João Francisco Almeida [#781 - TravisCI is attempting to deploy PRs](https://github.com/javalite/activejdbc/commit/98a3bf92)
+* 2018-09-01 17:55:58 +0100 João Francisco Almeida [Revert "#781 - TravisCI is attempting to deploy PRs"](https://github.com/javalite/activejdbc/commit/a87d0612)
+* 2018-09-01 17:46:57 +0100 João Francisco Almeida [#781 - TravisCI is attempting to deploy PRs](https://github.com/javalite/activejdbc/commit/abcb0e80)
+* 2018-09-01 17:20:20 +0100 João Francisco Almeida [Merge pull request #780 from javalite/issue_752_optimize_oracle_build](https://github.com/javalite/activejdbc/commit/df029db1)
+* 2018-09-01 16:54:48 +0100 João Francisco Almeida [#752 Migrate build from Jenkins to TravisCI - remove useless Oracle optimization](https://github.com/javalite/activejdbc/commit/bd5037b8)
+* 2018-08-28 23:34:42 -0500 ipolevoy [#774 - NPE in Paginator.pageCount](https://github.com/javalite/activejdbc/commit/1e56a4fb)
 
 The above is a partial list of commits that represent features and bugs that made it onto this release. The following are the important new features included into this releas:
  
-2018-09-05 11:54:58 -0500 ipolevoy #784 - Implement support for JUnit 5
-2019-01-09 21:28:52 +0300 andrey@expresspigeon.com #479 Add ability to use model classes without connecting to the DB
+
+* 2018-09-05 11:03:43 -0500 ipolevoy [#784 - Implement support for JUnit 5 - initial commit, will need  to add a JUnit5 test](https://github.com/javalite/activejdbc/commit/34e7058b)
+* 2018-12-20 22:29:34 +0300 andrey@----.com [ #479 Add ability to use model classes without connecting to the DB - Core code refactored](https://github.com/javalite/activejdbc/commit/cbb898ad)
 
 ### ActiveWeb Repo Changelog
 

@@ -40,6 +40,10 @@ The output is located:
 
     ./scripts/publish_aws.ah
     
+After that, need to reload the blog: http://javalite.io/blog/reload
+
+
+    
 
  
     
