@@ -3,13 +3,6 @@
 </div>
 
 
-
-## Current release version is: 2.3
-
-The latest current release version is 2.3 and can be downloaded from [Maven Central](http://search.maven.org).
-
-Please, see [2.3 release notes](release-notes-23).
-
 ## Current snapshot 3.0-SNAPSHOT
 
 Can be downloaded from the Sonatype Repo: [https://oss.sonatype.org/content/repositories/snapshots/org/javalite/](https://oss.sonatype.org/content/repositories/snapshots/org/javalite/).
@@ -47,6 +40,13 @@ For Maven plugins, such as [DB-Migrator](database_migrations) and [LessC Compile
 ```
 
 
+
+## Release version is: 2.3
+
+The latest current release version is 2.3 and can be downloaded from [Maven Central](http://search.maven.org).
+
+Please, see [2.3 release notes](release-notes-23).
+
 ## Release version is: 2.2
 
 The latest current release version is 2.2 and can be downloaded from [Maven Central](http://search.maven.org).
@@ -66,7 +66,7 @@ Here is the Maven  dependency config:
 <dependency>
     <groupId>org.javalite</groupId>
     <artifactId>activeweb</artifactId>
-    <version>2.2</version>
+    <version>CURRENT_VERSION</version>
 </dependency>
 ```
 
