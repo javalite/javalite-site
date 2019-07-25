@@ -83,6 +83,8 @@ path                                         controller                         
 
 RESTful routing supports sub-packaging exactly the same as standard.
 
+**Please note:** Controller names must not match (sub)package names.
+
 ## Mapping paths to controller names
 
 When matching a path to a controller class, ActiveWeb converts a name of a controller from underscore or hyphenated format to CamelCase:
