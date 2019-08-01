@@ -20,7 +20,7 @@ Please see [Static Metadata Generation](/runtime_discovery#static-metadata-gener
 
 ##   What about the rest?
 
-Of course not! There is a considerable set of changes from a previous version, check out a full list:  [Realse Notes 2.3](/release-notes-23).  
+The rest of the changes can be found on the [Realse Notes 2.3](/release-notes-23)  page.   
 
 ## What is next? 
 
@@ -32,7 +32,5 @@ Here is how branching and versioning will work:
 
 All important bug fixes and new features will be implemented on master and then cherry-picked  to the [java8](https://github.com/javalite/activejdbc/tree/java8) branch. 
 
-  
- 
 
-Version 2.3.1 is for Java 8 maintenance. The next version 3.0 will start supporting Jav version 11 and later. 
+Version 2.3.1 is for Java 8 maintenance. The next version 3.0 will start supporting Java version 11 and later. 
