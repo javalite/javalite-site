@@ -3,10 +3,10 @@
 import java.nio.file.*
 
 GroovyShell shell = new GroovyShell()
-common = shell.parse(Paths.get(System.getenv("JAVALITE_SITE_PROJECT") + "/content/src/main/groovy/Common.groovy").toFile())
+common = shell.parse(Paths.get("src/main/groovy/Common.groovy").toFile())
 
-String src = System.getenv("JAVALITE_SITE_PROJECT") + "/content/src"
-String output = System.getenv("JAVALITE_SITE_PROJECT") + "/content/target/output"
+String src = "src"
+String output = "target/output"
 String outBlog = "${output}/blog"
 String outImages = "${output}/content-images"
 String searchIndex = "${output}/search_index"
