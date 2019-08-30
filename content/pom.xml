@@ -48,7 +48,7 @@
                             <goal>execute</goal>
                         </goals>
                         <configuration>
-                            <source>src/main/groovy/ProcessMarkdown.groovy</source>
+                            <source>${project.basedir}/target/classes/ProcessMarkdown.groovy</source>
                         </configuration>
                     </execution>
                 </executions>
@@ -68,8 +68,8 @@
                         <configuration>
                             <mainClass>org.javalite.index.IndexMain</mainClass>
                             <arguments>
-                                <argument>target/output/blog/posts</argument>
-                                <argument>target/output/pages</argument>
+                                <argument>${project.basedir}/target/output/blog/posts</argument>
+                                <argument>${project.basedir}/target/output/pages</argument>
                             </arguments>
                         </configuration>
                     </execution>
