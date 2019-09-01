@@ -108,18 +108,4 @@
 
         </dependencies>
     </dependencyManagement>
-
-
-    <repositories>
-        <repository>
-            <id>snapshots1</id>
-            <name>Sonatype Snapshots</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-                <checksumPolicy>warn</checksumPolicy>
-            </snapshots>
-        </repository>
-    </repositories>
 </project>

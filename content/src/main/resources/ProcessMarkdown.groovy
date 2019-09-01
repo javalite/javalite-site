@@ -10,6 +10,7 @@ String outImages = "${output}/content-images"
 String searchIndex = "${output}/search_index"
 
 new File(output).mkdir()
+new File("${output}/pages").mkdir()
 new File(outBlog).mkdir()
 new File(searchIndex).mkdir()
 new File(outImages).mkdir()
@@ -26,5 +27,4 @@ common.processMarkDown("${src}/blog/authors", "${outBlog}/authors")
 
 common.processMarkDown("${src}/activejdbc", "${output}/pages")
 common.processMarkDown("${src}/activeweb", "${output}/pages")
-common.copyFiles(Paths.get("${src}/activejdbc").toString(), "${output}/pages")
-common.copyFiles(Paths.get("${src}/activeweb").toString(), "${output}/pages")
+
