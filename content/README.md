@@ -1,12 +1,6 @@
 # Content for the [JavaLite](http://javalite.io) site.
 
 
-## Environment variable
-
-Set the environment variable similar to this:
- 
-    export JAVALITE_SITE_PROJECT=/home/igor/projects/javalite/javalite-site
-
 ## Pandoc required
 
 Install pandoc :

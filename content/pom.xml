@@ -68,6 +68,7 @@
                         <configuration>
                             <mainClass>org.javalite.index.IndexMain</mainClass>
                             <arguments>
+                                <argument>${project.basedir}/target/output/search_index</argument>
                                 <argument>${project.basedir}/target/output/blog/posts</argument>
                                 <argument>${project.basedir}/target/output/pages</argument>
                             </arguments>

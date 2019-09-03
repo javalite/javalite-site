@@ -10,15 +10,15 @@ import java.nio.file.Paths;
 public class IndexMain {
     public static void main(String[] args) throws IOException {
 
-        String target = System.getenv("JAVALITE_SITE_PROJECT") + "/content/target/output/search_index";
+        String target = args[0];
         File targetDir = Paths.get(target).toFile();
         if (targetDir == null || !targetDir.exists() || !targetDir.isDirectory()) {
-            throw new RuntimeException("failed to find target directory");
+            throw new RuntimeException("failed to find target directory: " + target);
         }
 
         System.out.println("IndexMain: Completed indexing, processed: "
-                + new Indexer(Paths.get(target)).index(args[0]) + " documents");
-        System.out.println("IndexMain: Completed indexing, processed: "
                 + new Indexer(Paths.get(target)).index(args[1]) + " documents");
+        System.out.println("IndexMain: Completed indexing, processed: "
+                + new Indexer(Paths.get(target)).index(args[2]) + " documents");
     }
 }
