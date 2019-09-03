@@ -20,8 +20,16 @@ def processMarkDown(String src, String target){
     dir.toFile().eachFileRecurse(FILES) {
         if(it.name.endsWith('.md')) {
             println "Processing ${it.absolutePath}"
-            def proc = "pandoc -f markdown -t html   \"${it.absolutePath} -o ${target}/${it.name}.html\"".execute();
+
+            def proc = System.getProperty("os.name").equals("Linux") ?
+                    "pandoc -f markdown -t html   ${it.absolutePath} -o ${target}/${it.name}.html".execute() :
+                    "pandoc -f markdown -t html   \"${it.absolutePath}\" -o \"${target}/${it.name}.html\"".execute()
+
             proc.waitForProcessOutput(System.out, System.err)
+            if (proc.exitValue() != 0){
+                System.err.println("Failed to execute Pandoc, see error above")
+                System.exit(-1);
+            }
         }
     }
 }
