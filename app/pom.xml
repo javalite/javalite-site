@@ -20,6 +20,7 @@
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
+                <version>9.4.17.v20190418</version>
                 <configuration>
                     <httpConnector>
                         <port>8080</port>
