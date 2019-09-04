@@ -24,7 +24,7 @@
             <h1>${post.title!""}</h1>
         </div>
         <div class="blog-data">
-            <#--<img src="https://media.licdn.com/media/p/8/000/1d2/391/13e9e58.jpg" alt="${post.authorName!""}">-->
+            <img src="/images/igor-polevoy.jpg" alt="${post.authorName!""}" />
             <h5>
                 <a href="/blog/author/${post.authorId!""}">${post.authorName!""}</a>
             </h5>
