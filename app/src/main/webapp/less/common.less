@@ -657,6 +657,39 @@ body.error { background-color: @gray-dark; }
   }
 }
 
+.subscription-inputs {
+  .btn {
+    margin-bottom: 10px;
+  }
+  .form-control {
+    margin-bottom: 20px;
+  }
+}
+
+.blog-subscription {
+  .captcha {
+    margin-top: 45px;
+  }
+  @media (max-width: 767.98px){
+    .captcha {
+      position: absolute;
+      top: -151px;
+      margin-top: 0;
+    }
+    .btn {
+      margin-top: 118px;
+    }
+  }
+  @media (max-width: 340px){
+    .captcha {
+      .g-recaptcha div,
+      iframe {
+        width: 290px !important;
+      }
+    }
+  }
+}
+
 @media (max-width: 767px){
   .navbar-search {
     position: absolute;
