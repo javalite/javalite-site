@@ -3,15 +3,11 @@
 </div>
 
 
-## Current snapshot 3.0-SNAPSHOT
+## Current snapshots 
 
-* [ActiveJDBC Docs](http://javalite.github.io/activejdbc/snapshot)
-* [ActiveWeb Docs](http://javalite.github.io/activeweb/snapshot)
-* [Async](http://javalite.github.io/activeweb/snapshot/org/javalite/async/package-summary.html)
-* [JSpec Docs](http://javalite.github.io/activejdbc/snapshot/org/javalite/test/jspec/JSpec.html)
-* [Http Docs](http://javalite.github.io/activejdbc/snapshot/org/javalite/http/Http.html)
-* [DB-Migrator](http://javalite.github.io/activejdbc/snapshot/org/javalite/db_migrator/maven/package-summary.html)
-* [AppConfig](http://javalite.github.io/activeweb/snapshot/org/javalite/activeweb/AppConfig.html)
+* For Java 11: [3.0-SNAPSHOT](http://javalite.github.io/3.0-SNAPSHOT)
+
+* For Java 8: [2.3.1-j8-SNAPSHOT](http://javalite.github.io/2.3.1-j8-SNAPSHOT/)
 
 
 ## Latest release 2.3 

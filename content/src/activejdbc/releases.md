@@ -3,42 +3,12 @@
 </div>
 
 
-## Current snapshot 3.0-SNAPSHOT
+## Current snapshots 
 
 Can be downloaded from the Sonatype Repo: [https://oss.sonatype.org/content/repositories/snapshots/org/javalite/](https://oss.sonatype.org/content/repositories/snapshots/org/javalite/).
 
-If you feel adventurous, you can automatically download snapshots from our repo by adding this config to your pom file:  
-
-```xml
-<repositories>
-    <repository>
-        <id>snapshots1</id>
-        <name>Sonatype Snapshots</name>
-        <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-        <snapshots>
-            <enabled>true</enabled>
-            <updatePolicy>always</updatePolicy>
-            <checksumPolicy>warn</checksumPolicy>
-        </snapshots>
-    </repository>
-</repositories>
-
-```
-For Maven plugins, such as [DB-Migrator](database_migrations) and [LessC Compiler](lessc): 
-
-```xml
-<pluginRepositories>
-    <pluginRepository>
-        <id>sonatype_plugin_snapshots</id>
-        <name>Sonatype Plugin Snapshots</name>
-        <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-        <snapshots>
-            <enabled>true</enabled>
-        </snapshots>
-    </pluginRepository>
-</pluginRepositories>
-```
-
+* Java 11 version: 3.0-SNAPSHOT
+* Java 8 version: 2.3.1-j8-SNAPSHOT
 
 
 ## Release version is: 2.3
