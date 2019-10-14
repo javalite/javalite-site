@@ -123,3 +123,9 @@ Then you can access the `name` from a view directly:
 ```html
 Your name is: ${request.name}. 
 ```
+
+## AppContext parameter
+
+There is an object that has a life cycle of the running application called AppContext. 
+It is available in Java code as well as Freemarker templates. For  more information, see here: 
+[AppContext](app_context).

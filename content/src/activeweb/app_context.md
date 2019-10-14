@@ -3,6 +3,14 @@
 </div>
 
 
+
+## Lifecycle
+
+This object essentially is a map of objects you want to keep for the duration of  your running app. 
+It is not intended for large and complex object. Use it only to contain small dynamic configuration if you need it. 
+
+## Access from Java
+
 Sometimes you need to configure and  keep some values in the application for the duration of application life cycle. Use AppContext for this.
 In order to set the values to the AppContext, write some code in the AppBootstrap:
 
@@ -24,4 +32,15 @@ public class HomeController extends AppController {
     }
 }
 ~~~~
+
+## Access from templates
+
+This object is always available from templates, here is how to access: 
+
+```
+AppContext Value: ${app_context.name-of-object}
+
+```
+
+
 

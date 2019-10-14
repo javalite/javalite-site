@@ -9,7 +9,6 @@
 
 * For Java 8: [2.3.1-j8-SNAPSHOT](http://javalite.github.io/2.3.1-j8-SNAPSHOT/)
 
-
 ## Latest release 2.3 
 
 * [ActiveJDBC Docs](http://javalite.github.io/activejdbc/2.3)
