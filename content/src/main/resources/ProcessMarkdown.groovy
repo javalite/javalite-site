@@ -28,3 +28,6 @@ common.processMarkDown("${src}/blog/authors", "${outBlog}/authors")
 common.processMarkDown("${src}/activejdbc", "${output}/pages")
 common.processMarkDown("${src}/activeweb", "${output}/pages")
 
+
+common.copyProperties("${src}/activejdbc", "${output}/pages")
+common.copyProperties("${src}/activeweb", "${output}/pages")
