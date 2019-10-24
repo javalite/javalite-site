@@ -133,8 +133,8 @@ conventions, you could easily override it like this:
 public class Address extends Model {}
 ~~~~
 
-The `@BelongsTo` annotation will ensure that API on both ends will work. ActiveJDBC does not have annotation
-`@HasMany`, since it would not be [DRY](http://en.wikipedia.org/wiki/Don't_repeat_yourself).
+The `@BelongsTo` annotation will ensure that API on both ends will work, as does `@HasMany`.
+
 
 In cases a model belongs to many parents, you can use this annotation:
 

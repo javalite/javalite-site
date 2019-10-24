@@ -8,12 +8,19 @@
 Can be downloaded from the Sonatype Repo: [https://oss.sonatype.org/content/repositories/snapshots/org/javalite/](https://oss.sonatype.org/content/repositories/snapshots/org/javalite/).
 
 * Java 11 version: 3.0-SNAPSHOT
-* Java 8 version: 2.3.1-j8-SNAPSHOT
+* Java 8 version: 2.3.2-j8-SNAPSHOT
 
+## Release 2.3.1-j8
+
+This release supports Java 8. 
+
+
+* [2.3.1-j8 release notes](release-notes-231-j8).
+* JavaDoc: [2.3.2-j8](http://javalite.github.io/2.3.1-j8/)
 
 ## Release version is: 2.3
 
-The latest current release version is 2.3 and can be downloaded from [Maven Central](http://search.maven.org).
+Can be downloaded from [Maven Central](http://search.maven.org).
 
 Please, see [2.3 release notes](release-notes-23).
 
