@@ -409,6 +409,27 @@ public class AjaxController extends AppController{
 The URL for this call will look like this: `http://host/context/ajax`. The Ajax actions act just like any other actions,
 they support all HTTP methods and annotations.
 
+
+## Other responses
+
+Sometimes, it's better to parse a template, and get the result as a string for further processing. For example, when sending emails, so you can write the email body in a template, feed the template with the required parameter map, and let the template engine do the hard work for you. That can be achieved with the `merge()` method from any Controller or Filter:
+
+~~~~ {.java  .numberLines}
+public class EmailController extends AppController{
+   @POST
+   public void send(){
+      //... get and validate the parameters in a model instance
+      String from = model.getString("user_email");
+      String to   = appContext().get("sender_email_address");
+      
+      String body = merge("/shared/emails/welcome", model.toMap());
+      
+      MyMailHelper.sendEmail(from, to, body);   // some helper function, wrapping for ex. commons.email
+      //... continue
+   }
+}
+~~~~
+
 ## Downloading of files
 
 There are a few calls you can use for file download:
