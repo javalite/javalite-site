@@ -133,7 +133,14 @@ conventions, you could easily override it like this:
 public class Address extends Model {}
 ~~~~
 
-The `@BelongsTo` annotation will ensure that API on both ends will work, as does `@HasMany`.
+You can also define the relation in the opposite direction, using the `@HasMany` annotation:
+
+~~~~ {.java  .numberLines}
+@HasMany(child = Address.class, foreignKeyName = "usr_id")
+public class User extends Model {}
+~~~~
+
+Both annotations will ensure that API on both ends will work, so you can choose which one to use. There is no need to define the relation in both ends.
 
 
 In cases a model belongs to many parents, you can use this annotation:
