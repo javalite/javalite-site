@@ -226,7 +226,7 @@ public class HelloController extends AppController {
 In the example above,   a layout is overridden only for a specific action. 
     
 
-##Partials
+## Partials
 
 Partials are snippets of HTML pages, hence the word. Usually they host chunks of code repeating in a few places.
 In much the same way that a regular programming language allows develpers to refactor and keep repeating patterns of
@@ -501,7 +501,7 @@ There is a "locale" argument you can pass to the tag to override the locale from
 
 
 
-## link_to tag and unobtrusibe JavaScript
+## link_to tag and unobtrusive JavaScript
 
 ActiveWeb provides a `<@link_to/>`. This tag generates an HTML anchor tag and is capable of regular HTML links, as
 well as Ajax capability.
@@ -776,7 +776,62 @@ For instance, for a `java.util.Map` object it will print this:
 
 ## Custom tag development
 
-TODO
+In addition to the provided tags, you can create your own ones. Simply follow these three steps:
+
+1) Create tag class somewhere in your project. For example, an "excerpt tag", who takes some long text and truncates it to certain width, adding an ellipsis:
+
+~~~~ {.java  .numberLines}
+package app.util.tags;
+
+import java.io.Writer;
+import java.util.Map;
+import org.javalite.activeweb.freemarker.FreeMarkerTag;
+import org.javalite.common.Convert;
+
+public class ExcerptTag extends FreeMarkerTag {
+
+    @Override
+    protected void render(Map params, String body, Writer writer) throws Exception {
+
+        validateParamsPresence(params, "text", "max");
+
+        String text = params.get("text").toString();
+        int max = Convert.toInteger(params.get("max"));
+
+        if (text.length() > max) {
+            String chop = text.substring(0, max + 1);
+
+            String template = "<span data-toggle=\"tooltip\" title=\"%s\">%s...</span>";
+            writer.write(String.format(template, text, chop));
+        } else {
+            writer.write(text);
+        }
+    }
+}
+~~~~
+
+2) Register your custom tag in your FreeMarkerConfig class, giving it some name (in this case "excerpt"):
+
+~~~~ {.java  .numberLines}
+package app.config;
+import app.util.tags.ExcerptTag;
+
+public class FreeMarkerConfig extends org.javalite.activeweb.freemarker.AbstractFreeMarkerConfig {
+
+    @Override
+    public void init() {
+        //... some config
+        getConfiguration().setSharedVariable("excerpt", new ExcerptTag());
+    }
+}
+~~~~
+
+3) Use your custom tag in your views:
+
+~~~~ {.html  .numberLines}
+<h3>User description</h3>
+<p><@excerpt text=user.description max=50/></p>
+~~~~
 
 ## System error pages
 
