@@ -3,7 +3,6 @@
 </div>
 
 
-Follow these links:
+All Javalite projects were integrated into one github repository:
 
-* [ActiveJDBC, JSpec, HTTP](https://github.com/javalite/activejdbc)
-* [ActiveWeb](https://github.com/javalite/activeweb)
+* [Javalite](https://github.com/javalite/javalite)
