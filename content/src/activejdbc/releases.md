@@ -14,22 +14,18 @@ Can be downloaded from the Sonatype Repo: [https://oss.sonatype.org/content/repo
 
 This release supports Java 8. 
 
+* [Download from Maven Central](https://search.maven.org/search?q=g:org.javalite).
+* [Release notes](release-notes-231-j8).
 
-* [2.3.1-j8 release notes](release-notes-231-j8).
-* JavaDoc: [2.3.2-j8](http://javalite.github.io/2.3.1-j8/)
+## Release 2.3
 
-## Release version is: 2.3
-
-Can be downloaded from [Maven Central](http://search.maven.org).
-
-Please, see [2.3 release notes](release-notes-23).
+* [Download from Maven Central](https://search.maven.org/search?q=g:org.javalite).
+* [Release notes](release-notes-23).
 
 ## Release version is: 2.2
 
-The latest current release version is 2.2 and can be downloaded from [Maven Central](http://search.maven.org).
-
-Please, see [2.2 release notes](release-notes-22).
-
+* [Download from Maven Central](https://search.maven.org/search?q=g:org.javalite).
+* [Release notes](release-notes-22).
 
 ## Where is release 2.1?
 
@@ -48,7 +44,6 @@ Here is the Maven  dependency config:
 ```
 
 Replace `activeweb` with the name of the module you are using (activejdbc, app-config, etc.).
-
 
   
 ## Past releases
