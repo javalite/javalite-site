@@ -2,7 +2,7 @@
 
 ### Supported Java
 
-Oracle JDK v 8.x
+Built with Oracle JDK v 8.x. Should work with OpenJDK too.
 
 
 ### ActiveJDBC Repo Changelog
