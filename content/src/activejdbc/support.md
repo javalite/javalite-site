@@ -9,9 +9,7 @@ If you have a questions, post is on [StackOverflow](http://stackoverflow.com) an
 
 ## Filing new issues
 
-If you find a bug, here are respective links:
+If you find a bug, or want to report some problem with this site, feel free to contribute here:
 
-* [ActiveJDBC Issues](https://github.com/javalite/activejdbc/issues) (as well as JSpec, HTTP)
-* [ActiveWeb Issues](https://github.com/javalite/activeweb/issues)
-
-
+* [Javalite Issues](https://github.com/javalite/javalite/issues)
+* [Javalite Site Issues](https://github.com/javalite/javalite-site/issues)
