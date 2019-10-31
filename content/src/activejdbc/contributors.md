@@ -40,6 +40,10 @@ Once the new code is in the snapshot, it will make it into a new release.
 
 > Any contributed code must come with tests showing that: A: it works,  and B: demonstrating a new feature
 
+## Improve documentation
+
+Documentation (this site) [is on Github too](https://github.com/javalite/javalite-site). The workflow is similar: fork this site, make changes, push your changes, submit a pull request. Easy, right?
+
 
 ## Code of conduct
 
