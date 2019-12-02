@@ -162,9 +162,9 @@ If you do want to retain a reference, there is no harm done though.
 
 ## Database connection pools
 
-ActiveJDBC does not maintain connection pools and does not integrate with any pools. Instead, it provides a
-few `DB.open()` and `Base.open()` methods to open connections. If a version of methods used that takes standard JDBC
-parameters, then no pool is used this is only a convenience method to open a brand new connection, such as:
+ActiveJDBC does accepts a JNDI connection URL to an existing pool. It provides a
+few `DB.open()` and `Base.open()` methods to open pool connections. If a version of a method used that takes standard JDBC
+parameters, then no pool is used. This is only a convenience method to open a brand new connection, such as:
 
 ~~~~ {.java  .numberLines}
 Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/test", "root", "pwd");
@@ -176,13 +176,15 @@ If however, this call is used:
 Base.open("java:comp/env/jdbc/testdb");
 ~~~~
 
-it will use a JDNI name to lookup a connection. Usually this is called from within a container and the name points
-to a pooled JNDI DataSource.
+then it will use a JDNI name to lookup a connection from a pool. Usually this is called from within a container and the name points
+to a pooled JNDI DataSource configured at a container level. 
 
 If you want to work directly with some connection pool, you can do so by feeding a datasource to Base/DB class:
 
 ~~~~ {.java  .numberLines}
 new DB("default").open(datasourceInstance);
+//or:
+Base.open(datasourceInstance);
 ~~~~
 
 
@@ -211,14 +213,22 @@ production.jndi=java:comp/env/jdbc/acme
 
 In order for this to work, you need to configure an environment variable `ACTIVE_ENV` to a value that is equal to a 
 property set key.  According to a file above, the `ACTIVE_ENV` can take on values `development` and `production`. 
-The `test` is special because it is used in development environment, but for running tests. 
+The `test` is special because it is used in development environment, but for running tests (test mode). 
 
 Once the file is configured and placed at the root of classpath, you would open connections with a no-argument 
 method like this: 
 
 ~~~~ {.java .numberLines}
+org.javalite.activejdbc.connection_config.DBConfiguration.loadConfiguration("/database.properties);
+
 new DB("default").open();
+//or: 
+Base.open();
 ~~~~
+
+> The first line needs to be called just once  at the start for loading configuration from a file. 
+
+
  
 A configuration related to the current environment will be selected and used to open a connection. This makes it easy 
 to develop applications that live on different environments, and simply "know" where to connect on each. 
@@ -228,39 +238,9 @@ to develop applications that live on different environments, and simply "know" w
 
 ## Location of property file
 
-### Using system property
+The file can be located on a classpath or on a file system. For instance,  if the path looks like this: `/opt/database.properties`, 
+then if it  is found on classpath, it is loaded first. If not found on classpath, it will look for the file on te file system using the same path. 
  
-You can tell the framework the location of the file by supplying a system property at the start of your program: 
-
-```
-java com.company.project.Main -cp myprogram.jar -Denv.connections.file=/path/to/file/database.properties
-```
- 
-Even if you have `database.properties` packaged into your Jar/war file, this setting will override the packaged file. 
-Use it for production environments where database passwords cannot be checked into source control.
-
-### Using `activejdbc.properties`
-
-In some cases it is inconvenient to bundle the `database.properties` file with class files on classpath. 
-There can be different reasons for it: you want to be able to change passwords, do not want to commit credentials to
-code repoository, etc. 
-
-The database connection properties file can be given any name and can reside on a file system somewhere. 
-
-
-Here is how to configure: 
-
-Add a file `activejdbc.properties` to your project at root of classpath and configure a property in it: 
-
-~~~~
-env.connections.file=/etc/my_project123/database.properties
-~~~~
-
-Then, simply add connection properties to the file as usual. The methods `DB.open()` and `Base.open()` will locate 
-a connection from this file using the usual `ACTIVE_ENV` conventions.
- 
- 
-
 ## Environment variables override
 
 In some cases you will need to specify parameters as environment variables. 
