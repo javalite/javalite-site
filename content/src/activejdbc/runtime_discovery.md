@@ -253,3 +253,56 @@ Please, see an example project with this configuration: [Static Metadata Test](h
 * **Disadvantage**: the generation of the metadata  file happens at build time against a local developers database (or CI server). 
 It is possible then that your development process does not track database changes resulting in the DB schemas being  out of sync, which will lead to a difference in schemas between the prod database 
 and the generated metadata file. A special attention must be paid to ensure the same database schema version used.      
+
+
+> NOTE: the static generation works at build time, not run time. This means  that if you use ActiveWeb, or configure connections in your app using `Base.open` or `new DB.open()`, 
+the static generation has no way of knowing that. It instead sources the connection to your database from `database.propertiers` just like the [Migration Plugin](/database_migrations). 
+This means it is important you configure static metadata generation accordingly. Here is a perfect example:    [Static Metadata Test](https://github.com/javalite/activejdbc/blob/7b202943fe5c4d40e8c793666f6499866d05e3c5/activejdbc-static-metadata-test/pom.xml#L73).
+
+Further: 
+
+~~~~ {.xml .numberLines}
+            <plugin>
+                <groupId>org.javalite</groupId>
+                <artifactId>activejdbc-instrumentation</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <generateStaticMetadata>true</generateStaticMetadata>
+
+                    <databases>
+                        <!--
+                            By default this entire section is not necessary. If your project has a "database.properties" file,
+                            it will be located and used for current environment (likely development).
+                            The config example is to illustrate an override approach.
+                        -->
+                        <database>
+                            <name>default</name>
+                            <url>${jdbc.url}</url>
+                            <username>${jdbc.user}</username>
+                            <password>${jdbc.password}</password>
+                            <driver>${jdbc.driver}</driver>
+                        </database>
+                    </databases>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>process-classes</phase>
+                        <goals>
+                            <goal>instrument</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.h2database</groupId>
+                        <artifactId>h2</artifactId>
+                        <version>1.4.197</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
+~~~~
+
+* Line 6 turns the static generation on.  
+* The line 10  mentions that you can override  your `database.properties` configuration directly in the pom file.
+* Line 31 includes the driver dependency, which is necessary to connect to the database.  
