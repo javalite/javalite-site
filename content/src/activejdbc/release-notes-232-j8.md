@@ -10,8 +10,8 @@ The full release notes can be [found here](https://github.com/javalite/javalite/
 
 ## Migration from previous versions
 
-While we have been striving for 100% compatibility with application code, sometimes you need to make decisions that break 100% compatibility.
-This release introduces one such inconvenience. 
+While we have been striving for 100% compatibility with application code, 
+sometimes you need to make decisions that break it. This release introduces one such inconvenience. 
 
 For instance, if you used this code in previous versions: 
 
