@@ -1,4 +1,4 @@
-## Release notes v2.3.1-j8
+## Release notes v2.3.2-j8
 
 ### Supported Java
 
