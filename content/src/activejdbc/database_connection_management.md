@@ -219,7 +219,8 @@ Once the file is configured and placed at the root of classpath, you would open 
 method like this: 
 
 ~~~~ {.java .numberLines}
-org.javalite.activejdbc.connection_config.DBConfiguration.loadConfiguration("/database.properties);
+org.javalite.activejdbc.connection_config.DBConfiguration.loadConfiguration("/database.properties); 
+// The previous line is necessary starting with version 2.3.2-j8.
 
 new DB("default").open();
 //or: 
