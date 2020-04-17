@@ -34,7 +34,7 @@ Follow to: [ActiveWeb documentation](documentation#activeweb)
 Watch a quick video on Youtube that demonstrates ActiveWeb's ability to add code to the application
 dynamically, at run time.
 
-<iframe width="425" height="344" frameborder="0" src="https://www.youtube.com/embed/YX1TAtuSqQE"></iframe>
+<iframe width="750" height="607" frameborder="0" src="https://www.youtube.com/embed/YX1TAtuSqQE"></iframe>
 
 Direct link to video on Youtube: [https://www.youtube.com/watch?v=YX1TAtuSqQE](https://www.youtube.com/watch?v=YX1TAtuSqQE)
 
