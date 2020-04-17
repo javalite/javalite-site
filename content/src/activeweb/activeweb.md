@@ -36,7 +36,7 @@ dynamically, at run time.
 
 <iframe width="425" height="344" frameborder="0" src="http://www.youtube.com/embed/YX1TAtuSqQE"></iframe>
 
-Direct link to video on Youtube: [http://www.youtube.com/watch?v=YX1TAtuSqQE](http://www.youtube.com/watch?v=YX1TAtuSqQE)
+Direct link to video on Youtube: [https://www.youtube.com/watch?v=YX1TAtuSqQE](http://www.youtube.com/watch?v=YX1TAtuSqQE)
 
 ## Quick guide to ActiveWeb
 
