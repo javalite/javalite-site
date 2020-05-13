@@ -226,6 +226,64 @@ public class HelloController extends AppController {
 In the example above,   a layout is overridden only for a specific action. 
     
 
+### Wrapper Layouts
+
+
+One of the built-in tags is a `WrapTag`. It allows to wrap some page content in a given layout.
+A wrapper layout is just another template that includes a content placeholder `${page_content}`.
+
+Example: let's say somewhere on the view you have this  snippet:  
+ 
+```html
+
+<div>some content above</div>
+
+<@wrap with="/wrap/wrapper">
+Inner Content
+</@wrap>
+
+<div>some content below</div>
+
+```
+
+where `/wrap/wrapper` is a layout and has the following content: 
+
+
+```html
+<div class="top">
+${page_content}
+</div>
+
+```
+
+Then the output will look like this:
+
+```html
+<div>some content above</div>
+
+<div class="top">
+Inner Content
+</div>
+
+<div>some content below</div>
+
+```
+
+
+You can use the same layout multiple times on a page. Additionally, if you need to, you can nest wrapped layouts:
+``` 
+ <@wrap with="/wrap/wrapper_first">
+     Inner content header
+     <@wrap with="/wrap/wrapper_second">
+       Inner Content
+     </@wrap>
+ </@wrap>
+```
+
+The result will be as expected.
+
+
+
 ## Partials
 
 Partials are snippets of HTML pages, hence the word. Usually they host chunks of code repeating in a few places.

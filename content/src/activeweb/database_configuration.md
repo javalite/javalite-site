@@ -127,7 +127,7 @@ standard configuration for jenkins environment, just one for testing.
 -   **Line 6**: This is configuration similar to one on line 3, but for "production" environment.
 
 > Configuration of database connections is just that - configuration. This code only configures a connection, but
-does not open it. To open a connection, you need to use [DBConnectionFilter](https://github.com/javalite/activeweb/blob/master/activeweb/src/main/java/org/javalite/activeweb/controller_filters/DBConnectionFilter.java#DBConnectionFilter).
+does not open it. To open a connection, you need to use [DBConnectionFilter](https://github.com/javalite/javalite/blob/master/activeweb/src/main/java/org/javalite/activeweb/controller_filters/DBConnectionFilter.java).
  For more, see [Controller filters](controller_filters).
 
 
