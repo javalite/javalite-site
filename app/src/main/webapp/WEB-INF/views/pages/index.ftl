@@ -177,23 +177,23 @@
                 </a>
             </div>
             <div class="col-xxs-12 col-xs-6 col-sm-4 col-md-3 col-lg5">
-                <a href="http://www.navy.mil/">
-                    <img src="/images/partners/logo-us-navy.png" alt="U.S. Navy">
-                </a>
-            </div>
-            <div class="col-xxs-12 col-xs-6 col-sm-4 col-md-3 col-lg5">
                 <a href="http://www.flipkart.com/">
                     <img src="/images/partners/logo-flipkart.png" alt="Flipkart">
                 </a>
             </div>
             <div class="col-xxs-12 col-xs-6 col-sm-4 col-md-3 col-lg5">
-                <a href="https://www.zoho.com/">
-                    <img src="/images/partners/logo-zoho.png" alt="Zoho">
+                <a href="http://www.navy.mil/">
+                    <img src="/images/partners/logo-us-navy.png" alt="U.S. Navy">
                 </a>
             </div>
             <div class="col-xxs-12 col-xs-6 col-sm-4 col-md-3 col-lg5">
                 <a href="https://www.bridgemoney.co/">
                     <img src="/images/partners/logo-bridge.png" alt="BridgeMoney">
+                </a>
+            </div>
+            <div class="col-xxs-12 col-xs-6 col-sm-4 col-md-3 col-lg5">
+                <a href="https://www.zoho.com/">
+                    <img src="/images/partners/logo-zoho.png" alt="Zoho">
                 </a>
             </div>
         </div>
