@@ -32,7 +32,7 @@ Let's say we have an empty table PEOPLE:
 A model will look like this:
 
 ~~~~ {.java  .numberLines}
-public class Person{}
+public class Person  extends Model{}
 ~~~~
 
 Let's add some records:
