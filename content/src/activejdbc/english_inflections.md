@@ -36,7 +36,7 @@ Examples:
 ### Default mapping
 
 ~~~~ {.java  .numberLines}
-public class Computer{}
+public class Computer extends Model{}
 ~~~~
 
 will be mapped to a table `COMPUTERS`.
@@ -45,7 +45,7 @@ will be mapped to a table `COMPUTERS`.
 ### Default mapping with English exception
 
 ~~~~ {.java  .numberLines}
-public class Octopus{}
+public class Octopus  extends Model{}
 ~~~~
 
 will be mapped to a table `OCTOPI`.
@@ -55,7 +55,7 @@ will be mapped to a table `OCTOPI`.
 
 ~~~~ {.java  .numberLines}
 @Table("Operator")
-public class Operator{}
+public class Operator  extends Model{}
 ~~~~
 
 will be mapped to a table `OPERATOR`.
