@@ -11,9 +11,19 @@ See <a href="http://en.wikipedia.org/wiki/Schema_migration">Schema_migration</a>
 Current implementation of this project is a Maven Plugin.
 Future releases might include a standalone library for non-Maven projects.
 
+## Supported languages
+
+Starting with version 2.3.3-j8-SNAPSHOT for Java8 and 3.0-SNAPSHOT for Java 11 and above, migrations can be written in:
+
+* SQL 
+* Groovy
+
+
+See the next section  for instructions  on creationg new migration files.  
+
 ## Writing a new migration
 
-Generate a new migration file: 
+Generate a new  SQL migration file: 
 
 ~~~~ {.prettyprint}
 mvn db-migrator:new -Dname=create_people_table
@@ -33,7 +43,21 @@ The newly created file is empty. Go ahead and add raw SQL to the file
 create table people ( name varchar (10));
 ~~~~
 
-Run migration:
+
+To generate a new  Groovy  migration file: 
+
+~~~~ {.prettyprint}
+mvn db-migrator:new -Dname=move_data_from_one_table_to_another.groovy
+~~~~
+
+
+> If you specify the file extension `.groovy`, you will have a Groovy file generated. The migrator will automatically
+open a connection to the right database before executing the groovy file, and close it after
+
+The artifact `org.javalite.javalite-common` as  well as `org.javalite.activejdbc` will be on the classpath of your script,
+so you can use `Base` and other classes as you wish.  
+
+Run migrations:
 
 ~~~~ {.prettyprint}
 mvn db-migrator:migrate
@@ -43,9 +67,9 @@ mvn db-migrator:migrate
 [INFO] Running migration 20140211113507_create_people_table.sql
 ~~~~
 
-Alternatively, you can just run the build.
+> Alternatively, you can just run the build.
 
-## Custom delimiter
+## Custom delimiter (SQL only)
 
 
 By default, the migrator uses semicolon to separate statements in a file from one another.   
