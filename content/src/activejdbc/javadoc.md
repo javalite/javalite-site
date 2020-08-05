@@ -7,7 +7,13 @@
 
 * For Java 11: [3.0-SNAPSHOT](http://javalite.github.io/3.0-SNAPSHOT)
 
-* For Java 8: [2.3.2-j8-SNAPSHOT](http://javalite.github.io/2.3.2-j8-SNAPSHOT/)
+* For Java 8: [2.3.3-j8-SNAPSHOT](http://javalite.github.io/2.3.3-j8-SNAPSHOT/)
+
+## Release 2.3.2-j8
+
+This release supports Java 8.
+
+* [2.3.2-j8](http://javalite.github.io/2.3.2-j8/)
 
 ## Release 2.3.1-j8
 

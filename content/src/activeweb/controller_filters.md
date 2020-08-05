@@ -184,7 +184,7 @@ ActiveWeb provides a number of filters for easy configuration of projects.
 ### DBConnectionFilter
 
 `DBConnectionFilter` opens a connection before execution of a controller and closes it after execution. Here is an
-example of usage of this filter from the [Kitchensink](https://github.com/javalite/kitchensink) project:
+example of usage of this filter from the [Kitchensink](https://github.com/javalite/javalite-examples/tree/master/kitchensink) project:
 
 ~~~~ {.java  .numberLines}
 public class AppControllerConfig extends AbstractControllerConfig {

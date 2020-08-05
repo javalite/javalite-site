@@ -126,11 +126,11 @@ Look through these:
 
 Other working examples:
 
-* [Maven example](https://github.com/javalite/simple-example)
-* [Ant example](https://github.com/javalite/ant-example)
-* [Standalone example](https://github.com/javalite/standalone-example) - neither Maven nor Ant
+* [Maven example](https://github.com/javalite/javalite-examples/tree/master/simple-example)
+* [Ant example](https://github.com/javalite/javalite-examples/tree/master/ant-example)
+* [Standalone example](https://github.com/javalite/javalite-examples/tree/master/standalone-example) - neither Maven nor Ant
 
-Here is the [JavaDoc for ActiveJDBC](http://javalite.github.io/activejdbc/snapshot)
+Here is the [JavaDoc](http://javalite.github.io/2.3.2-j8-SNAPSHOT/)
 
 
 ## Design principles
@@ -159,7 +159,7 @@ Currently the following databases are supported:
 * SQLite3
 * DB2
 
-Adding a new dialect is relatively easy. Just look at commits on this branch: [h2integration](https://github.com/javalite/activejdbc/tree/h2integration)
+Adding a new dialect is relatively easy. Just look at commits on this branch: [h2integration](https://github.com/javalite/javalite/tree/h2integration)
 
 
 ## Releases

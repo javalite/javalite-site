@@ -114,3 +114,7 @@
 ## [AppConfig](app-config) - configuration library
 
 * [AppConfig](app-config)
+
+## [JavaLite Common](javalite-common) - common convenience library 
+
+* [JavaLite Common](javalite-common)

@@ -162,10 +162,10 @@ async.setBinaryMode(true);
 
 
 In cases where your queue processing requires a database connetion, you can use a class 
-[DBCommandListener](http://javalite.github.io/activeweb/snapshot/org/javalite/async/DBCommandListener.html): 
+[DBCommandListener](http://javalite.github.io/3.0-SNAPSHOT/org/javalite/async/DBCommandListener.html): 
 
 ```java
-Async async = new Async(filePath, false, new QueueConfig("MESSAGES_QUEUE", new DBCommandListener("java:comp/env/jdbc/yout_project"), 5));
+Async async = new Async(filePath, false, new QueueConfig("MESSAGES_QUEUE", new DBCommandListener("java:comp/env/jdbc/your_project"), 5));
 ```
 
 So long as you configure a JNDI connection with access string: `java:comp/env/jdbc/yout_project`, 

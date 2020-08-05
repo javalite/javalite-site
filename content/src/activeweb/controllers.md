@@ -97,7 +97,7 @@ public class RpostsController extends AppController {
     public void destroy(){...}
 ~~~~
 
-See the [Kitchensink](https://github.com/javalite/kitchensink) code, as well as more on restful controllers in the [Routing](routing) page.
+See the [Kitchensink](https://github.com/javalite/javalite-examples/tree/master/kitchensink) code, as well as more on restful controllers in the [Routing](routing) page.
 
 A RESTful controller is allowed to have 7 methods, and they all are automatically mapped to the following URSs and HTTP methods:
 
@@ -347,7 +347,7 @@ p.fromMap(params1st());
 The `Post` is an ActiveJDBC model. `params1st()` method returns a map of first values (the most typical case) of all submitted parameters,
  which are set in on call on a model instance. A  this point, it is easy to use ActiveJDBC validation to display a page
  with error messages defined on the `Post` model. See
- [PostController](https://github.com/javalite/kitchensink/blob/master/src/main/java/app/controllers/PostsController.java)
+ [PostController](https://github.com/javalite/javalite-examples/blob/master/kitchensink/src/main/java/app/controllers/PostsController.java)
  for more information.
 
 

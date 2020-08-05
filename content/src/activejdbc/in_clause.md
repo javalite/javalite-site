@@ -26,7 +26,7 @@ String sql = "name IN ('John', 'Hellen', 'Henry')";
 Then you join this list with single quotes and commas:
 
 ~~~~ {.java  .numberLines}
-List names = Util.list("John", "Hellen", "Henry");
+List names = Collections.list("John", "Hellen", "Henry");
 List<Person> people = Person.where("name IN ('" + Util.join(names, "', '") + "')");
 ~~~~
 

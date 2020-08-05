@@ -21,7 +21,7 @@ System.out.println("DOB type: " + p.get("dob").getClass());
 > Convenience conversion methods are used after data was loaded into models due to read operations
 
 ActiveJDBC provides a number of getter methods for conversion. Most conversions use the
-underlying [Convert](http://javalite.github.io/activejdbc/snapshot/org/javalite/common/Convert.html) class. Here are some examples:
+underlying [Convert](http://javalite.github.io/3.0-SNAPSHOT/org/javalite/common/Convert.html) class. Here are some examples:
 
 ~~~~ {.java  .numberLines}
 Date date = person.getDate("dob");
@@ -60,7 +60,7 @@ Timestamp	getTimestamp(String attributeName)
 
 > Converters are triggered during model save operations
 
-A [Converter](http://javalite.github.io/activejdbc/snapshot/org/javalite/activejdbc/conversion/Converter.html) can convert values from one type to another. Currently there are a few converters available: blank to null, zero to null, date (date to string and string to date), and timestamp (timestamp to string and string to timestamp).
+A [Converter](http://javalite.github.io/3.0-SNAPSHOT/org/javalite/conversion/Converter.html) can convert values from one type to another. Currently there are a few converters available: blank to null, zero to null, date (date to string and string to date), and timestamp (timestamp to string and string to timestamp).
 
 Converters will always convert from the original type of the value (for example, java.lang.String for a value like "1926-06-01") to the type of the convenience conversion method called, and they are registered to model attributes. So for the `setDate("dob", "1926-06-01")` call, if there is a converter from String (original value type) to java.sql.Date (setting a date with setDate) registered for the attribute "dob", it will be used and the value set will be of type java.sql.Date. The same applies to getters, the other way around.
 

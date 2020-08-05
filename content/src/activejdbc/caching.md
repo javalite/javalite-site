@@ -290,7 +290,7 @@ user.delete();
 
 the framework will just reset the cache of the User model, and will not touch the cache of the Address model.
  
-For more information, refer to JavaDoc: [UnrelatedTo](http://javalite.github.io/activejdbc/snapshot/org/javalite/activejdbc/annotations/UnrelatedTo.html).
+For more information, refer to JavaDoc: [UnrelatedTo](http://javalite.github.io/3.0-SNAPSHOT/org/javalite/activejdbc/annotations/UnrelatedTo.html).
 
 
 ## Cache providers

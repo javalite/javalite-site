@@ -6,7 +6,7 @@
 Database migrations is a process of making changes to database schema during a development process.
 See <a href="http://en.wikipedia.org/wiki/Schema_migration">Schema_migration</a> to understand better what database migrations are.
 
-## DB-Migrator is Maven plugin
+## DB-Migrator is Maven plugin  
 
 Current implementation of this project is a Maven Plugin.
 Future releases might include a standalone library for non-Maven projects.
