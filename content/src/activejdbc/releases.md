@@ -10,6 +10,34 @@ Can be downloaded from the Sonatype Repo: [https://oss.sonatype.org/content/repo
 * Java 11 version: 3.0-SNAPSHOT
 * Java 8 version: 2.3.3-j8-SNAPSHOT
 
+If you want to pull JavaLite snapshots,  add the snapshot repositories  to your pom: 
+
+```xml
+<repositories>
+    <repository>
+        <id>sonatype_snapshots</id>
+        <name>Sonatype Snapshots</name>
+        <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+        </snapshots>
+    </repository>
+</repositories>
+<pluginRepositories>
+    <pluginRepository>
+        <id>sonatype_plugin_snapshots</id>
+        <name>Sonatype Snapshots</name>
+        <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
+    </pluginRepository>
+</pluginRepositories>
+         
+```
+ 
+
 
 ## Release 2.3.2-j8
 
