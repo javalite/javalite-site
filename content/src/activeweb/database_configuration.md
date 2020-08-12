@@ -229,7 +229,7 @@ If not, you will get a "connection not found" exception.
 If you need a very complex logic opening different connections for different conditions, 
 you may need to implement your own controller filter. Remember, that the `DBConnectionFilter` 
 is just ... another ActiveWeb filter. Take a look at implementation: 
-[DBConnectionFilter](https://github.com/javalite/activeweb/blob/master/activeweb/src/main/java/org/javalite/activeweb/controller_filters/DBConnectionFilter.java). 
+[DBConnectionFilter](https://github.com/javalite/javalite/blob/b8009f9ef0f3483b8b388086ae90ff0d91a13c82/activeweb/src/main/java/org/javalite/activeweb/controller_filters/DBConnectionFilter.java). 
 
 All you need is to open  your connection with `Base.open()` od `DB.open()` in the `before()` method, close it in `after()` method 
 and do what you have to in `onException(e)` method. 
@@ -284,12 +284,13 @@ public class AppControllerConfig extends AbstractControllerConfig {
 
 ## Tying it all together
  
-The [ActiveWeb Simple](https://github.com/javalite/activeweb-simple/) is one example of full configuration: 
- 
-* Property file: [database.properties](https://github.com/javalite/activeweb-simple/blob/master/src/main/resources/database.properties)
-* [DBConfig](https://github.com/javalite/activeweb-simple/blob/master/src/main/java/app/config/DbConfig.java) - configure connections
-* [AppControllerConfig](https://github.com/javalite/activeweb-simple/blob/master/src/main/java/app/config/AppControllerConfig.java) - bind connections to controllers
-* DB-Migrator configuration: [pom.xml](https://github.com/javalite/activeweb-simple/blob/master/pom.xml#L35) - to configure [DB-Migrator](database_migrations). 
+The [ActiveWeb Simple](https://github.com/javalite/javalite-examples/tree/master/activeweb-simple) is one example of full configuration: 
+
+                                        
+* Property file: [database.properties](https://github.com/javalite/javalite-examples/blob/master/activeweb-simple/src/main/resources/database.properties)
+* [DBConfig](https://github.com/javalite/javalite-examples/blob/master/activeweb-simple/src/main/java/app/config/DbConfig.java) - configure connections
+* [AppControllerConfig](https://github.com/javalite/javalite-examples/blob/master/activeweb-simple/src/main/java/app/config/AppControllerConfig.java) - bind connections to controllers
+* DB-Migrator configuration: [pom.xml](https://github.com/javalite/javalite-examples/blob/master/activeweb-simple/pom.xml#L52) - to configure [DB-Migrator](database_migrations). 
 
 ## Running without a database
 

@@ -45,7 +45,7 @@ The file `/views/books/index.ftl` would have a flash message displayed with "fla
 <@flash name="message"/>
 ~~~~
 
-> For a complete example of using FlashTag, please refer to [BooksController#save()](https://github.com/javalite/activeweb-simple/blob/master/src/main/java/app/controllers/BooksController.java#L45)
+> For a complete example of using FlashTag, please refer to [BooksController#create()](https://github.com/javalite/javalite-examples/blob/master/activeweb-simple/src/main/java/app/controllers/BooksController.java#L54)
 and corresponding views. Also, please see [ActiveJDBC Validation](validations)
 
 

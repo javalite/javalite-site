@@ -41,9 +41,11 @@ public class Page {
             title = inferTitle(id);
         }
 
-        if(getClass().getResource("/org/junit/Before.class") == null && InetAddress.getLocalHost().toString().contains("igorslaptop")){
-            File ajFile = new File("/home/igor/projects/javalite/site-content/src/activejdbc/" + id + ".md");
-            File awFile = new File("/home/igor/projects/javalite/site-content/src/activeweb/" + id + ".md");
+
+        if(InetAddress.getLocalHost().toString().contains("igordell")){
+            File ajFile = new File("/home/igor/projects/javalite/javalite-site/content/src/activejdbc/" + id + ".md");
+
+            File awFile = new File("/home/igor/projects/javalite/javalite-site/content/src/activeweb/" + id + ".md");
 
             File file;
             if(ajFile.exists()){
@@ -53,13 +55,13 @@ public class Page {
             }else {
                 throw new FileNotFoundException("id");
             }
-            content = RuntimeUtil.execute("pandoc", "-f", "markdown", "-t", "html", file.toString()).out;
+            content = RuntimeUtil.execute(80096, "pandoc", "-f", "markdown", "-t", "html", file.toString()).out;
             return;
         }
         content = readFile(p("pages_dir") + "/" + id + ".md.html");
     }
 
-    String inferTitle(String id){
+    private String inferTitle(String id){
         Pattern pattern = Pattern.compile("(_|-)", Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(id);
         return matcher.find() ? Inflector.capitalize(matcher.replaceAll(" ")) : id;

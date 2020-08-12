@@ -16,7 +16,7 @@ and how to perform dependency injection.
 
 ## Get example app
 
-Clone the app: [ActiveWeb simple example](https://github.com/javalite/activeweb-simple/)
+Clone the app: [ActiveWeb simple example](https://github.com/javalite/javalite-examples/blob/master/activeweb-simple/)
 
 ~~~~
 git clone git@github.com:javalite/activeweb-simple.git

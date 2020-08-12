@@ -37,6 +37,14 @@ The output is located:
 After that, need to reload the blog: http://javalite.io/blog/reload
 
 
+## How to refresh content 
+
+The article will refresh automatically in dev env. 
+However, the properties files and breadcrumbs will not. 
+In order for  properties files to be picked up, 
+do `mvn clean install` under module `content`. 
+
+
     
 
  

@@ -80,6 +80,9 @@
 ### Main components
 
 * [Controllers](controllers)
+* [Processing requests with dynamic parameters ](processing_web_requests_dynamic_parameters)
+* [Processing requests with implicit conversion](processing_web_requests_implicit_conversion)
+* [Processing requests with validation](processing_web_requests_with_validation)
 * [Views](views)
 * [Routing](routing)
 * [Context parameters](context-parameters)

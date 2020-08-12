@@ -19,7 +19,7 @@ test environment. For more on testing, see ... [Generating views in tests](testi
 ActiveWeb uses FreeMarker as a templating engine. Please see [Freemarker](http://freemarker.org/) for more information.
 
 The framework provides a pluggable architecture that allows to integrate any other engine, such as Velocity, as long as it
-implements [TemplateManager](https://github.com/javalite/activeweb/blob/master/activeweb/src/main/java/org/javalite/activeweb/TemplateManager.java)
+implements [TemplateManager](https://github.com/javalite/javalite/blob/master/activeweb/src/main/java/org/javalite/activeweb/TemplateManager.java)
 interface.
 
 ## FreeMarker configuration

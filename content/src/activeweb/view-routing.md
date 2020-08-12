@@ -31,7 +31,7 @@ where `xyz` is just a bogus example, which will work nonetheless!
 ## Format detection in controller
 
 Inside the controller, you can use a method `format()` n order to detect what format was requested by the client.
-Here is an example from [ActiveWeb-Simple](https://github.com/javalite/activeweb-simple) example project:
+Here is an example from [ActiveWeb-Simple](https://github.com/javalite/javalite-examples/blob/master/activeweb-simple/) example project:
 
 ~~~~ {.java  .numberLines}
 public class BooksController extends AppController {
@@ -55,7 +55,7 @@ you have to call these methods to prevent your view wrapped in an HTML layout.
 
  If you are building a true webservice, you will not need any layouts. You can then override the `getLayout()` methods
  in your controller and simply return `null` from it. Do it in a a super class of all controllers to concentrate this in one place.
-Please, see such an example: [APIController](https://github.com/javalite/activeweb-rest/blob/master/src/main/java/app/controllers/APIController.java).
+Please, see such an example: [APIController](https://github.com/javalite/javalite-examples/blob/master/activeweb-rest/src/main/java/app/controllers/APIController.java).
 
 
 ## HTML View

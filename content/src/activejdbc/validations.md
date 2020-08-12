@@ -4,12 +4,75 @@
 
 
 
-ActiveJDBC has a validation framework that is somewhat reminiscent of ActiveRecord validation.
+JavaLite has a validation framework that is somewhat reminiscent of ActiveRecord validation.
+Unlike ActiveRecord, it can  be applied to regular Java classes as well as ActiveJDBC models.
+
+In all cases, the rules are declared inside the classes of objects to be validated using a static blockl (models)  or using 
+a constructor (standard classes).  
+
 The validation rules in ActiveJDBC are described in a model definition in a declarative way.
 
-## Validation of attribute presence
+## Validation Framework principles
 
-In order to add any validation, a model will declare a static bloc at the top of a class definition, and invoke all
+### Inheritance - based
+
+
+Unlike other frameworks for validation, the JavaLite Validation framework is based on inherited 
+functionality, which might be limiting  in some cases. 
+
+###  Declarative style
+
+The validation rules are provided in a declarative manner, not programmatic  in most cases.
+For example, if you need to validate a presence of a value (that an attribute of an object is not null), 
+simply declare: `validatePrecenseOf("first_name")`, and the framework will be generating corresponding messages 
+during a validation phase.     
+
+### Exception - free
+
+The Validation framework, unlike others, will not generate any exceptions, but rather will accumulate validation erros and
+and make them available for developers, such as: 
+
+```java
+person.validate();
+if(person.isValid()){
+    //happy path
+}else{
+   Errors errors = person.errors(); 
+   System.out.println(errors.get("first_name"));
+}
+```
+
+where `first_name` is a name of an attribute of a `person` object. 
+ 
+ 
+
+
+## Validation support for simple classes 
+
+If you want to use the validation  framework with any simple class, you would inherit a `VaslidationSupport` class: 
+ 
+
+~~~~ {.java  .numberLines}
+public class Person extends ValidationSupport {
+
+    private String firstName;
+
+    public Person(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        validatePresenceOf("firstName", "lastName");
+    }
+}
+~~~~ 
+
+
+## List of validators
+
+TODO: 
+
+## Model declarations
+
+In order to add any validation, a model will declare a static block at the top of a class definition, and invoke all
 validation declaration inside this block:
 
 ~~~~ {.java  .numberLines}
@@ -23,16 +86,23 @@ public class Person extends Model {
 The method `Model.validatePresenceOf()` takes a vararg of strings, which allows to specify a list of attribute names
 (column names) in one line of code.
 
-## Triggering of validation
 
-triggering of validations causes these actions:
+## Simple Java classes: Triggering of validation
 
--   Call `Model.validate()` method (will not throw exception)
--   Call `Model.save()` method (will not throw exception)
--   Call `Model.saveIt()` method (will throw exception)
--   Call `Model.createIt()` method (will throw exception)
+TODO
+
+## Models: Triggering of validation
+
+The following methods will invoke validation:
+
+*   Call `Model.validate()` method (will not throw exception)
+*   Call `Model.save()` method (will not throw exception)
+*   Call `Model.saveIt()` method (will throw exception)
+*   Call `Model.createIt()` method (will throw exception)
 
 The semantic difference of `save()` and `saveIt()` methods is described on the [Record creation](record_creation) page.
+
+If course, you can also just call `model.validate()` method directly.
 
 ## Consuming validation messages
 
@@ -47,7 +117,7 @@ String firstNameError = errors.get("first_name");
 
 As you can imagine, it is very easy to write web applications with form validation using this ActiveJDBC.
 
-## Usage in a web application
+## Usage in a web application (non-ActiveWeb)
 
 This is a pseudo-code of a web application controller where a form was submitted:
 
@@ -77,26 +147,8 @@ In a JSP:
 ...
 ~~~~
 
-In [ActiveWeb](activeweb):
+> For more information on using validations and conversions in web requests, [see here](web-requests) 
 
-~~~~ {.java  .numberLines}
-@POST
-public void create(){
-    Book book = new Book();
-    book.fromMap(params1st());
-    if(!book.save()){
-        flash("message", "Something went wrong, please  fill out all fields");
-        flash("errors", book.errors());
-        flash("params", params1st());
-        redirect(BooksController.class, "new_form");
-    }else{
-        flash("message", "New book was added: " + book.get("title"));
-        redirect(BooksController.class);
-    }
-}
-~~~~
-
-Here is a link to controller: [ActiveWeb BookController](https://github.com/javalite/activeweb-simple/blob/master/src/main/java/app/controllers/BooksController.java#L45)
 
 ## Customized messages for different attributes
 
@@ -239,7 +291,7 @@ String errorMessage = p.errors().get("custom_error");
 Validators are executed during validation in the order they were added to the model. The `validate()` method is
 called from `save()` and `saveIt()`
 
-## Customization of messages
+## Resource bundles
 
 ActiveJDBC provides stock messages (one for each validator), which may not be appropriate for all projects.
 For instance, `validatePresenseOf()` provides a simple message "value is missing". In order to customize these messages,
