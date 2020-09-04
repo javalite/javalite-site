@@ -4,8 +4,8 @@
 
 
 
-ActiveJDBC provides two classes for connection management: [Base.java](http://javalite.github.io/activejdbc/org/javalite/activejdbc/Base.html)
-and [DB.java](http://javalite.github.io/activejdbc/snapshot/org/javalite/activejdbc/DB.html).
+ActiveJDBC provides two classes for connection management: [Base.java](https://javalite.github.io/activejdbc/snapshot/org/javalite/activejdbc/Base.html)
+and [DB.java](https://javalite.github.io/activejdbc/snapshot/org/javalite/activejdbc/DB.html).
 
 ## Thread connection propagation
 
