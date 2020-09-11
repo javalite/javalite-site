@@ -17,7 +17,7 @@
                 </div>
             </div>
             <div class="col-xs-12 col-md-6 h-sm-40">
-                <h4 class="block-h block-h-icon"><a href="https://github.com/javalite/javalite-site/content">Help us improve this page</a></h4>
+                <h4 class="block-h block-h-icon"><a href="https://github.com/javalite/javalite-site/tree/master/content/src">Help us improve this page</a></h4>
                 <span class="footer-donate">
                     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                         <input type="hidden" name="cmd" value="_donations">
