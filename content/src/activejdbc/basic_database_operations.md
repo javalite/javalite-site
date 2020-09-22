@@ -25,7 +25,7 @@ The goal of this page is to familiarize the  user with the  rest of the function
 > Moving forward,  all examples will be based on the Base class, considering only  one database connection. The reader can extrapolate the below examples for the `DB` class 
 if  more than one connection isd needed.
 
-The rest of the documentation (all other  pages) related to database access  describe a "Higher layer" access to data, see the [documentaion](/documentation) page.  
+The rest of the documentation (all other  pages) related to database access  describe a "Higher layer" access to data, see the [documentation](/documentation) page.  
  
 
 ## Batch operations 
@@ -69,7 +69,7 @@ public void shouldDoX(){
     Base.findAll("select * from users").dump(); 
 }
 ```
-The line `Base.findAll("select * from users").dump();` will simply pull all records from the `users` table and will dump them to a STDIO. 
+The line `Base.findAll("select * from users").dump();` will simply pull all records from the `users` table and will dump them to STDIO. 
 
 This is a convenience method for  testing. 
    
