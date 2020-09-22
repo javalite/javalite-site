@@ -2,12 +2,11 @@
    <h1>JavaLite Documentation</h1>
 </div>
 
-
 ## [ActiveJDBC](activejdbc)
 
 
 ### Basics
-
+* [Basic database operations](basic_database_operations)
 * [Setters and getters](setters_and_getters)
 * [English inflections](english_inflections)
 * [Runtime discovery](runtime_discovery)
