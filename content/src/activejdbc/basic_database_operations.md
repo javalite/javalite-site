@@ -22,7 +22,7 @@ The differences and similarities of the `Base` and `DB` are described  on the  [
 
 The goal of this page is to familiarize the  user with the  rest of the functions of these two classes. 
  
-> Moving forward,  all examples will be based on the Base class, considering only  one database connection. The reader can extrapolate the below exampoles for the `DB` class 
+> Moving forward,  all examples will be based on the Base class, considering only  one database connection. The reader can extrapolate the below examples for the `DB` class 
 if  more than one connection isd needed.
 
 The rest of the documentation (all other  pages) related to database access  describe a "Higher layer" access to data, see the [documentaion](/documentation) page.  
@@ -33,7 +33,7 @@ The rest of the documentation (all other  pages) related to database access  des
 See description on a page [Batch operations](/batch_operations)    
 
 
-## Java 7 try-with-resources usage
+## Try-with-resources usage
 
 When accessing a database,  you can run into exceptions (surprise!). While `Base` and `DB`  classes wrap all checked JDBC exceptions into subclasses of 
 a `RuntimeException`, there is still a need to manage exceptions. Additionally, the DB class is an instance  of a Closeable interface, and the `Base.open(..)` methods
