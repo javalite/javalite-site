@@ -49,7 +49,7 @@ This does not require explanation.
 
 ## Complex batch operations
 
-ActiveJDBC provides a way to actually batch destructive operations into a single batch.
+ActiveJDBC provides a way to combine destructive operations into a single batch.
 In some cases it can provide significant performance improvements
 
 ~~~~ {.java  .numberLines}
