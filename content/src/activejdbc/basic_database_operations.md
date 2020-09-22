@@ -139,6 +139,10 @@ Just like the `firstCell`, this method will ignore any other values beyond a fir
 The base and DB classes also provide  an API  for [batch operations](/batch_operations). 
 
 
+## JavaDoc
+
+For more information, follow to the [Base JavaDoc](http://javalite.github.io/2.3.2-j8/org/javalite/activejdbc/Base.html).
+ 
 
 
 
