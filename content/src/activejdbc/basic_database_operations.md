@@ -11,7 +11,7 @@ ActiveJDBC architecture has two layers:
 * Lower layer: Base  and DB classes
 * Higher layer: Models as described in the [ActiveRecord pattern](https://en.wikipedia.org/wiki/Active_record_pattern).
 
-The first layer is provided by two classes, `oreg.javalite.activejdbc.Base` and `oreg.javalite.activejdbc.DB`.
+The first layer is provided by two classes, `org.javalite.activejdbc.Base` and `org.javalite.activejdbc.DB`.
   
 These two classes  mirror each other and provide two functions:
 
