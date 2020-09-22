@@ -111,7 +111,7 @@ Base.find("select first_name, last_name from really_large_table", ....).with(new
              }
          });
 ```  
-See more at:[Base.find](http://javalite.github.io/2.3.2-j8/org/javalite/activejdbc/DB.html#find-java.lang.String-org.javalite.activejdbc.RowListener-). 
+See more at: [Base.find](http://javalite.github.io/2.3.2-j8/org/javalite/activejdbc/DB.html#find-java.lang.String-org.javalite.activejdbc.RowListener-). 
 
 
 ## Reading a single value 
