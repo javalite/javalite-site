@@ -22,8 +22,8 @@ The differences and similarities of the `Base` and `DB` are described  on the  [
 
 The goal of this page is to familiarize the  user with the  rest of the functions of these two classes. 
  
-> Moving forward,  all examples will be based on the Base class, considering only  one database connection. The reader can extrapolate the below examples for the `DB` class 
-if  more than one connection isd needed.
+> Moving forward,  all examples will be based on the Base class, considering only  one database connection. 
+The reader can extrapolate the below examples for the `DB` class if  more than one connection isd needed.
 
 The rest of the documentation (all other  pages) related to database access  describe a "Higher layer" access to data, see the [documentation](/documentation) page.  
  
