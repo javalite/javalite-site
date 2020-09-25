@@ -38,6 +38,7 @@
 * [Generation of Xml](generation_of_xml)
 * [Generation of Json](generation_of_json)
 
+
 ### Miscellaneous
 
 * [Sharding](sharding)
@@ -48,7 +49,7 @@
 * [Clob Support and caching](clob_support_and_caching)
 * [Optimistic locking](optimistic_locking)
 * [Transactions](transactions)
-* [Logging](logging)
+
 * [IN Clause](in_clause)
 * [Delete cascade](delete_cascade)
 * [Inheritance](inheritance)
@@ -66,6 +67,14 @@
 * [Netbeans Integration](netbeansIntegration)
 * [Eclipse Integration](eclipseIntegration)
 * [Intellij Idea Integration ](intellij_idea_integration)
+
+## Logging
+
+* [ActiveJDBC Logging](activejdbc_logging)
+* [Logging Context](logging_context)
+* [Log4j Configuration](log4j_configuration)
+* [Log4j2 Configuration](log4j2_configuration)
+* [ActiveWeb logging](activeweb_logging)
 
 ## [ActiveWeb](activeweb)
 
