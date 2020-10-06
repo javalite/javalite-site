@@ -17,7 +17,7 @@ for tables, etc, as long as you provide CQL - compatible code in your migration 
 
 The JavaLite DBMigrator plugin  uses its own JDBC driver developed strictly to  add Cassandra support to the plugin. 
 
-> The JDBC driver is NOT a real JDBC driver and has implementation that strictly supports the DBMigrator plugin and nothing else. 
+> The JDBC driver is NOT a real JDBC driver. Its implementation strictly supports the DBMigrator plugin and nothing else. 
 Using this driver outside the DBMigrator plugin to might cause bodily injury.    
 
 ## Example configuration   
