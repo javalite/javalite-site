@@ -38,11 +38,15 @@
 * [Generation of Xml](generation_of_xml)
 * [Generation of Json](generation_of_json)
 
+### Database migrations
+
+* [Database migrations](database_migrations)
+* [Cassandra migrations](cassandra_migrations)
+
 
 ### Miscellaneous
 
 * [Sharding](sharding)
-* [DB migrations](database_migrations)
 * [Lifecycle Callbacks](lifecycle_callbacks)
 * [Statistical reporting](statistics_reporting)
 * [Caching](caching)
@@ -104,7 +108,6 @@
 
 * [Testing](testing)
 * [Running in development mode](running_in_development_mode)
-* [DB Migrations](database_migrations)
 * [Deploying to Heroku](deploying_to_heroku)
 * [Developing on a Mac](mac_osx)
 

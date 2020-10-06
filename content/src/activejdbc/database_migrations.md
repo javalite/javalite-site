@@ -6,11 +6,18 @@
 Database migrations is a process of making changes to database schema during a development process.
 See <a href="http://en.wikipedia.org/wiki/Schema_migration">Schema_migration</a> to understand better what database migrations are.
 
-## DB-Migrator is Maven plugin  
+## DBMigrator is Maven plugin  
 
 Current implementation of this project is a Maven Plugin.
 Future releases might include a standalone library for non-Maven projects.
 
+## Supported databases
+
+The DBMigrator plugin is really independent of ActiveJDBC and suports pretty much any 
+SQL database, since the developer types code for individual migrations. 
+
+> As long as the database itself supports JDBC, it is supported by this migrator. 
+  
 ## Supported languages
 
 Starting with version 2.3.3-j8-SNAPSHOT for Java8 and 3.0-SNAPSHOT for Java 11 and above, migrations can be written in:
@@ -18,8 +25,8 @@ Starting with version 2.3.3-j8-SNAPSHOT for Java8 and 3.0-SNAPSHOT for Java 11 a
 * SQL 
 * Groovy
 
+See the next section  for instructions  on creating new migration files.  
 
-See the next section  for instructions  on creationg new migration files.  
 
 ## Writing a new migration
 
@@ -177,7 +184,7 @@ do so here: <a href="http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22db-migrat
 
 ## Property file configuration
 
-> Using a property file for connection configuration is a preferred way of configuring JavaLite DB-Migrator.
+> Using a property file for connection configuration is a preferred way of configuring JavaLite DBMigrator.
 
 If you have only one database, it does not make much difference which method of configuration you use.
 However if you have a test and development databases locally (recommended), then you also have staging and
@@ -261,7 +268,7 @@ For example, there are 5 environments defined on this file:
 
 ### Executing for environment
 
-Executing DB-Migrator is described above in section [All goals](#all-goals).
+Executing DBMigrator is described above in section [All goals](#all-goals).
 The plugin will run migrations for environments `test` and `development` because they are configured in the
 `<properties>` section (see above). In order to override this behavior, you need to override the `<environments>`
 property from a command line like this:
@@ -351,7 +358,7 @@ where user, password and driver are configured as project properties.
  After that, you can configure the plugin to execute multiple databases by adding many executions.
  Here is example of one execution:
 
-~~~~ {.xml  .numberLines}
+~~~~ {.xml  .numberLines}   
 <plugin>
     <groupId>org.javalite</groupId>
     <artifactId>db-migrator-maven-plugin</artifactId>
@@ -400,7 +407,7 @@ of the same plugin.
 
 ## Migration records
 
-DB-Migrator maintains a record of executing migrations in table `SCHEMA_VERSION` and will not execute the same migration twice:
+DBMigrator maintains a record of executing migrations in table `SCHEMA_VERSION` and will not execute the same migration twice:
 
 ~~~~ {.prettyprint}
 mysql> select * from schema_version;
@@ -495,11 +502,14 @@ If you had more migration files defined that have not yet been migrated, they al
 
 ### Step 3 alternative
 
-Since the DB-Migrator is a Maven plugin and is executed during a normal build, every time you run a project build with:
+Since the DBMigrator is a Maven plugin and is executed during a normal build, every time you run a project build with:
 
 ~~~~
 mvn clean install
 ~~~~
 
-your new migrations will be executed against target databases. This means you do not need to execute 
+The DBMigrator will trigger during a `validate` phase. 
+
+Your new migrations will be executed against target databases. This means you do not need to execute 
 `mvn db-migrator:migrate` during a normal development process. 
+
