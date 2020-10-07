@@ -21,7 +21,6 @@
             <ul class="nav navbar-nav">
                 <li <#if id?? && id == "blog">class="active"</#if>><a href="/blog">Blog</a></li>
                 <li <#if id?? && id == "documentation">class="active"</#if>><a href="/documentation">Documentation</a></li>
-                <li <#if id?? && id == "javadoc">class="active"</#if>><a href="/javadoc">JavaDocs</a></li>
                 <li <#if id?? && id == "sources">class="active"</#if>><a href="/sources">Sources</a></li>
                 <li <#if id?? && id == "support">class="active"</#if>><a href="/support">Support</a></li>
                 <li <#if id?? && id == "releases">class="active"</#if>><a href="/releases">Releases</a></li>
