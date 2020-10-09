@@ -233,7 +233,7 @@ Polymorphic Association information is not sourced from the schema, but rather c
 
 Please, see: [Polimorphic Associations](polymorphic_associations).
 
-### Static Metadata Generation
+## Static Metadata Generation
 
 
 Dynamic runtime discovery is great, since you do not need to configure anything and the 
