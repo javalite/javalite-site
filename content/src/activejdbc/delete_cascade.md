@@ -148,3 +148,39 @@ The current record is deleted, as well as immediate children.
 ### Many to many associations and deleteCascadeShallow()
 
 The current record is deleted, as well as links in a join table. Nothing else is deleted.
+
+## Interactions with databases
+
+The above features are strictly the framework and not the database behavior.
+If the database schema has `ON DELETE CASCADE` or other constraints, then they will work independently. 
+The main mantra of JavaLite is to not implement what is already implemented by a low level layer.  
+
+There are implications to understand here. For example, you have tables `USERS` and `ADDRESSES` where a single user 
+may have more than one address. The `ADDRESSES` table also has an `ON DELETE CASCADE` FK defined.   
+If you delete  a user, the database, not the framework will be responsible to delete child records.
+
+
+This might create an unpleasant situation: 
+
+```java
+User user =- User,.getById(123);
+List<Address> addresses = user.getAll("address");
+Base.exec("delete from users where id = ? ", user.getId());
+```
+
+At this point, you do not have the corresponding records in the `ADDRESSES` table, but they are still referenced in memory. 
+If you try to change and save any of the address models,  you will get an exception from the database, 
+since their IDs are now missing. 
+
+
+> [Caching](/caching) in ActiveJDBC works at a model level. This means that in the scenario above, you might have stale records 
+in cache.  
+
+If ActiveJDBC caching is enabled, it is advised to purge corresponding models just in case: 
+
+```java
+User.purgeCache();
+Address.purgeCache();
+``` 
+
+Developers need to be aware of this behavior. 
