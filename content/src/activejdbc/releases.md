@@ -16,7 +16,7 @@
 Can be downloaded from the Sonatype Repo: [https://oss.sonatype.org/content/repositories/snapshots/org/javalite/](https://oss.sonatype.org/content/repositories/snapshots/org/javalite/).
 
 * Java 11 version: 3.0-SNAPSHOT, JavaDoc: [3.0-SNAPSHOT](http://javalite.github.io/3.0-SNAPSHOT)
-* Java 8 version: 2.3.3-j8-SNAPSHOT, JavaDoc: [2.3.3-j8-SNAPSHOT](http://javalite.github.io/2.3.3-j8-SNAPSHOT/)
+* Java 8 version: 2.5-j8-SNAPSHOT, JavaDoc: [2.5-j8-SNAPSHOT](http://javalite.github.io/2.5-j8-SNAPSHOT/)
 
 If you want to pull JavaLite snapshots,  add the snapshot repositories  to your pom: 
 
