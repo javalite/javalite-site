@@ -151,13 +151,18 @@ Here is the [JavaDoc](http://javalite.github.io/2.3.2-j8-SNAPSHOT/)
 
 Currently the following databases are supported:
 
-* SQLServer
-* MySQL
-* Oracle
-* PostgreSQL
+* SQLServer 2019 
+* MariaDB (10.5.8) 
+* Oracle (11.2.0.2.0)
+* PostgreSQL (13.1)
 * H2
 * SQLite3
-* DB2
+* DB2 (11.5.4.0) 
+
+> The versions listed above are what we use for testing. There is no reason to think that ActiveJDBC does not support 
+> a different version, after all it is a [pass-through framework](/pass_through_framework). 
+
+
 
 Adding a new dialect is relatively easy. Just look at commits on this branch: [h2integration](https://github.com/javalite/javalite/tree/h2integration)
 
