@@ -21,7 +21,7 @@ public class Person{}
 
 defines a model automatically mapped to a table PEOPLE according to [English Inflections](english_inflections). 
 
-If this model's data is sharded across multiple tables (say named 'shard1_people', 'shard2_people', etc.), then 
+If this model's data is sharded across multiple tables (say named `shard1_people`, `shard2_people`, etc.), then 
 you can change the table  name before using a model like this: 
 
 ~~~~ {.java .numberLines}
