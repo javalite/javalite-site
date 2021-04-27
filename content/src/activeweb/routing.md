@@ -280,6 +280,23 @@ The class `app.config.RouteConfig` is recompiled and reloaded in development env
 [Running in development mode](running_in_development_mode) for more information.
 
 
+### Esclusive mode (since v3.0)
+
+Generally, any custom route does not preclude any standard or Restful routes, meaning if you have a custom route to a resource, a standard route to the same or any other resource is still working. That can be turned off like this: 
+
+
+~~~~ {.java  .numberLines}
+public class RouteConfig extends AbstractRouteConfig {
+    public void init(AppContext appContext) {
+        exclusiveMode();
+        route("/myposts").to(PostsController.class);
+    }
+}
+~~~~
+
+If you call the `exclusiveMode()` method in the `RouteConfig` as above, only the routes listed in this class will work. Per example above, only access to `/myposts` will work. Any other request will result in a 404 response.
+
+
 ## Excluding some routes
 
 Exclusion of some routes is necessary for most applications. Static content, such as CSS, HTML, images, etc. should not be
