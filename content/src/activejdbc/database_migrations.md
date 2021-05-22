@@ -400,6 +400,36 @@ with this plugin to migrate databases in different environments, such as product
 * `dropSql` - drop database SQL, defaults to `drop database {$your database}`
 
 
+### Variable substitutions in migrations
+
+Sometimes you need more flexibility, for instance tables might have different names in different environments. This can be accomplished with Variable substitutions in your migrations and replacing these variables during migrations. For instance you could have a variable in the migration defined like this: 
+
+```
+CREATE TABLE {{books-table}} (
+    id INT NOT NULL PRIMARY KEY,
+    isbn VARCHAR(20) NOT NULL UNIQUE,
+    title VARCHAR(256) NOT NULL
+);
+```
+
+Then the plugin could be configured to substitute values like `{{books-table}}` from a properties file: 
+
+<plugin>
+    <groupId>org.javalite</groupId>
+    <artifactId>db-migrator-maven-plugin</artifactId>
+    <configuration>
+        <mergeProperties>${project.basedir}/src/merge-vals.properties</mergeProperties>
+    </configuration>
+</plugin>
+
+The file itself is a just a standard Java properties file: 
+
+```
+books-table=books
+```
+
+You can configure to use different property files in different executions, but  that is just stanmdard Maven plugin configuration. 
+
 ### Maintaining multiple databases
 
 You can use Maven profiles to maintain multiple database, as well as specific configuration for different executions
