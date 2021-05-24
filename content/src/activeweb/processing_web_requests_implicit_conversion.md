@@ -15,7 +15,7 @@ there is a more advanced set of features to process the
 
 Controller action classes can take  a single argument, such that this argument has private members that match the request properties. 
 
-For instance,  you may have a controller that looks looks like this: 
+For instance,  you may have an argument that looks looks like this: 
 
 ~~~~ {.java  .numberLines}
 public class Person {
