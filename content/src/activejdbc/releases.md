@@ -4,7 +4,7 @@
 
 ## Roadmap for v 3.0
 
-Main goal: implementation will run on OpenJDK 16 and up.
+Main goal: implementation will run on OpenJDK 16.
 
 * [#1119 - Add LocalDate and LocalDateTime suppport - LocalDate added to class Convert.](https://github.com/javalite/javalite/issues/1119)
 * [#1104 - Add ability to provide variables in migrations](https://github.com/javalite/javalite/issues/1104)
