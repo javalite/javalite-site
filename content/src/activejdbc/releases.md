@@ -2,6 +2,27 @@
    <h1>Releases</h1>    
 </div>
 
+## Roadmap for v 3.0
+
+Main goal: implementation will run on OpenJDK 16 and up.
+
+* [#1119 - Add LocalDate and LocalDateTime suppport - LocalDate added to class Convert.](https://github.com/javalite/javalite/issues/1119)
+* [#1104 - Add ability to provide variables in migrations](https://github.com/javalite/javalite/issues/1104)
+* [#1115 - Fix a failing test in SessionFacadeSpec](https://github.com/javalite/javalite/issues/1115)
+* [#1116 - org.javalite.app_config.EnvironmentSpec cannot be executed in Windows](https://github.com/javalite/javalite/issues/1116)
+* [#1114 - Provide a better exception login into the application log file in case Guice prevents from starting the app](https://github.com/javalite/javalite/issues/1114)
+* [#1108 - Change  Mysql driver to latest MariaDB](https://github.com/javalite/javalite/issues/1108)
+* [#1106 - ActiveWeb: The HTTP method is incorrectly defined if another annotation exists for the action.](https://github.com/javalite/javalite/issues/1106)
+* [#1078 - Prevent unexpected session creation - update tests & fix one error](https://github.com/javalite/javalite/issues/1078)
+* [#1094 - ActiveWeb: Implement an exclusive routing flag](https://github.com/javalite/javalite/issues/1094)
+* [#1101 - Base.find(String query, Object... params) is fetching the whole resultset instead of streaming it](https://github.com/javalite/javalite/issues/1101)
+* [#1103 - kotlin-maven-plugin chokes on Java 16 - disconnecting the module activejdbc-kt for now](https://github.com/javalite/javalite/issues/1103)
+* [#1089 - Async command serialization might fail in some cases (jdk 16)](https://github.com/javalite/javalite/issues/1089)
+* [#1120 - Implement all methods of Map in AppConfig](https://github.com/javalite/javalite/issues/1120)
+* [#1119 - Add LocalDate and LocalDateTime suppport](https://github.com/javalite/javalite/issues/1119)
+* [#1040 - Implement automatic generation of Open API / Swagger documentation from JavaDoc comments in controllers](https://github.com/javalite/javalite/issues/1040)
+
+
 
 ## Current release 2.4-j8
 
