@@ -22,7 +22,7 @@ def processMarkDown(String src, String target){
             println "Processing ${it.absolutePath}"
 
             def proc = System.getProperty("os.name").equals("Linux") ?
-                    "pandoc -f markdown -t html   ${it.absolutePath} -o ${target}/${it.name}.html".execute() :
+                    "pandoc -f markdown -t html  --html-q-tags ${it.absolutePath} -o ${target}/${it.name}.html".execute() :
                     "pandoc -f markdown -t html   \"${it.absolutePath}\" -o \"${target}/${it.name}.html\"".execute()
 
             proc.waitForProcessOutput(System.out, System.err)
