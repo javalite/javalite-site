@@ -57,7 +57,7 @@ GET               /books                app.controllers.BooksController   index 
 GET               /books/new\_form      app.controllers.BooksController   new_form    return an HTML form for creating a new book 
 POST              /books                app.controllers.BooksController   create      create a new book                          
 GET               /books/id             app.controllers.BooksController   show        display a specific book                    
-GET               /books/id/edit\_form  app.controllers.BooksController   edit_form   return an HTML form for editing a books     
+GET               /books/id/edit\_form  app.controllers.BooksController   edit_form   return an HTML form for editing a book
 PUT               /books/id             app.controllers.BooksController   update      update a specific book                     
 DELETE            /books/id             app.controllers.BooksController   destroy     delete a specific book                     
 
