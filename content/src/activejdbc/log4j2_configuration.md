@@ -77,7 +77,7 @@ Here is an example:
 ~~~~
 
 
-Let's decompose  this configuration: 
+Let\'s decompose  this configuration: 
 
 * Line 2 contains this attribute: ` packages="org.javalite.logging"`, which is necessary to
 use if you  want the output in JSON format, which is achieved by `JsonLog4j2Layout` configured on 

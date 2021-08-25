@@ -36,7 +36,8 @@
 ### Webservices support
 
 * [Generation of Xml](generation_of_xml)
-* [Generation of Json](generation_of_json)
+* [Generation of JSON from Models](generation_of_json)
+* [Working with JSON](json)
 
 ### Database migrations
 
@@ -95,6 +96,7 @@
 * [Processing requests with dynamic parameters ](processing_web_requests_dynamic_parameters)
 * [Processing requests with implicit conversion](processing_web_requests_implicit_conversion)
 * [Processing requests with validation](processing_web_requests_with_validation)
+* [Processing requests with JSON validation](processing_web_requests_with_json_validation)
 * [Views](views)
 * [Routing](routing)
 * [Context parameters](context-parameters)

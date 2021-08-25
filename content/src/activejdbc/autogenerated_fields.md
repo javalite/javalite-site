@@ -21,7 +21,7 @@ This column will be updated each time there is an update to an existing record v
 
 ## Example
 
-Let's say we have an empty table PEOPLE:
+Let\'s say we have an empty table PEOPLE:
 
 +----+------------+-----------+---------------------+----------------------+
 | id | first_name | last_name | created_at          | updated_at           |

@@ -232,7 +232,7 @@ In the example above,   a layout is overridden only for a specific action.
 One of the built-in tags is a `WrapTag`. It allows to wrap some page content in a given layout.
 A wrapper layout is just another template that includes a content placeholder `${page_content}`.
 
-Example: let's say somewhere on the view you have this  snippet:  
+Example: let\'s say somewhere on the view you have this  snippet:  
  
 ```html
 

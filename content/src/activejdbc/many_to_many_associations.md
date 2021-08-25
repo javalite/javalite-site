@@ -13,7 +13,7 @@ binds entities from the first two tables.
 
 ## Example tables
 
-Let's see an example based on doctors and patients.
+Let\'s see an example based on doctors and patients.
 
 Table `DOCTORS`:
 
@@ -51,7 +51,7 @@ Table `DOCTORS_PATIENTS`:
 +----+-----------+------------+
 
 Looking at this table, we can discern that a doctor with ID = 1 (John Doe) has two patients:
-Jim Cary and John Carpenter. However Jim Cary also sees doctor Hellen Hunt. Let's see what kind of a
+Jim Cary and John Carpenter. However Jim Cary also sees doctor Hellen Hunt. Let\'s see what kind of a
 support ActiveJDBC provides when it comes to many to many relationship. We will use the same table we outlined above.
 
 ## Writing models
@@ -104,7 +104,7 @@ The framework will generate appropriate select statement and execute it across t
 
 ### Conditional selection of related objects
 
-ActiveJDBC provides a way to filter related objects. Let's say that there are tables `PROGRAMMERS`, `PROJECTS`
+ActiveJDBC provides a way to filter related objects. Let\'s say that there are tables `PROGRAMMERS`, `PROJECTS`
 and `PROGRAMMERS_PROJECTS`. In this case, we will create a model `Assignments` that will represent the join table:
 
 ~~~~ {.java  .numberLines}

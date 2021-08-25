@@ -1,5 +1,5 @@
 <div class="page-header">
-   <h1>Generation of json</h1>
+   <h1>Generation of JSON from Models</h1>
 </div>
 
 

@@ -13,7 +13,7 @@ Built with Oracle JDK v 8.x. Should work with OpenJDK too.
 * 2019-06-04 17:48:13 -0500 ipolevoy [#860 Travis build broken in MojoIntegrationEnvironmentsSpec - adding debug info](https://github.com/javalite/activejdbc/commit/4c632fa3)
 * 2019-06-01 12:10:32 -0400 creatorfromhell [Fix Styling issues.](https://github.com/javalite/activejdbc/commit/b83f7590)
 * 2019-06-01 12:09:27 -0400 creatorfromhell [Fix Project Import Settings.](https://github.com/javalite/activejdbc/commit/18f6fe35)
-* 2019-06-01 12:03:42 -0400 creatorfromhell [Let's make the properties file configurable.](https://github.com/javalite/activejdbc/commit/9c402bd0)
+* 2019-06-01 12:03:42 -0400 creatorfromhell [Let\'s make the properties file configurable.](https://github.com/javalite/activejdbc/commit/9c402bd0)
 * 2019-05-23 16:18:20 -0500 ipolevoy [#858 Upgrade com.fasterxml.jackson.core:jackson-databind to 2.9.9 due to a security issue](https://github.com/javalite/activejdbc/commit/8978a1fc)
 * 2019-05-03 09:17:38 -0500 Igor Polevoy [Merge pull request #854 from cschabl/gradle-plugin-removal](https://github.com/javalite/activejdbc/commit/25c5ac92)
 * 2019-04-01 18:26:29 +0200 cschabl [Merge remote-tracking branch 'origin/gradle-plugin-removal' into gradle-plugin-removal](https://github.com/javalite/activejdbc/commit/39c01fe3)

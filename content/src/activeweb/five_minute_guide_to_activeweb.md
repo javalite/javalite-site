@@ -35,7 +35,7 @@ For more information, please see [Routing](routing)
 
 ## Action mapping convention
 
-If the URL contained more information, let's say:
+If the URL contained more information, let\'s say:
 
 ~~~~ {.prettyprint}
 http://localhost:8080/testapp/greeting/hello

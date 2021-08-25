@@ -58,7 +58,7 @@ DB as many times as this getter is called.
 
 ## Improve efficiency with eager loading
 
-Let's consider an example where an ORM could unexpectedly generate a huge number of inefficient queries:
+Let\'s consider an example where an ORM could unexpectedly generate a huge number of inefficient queries:
 
 ~~~~ {.java  .numberLines}
 List<Address> addresses = Address.findAll();

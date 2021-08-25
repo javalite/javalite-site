@@ -94,7 +94,7 @@ For more examples, refer to tests: [CompositePkTest.java](https://github.com/jav
 
 If your table cannot provide a primary key column named `id` (for instance due to corporate naming standards), you can override it with `@IdName` annotation.
 
-Example: let's say you have a table PEOPLE:
+Example: let\'s say you have a table PEOPLE:
 
 ~~~~ {.sql}
 CREATE TABLE people (

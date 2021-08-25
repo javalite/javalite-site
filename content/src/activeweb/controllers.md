@@ -351,7 +351,7 @@ they support all HTTP methods and annotations.
 
 ## Other responses
 
-Sometimes, it's better to parse a template, and get the result as a string for further processing. For example, when sending emails, so you can write the email body in a template, feed the template with the required parameter map, and let the template engine do the hard work for you. That can be achieved with the `merge()` method from any Controller or Filter:
+Sometimes, it is better to parse a template, and get the result as a string for further processing. For example, when sending emails, so you can write the email body in a template, feed the template with the required parameter map, and let the template engine do the hard work for you. That can be achieved with the `merge()` method from any Controller or Filter:
 
 ~~~~ {.java  .numberLines}
 public class EmailController extends AppController{

@@ -62,7 +62,7 @@ methods to perform a task at a certain time.
 
 ## Usage
 
-Let's say we have a model `User`:
+Let\'s say we have a model `User`:
 
 ~~~~ {.java  .numberLines}
 public class User extends Model{}

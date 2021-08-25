@@ -63,7 +63,7 @@ It simply contains the boolean value that shows if this controller is [Restful](
   
 ### Usage
 
-Generally you might use the `environment` parameter to expose a special feature in let's say development environment:  
+Generally you might use the `environment` parameter to expose a special feature in let\'s say development environment:  
 
 
 ```html

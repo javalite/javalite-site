@@ -368,5 +368,9 @@ The properties file needs to be at the root of classpath.
 > <strong>Limitation:</strong> Redis cache manager does not support `CacheManager#flush(CacheEvent)` with value 'ALL'.
 
 
+## External cache considerations 
+
+Reset cache when starting a nodes in a cluster - responsibility of a project. 
+
 
 
