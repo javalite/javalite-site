@@ -564,7 +564,7 @@ There is a "locale" argument you can pass to the tag to override the locale from
 ActiveWeb provides a `<@link_to/>`. This tag generates an HTML anchor tag and is capable of regular HTML links, as
 well as Ajax capability.
 
-> Unobtrusive `link_to` functions require that you have the [aw.js](https://github.com/javalite/kitchensink/blob/master/src/main/webapp/js/aw.js) script  file loaded on your page. 
+> Unobtrusive `link_to` functions require that you have the [aw.js](https://github.com/javalite/javalite-examples/blob/master/kitchensink/src/main/webapp/js/aw.js) script  file loaded on your page. 
 
 ### Attributes for configuration
 
