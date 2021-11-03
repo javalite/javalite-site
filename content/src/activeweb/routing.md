@@ -151,6 +151,8 @@ ActiveWeb defines three types of segments:
 -   Static
 -   User (or dynamic)
 
+> I case of a custom routing, the automatic detection of fromat of a template is not engaged. A developer needs to manually use a `render("index.xml")` method inside a controller.
+
 ### Built-in segments
 
 ActiveWeb defines three built-in segments:
