@@ -61,6 +61,7 @@ Main goal: implementation will run on OpenJDK 16.
 
 * Java version: 8
 * Date: Apr 06, 2021.  
+* [Release notes](https://github.com/javalite/javalite/releases/tag/javalite-2.5-j8).
 * [Download from Maven Central](https://search.maven.org/search?q=g:org.javalite).
 * [JavaDoc 2.5-j8](http://javalite.github.io/2.5-j8/)
 
