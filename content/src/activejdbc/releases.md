@@ -56,11 +56,12 @@ Main goal: implementation will run on OpenJDK 16.
 * [#1120 - Implement all methods of Map in AppConfig](https://github.com/javalite/javalite/issues/1120)
 * [#1119 - Add LocalDate and LocalDateTime suppport](https://github.com/javalite/javalite/issues/1119)
 * [#1040 - Implement automatic generation of Open API / Swagger documentation from JavaDoc comments in controllers](https://github.com/javalite/javalite/issues/1040)
+* [ #1177 - Implement a Websockets support](https://github.com/javalite/javalite/issues/1177)
 
 
 ## Release 2.6-j8
 
-> NOTE The main reason for making this release is to fix the Log4j vulnerability bug [1175](https://github.com/javalite/javalite/issues/1175)
+> NOTE This release fixes the Log4j vulnerability bug [1175](https://github.com/javalite/javalite/issues/1175). For more changes, please see the release notes (link below). 
 
 * Java version: 8
 * Date: Dec 21, 2021.  
