@@ -58,7 +58,7 @@ Main goal: implementation will run on OpenJDK 16.
 * [#1040 - Implement automatic generation of Open API / Swagger documentation from JavaDoc comments in controllers](https://github.com/javalite/javalite/issues/1040)
 
 
-## Release 2.5-j8
+## Release 2.6-j8
 
 > NOTE The main reason for making this release is to fix the Log4j vulnerability bug [1175](https://github.com/javalite/javalite/issues/1175)
 
