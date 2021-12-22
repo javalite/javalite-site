@@ -57,6 +57,21 @@ Main goal: implementation will run on OpenJDK 16.
 * [#1119 - Add LocalDate and LocalDateTime suppport](https://github.com/javalite/javalite/issues/1119)
 * [#1040 - Implement automatic generation of Open API / Swagger documentation from JavaDoc comments in controllers](https://github.com/javalite/javalite/issues/1040)
 
+
+## Release 2.5-j8
+
+> NOTE The main reason for making this release is to fix the Log4j vulnerability bug [1175](https://github.com/javalite/javalite/issues/1175)
+
+* Java version: 8
+* Date: Dec 21, 2021.  
+* [Release notes](https://github.com/javalite/javalite/releases/tag/javalite-2.6-j8).
+* [Download from Maven Central](https://search.maven.org/search?q=g:org.javalite).
+* [JavaDoc 2.6-j8](http://javalite.github.io/2.6-j8/)
+
+
+http://javalite.github.io/2.6-j8/
+
+
 ## Release 2.5-j8
 
 * Java version: 8
