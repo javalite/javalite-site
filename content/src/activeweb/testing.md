@@ -104,9 +104,9 @@ public class HelloControllerSpec extends ControllerSpec {
 }
 ~~~~
 
-In a snippet above on line `request()...`, the method `request()` allows to simulate a call to a controller `HomeController`.
+In a snippet above on line `request()...`, the method `request()` allows to simulate a call to a controller `HelloController`.
 
-> This line reads: Send GET request to `HomeController`, action `index`.
+> This line reads: Send GET request to `HelloController`, action `index`.
 
 There are other methods for sending different HTTP methods:
 
