@@ -38,6 +38,7 @@
 * [Generation of Xml](generation_of_xml)
 * [Generation of JSON from Models](generation_of_json)
 * [Working with JSON](json)
+* [Open API Support](open_api)
 
 ### Database migrations
 
