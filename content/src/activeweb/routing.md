@@ -275,6 +275,22 @@ It works similarly to standard routing with packages:
 
 Path: `/api/v2/authors/9` will map to a custom route: `route("/api/v2/{controller}/{aut_id}").to(AuthorsController.class).action("findById");`
 
+
+### Custom routing with Java code
+
+If all else fails you can develop our own code to match a request to a controller/action: 
+
+route("/{action}/greeting/{name}").to(HelloController.class).get();
+
+```java
+route( new RouteBuilder(new RouteBuilderController(), "index"){
+    protected boolean matches(String requestUri, ControllerPath controllerPath, HttpMethod httpMethod)  {
+        return requestUri.contains("one");// this is a place for custom logic to tell ActiveWeb if this request matches. 
+    }
+});
+```
+
+
 ### RouteConfig reloaded
 
 The class `app.config.RouteConfig` is recompiled and reloaded in development environment in case a system property
