@@ -4,7 +4,7 @@
 </div>
 
 
-AppConfig is a small configuration library which provides properties for applications deployed to different environments.
+AppConfig is a configuration library which provides properties for applications deployed to different environments.
 For example, your local file storage is located at `/home/joe/project1/files` in a development environment (laptop), 
 but in production it is located on the NFS: `/opt/project1/files`. 
 
@@ -59,7 +59,7 @@ System.out.println(p("phrase"));
 > Note: The order of properties does not matter.
  
 
-## Setting an environment 
+## Setting up for multiple environments 
 
 `AppConfig` allows configuration of applications that is specific for different deployment environments. Applications have 
 environment-specific files, whose names follow this pattern: `environment.properties`, where environment is a name of a 
@@ -69,8 +69,8 @@ You can also provide a global file, properties from which will be loaded in all 
 
 > In all cases the files need to be on the classpath under directory/package `/app_config`.
 
-Environment-specific file will have an "environment" part of the file name match to an environment 
-variable called `ACTIVE_ENV`. Such configuration is easy to achieve in Unix shell:
+Environment-specific file will have an "environment" part of the file name match to an __environment 
+variable__ called __ACTIVE_ENV__. Such configuration is easy to achieve in Unix shell:
 
 ~~~~ {.java  .numberLines}
 export ACTIVE_ENV=test
@@ -92,6 +92,8 @@ A typical file structure
         
 ```
 
+> If you are using Maven, then the location will be: `src/main/resources/app_config`.
+
 
 
 Global property file will always be loaded, while others will be loaded depending on the value of `ACTIVE_ENV`` environment variable.
@@ -111,4 +113,14 @@ Here is an example (add this to the startup script for your app):
 The `app_config.properties` system property points to a file specific to that computer (local box, server, etc.). 
 If a specific property is provided in the properties file loaded on classpath, and the same property is also found in 
  the file `app_config.properties`, then the value loaded from a local file overrides the one loaded from classpath.
-  
+
+
+## Environment Variables Override
+
+Sometimes the DevOps will not allow production passwords and other sensitive data to placed in the source code. 
+If this is the case, any property defined in the environment - specific  property files can be overridden by a 
+system environment variable. As long as that environment variable named exactly the same as the property, its value 
+will  override the one from any file (internal or external). 
+
+> Watch out for log lines like: "Duplicate property defined...." in case of a duplicate value override. It will tell you
+> exactly where the new value is coming from and which property source is overridden with it.  
