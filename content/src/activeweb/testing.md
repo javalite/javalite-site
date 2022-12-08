@@ -21,9 +21,11 @@ While ActiveWeb tests are written with the popular JUnit testing framework, trad
 with [JSpec](jspec)
 
 
-## DBSpec for database tests
+## Database transaction management
 
-You can use a class [DBSpec](testing_with_db_connection) for writing tests that depend on a database connection. 
+The behavior of  database  transactions in ActiveWeb is identical to the [DBSpec](/testing_with_db_connection#transaction-management). 
+class.  
+
 
 ## Configuration
 
@@ -46,14 +48,6 @@ public class DbConfig extends AbstractDBConfig {
 Specifically, line 4 configures a test connection to be used during the test.
 In case you work with multiple databases, you can configure more than one test connection. DBSpec will open all connections
 marked for tests.
-
-## Transaction management
-
-`DBSpec` will  start a transaction before the test and roll it back after the test, ensuring that you have:
-
-1. integrity of data in your test
-2. no conflicts of data in the database from one test to another
-
 
 ## ControllerSpec - test your controllers
 

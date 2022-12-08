@@ -74,6 +74,53 @@ In the test above the `DBSpec` will:
 This class allows for tests to run in a "clean room" environment, since the database tables  will always have a 
 clean state for any given test.
   
+
+## Transaction Management 
+
+
+### Default transaction management 
+
+> By default, the test  will automatically set your database connection
+to `autocommit = false`, hence starting  a single transaction. When the test
+is complete,  this transaction will be automatically rolled back. 
+
+This is done so that your tests would not leave any remaining data in the 
+database, since it might interfere with other tests and might even generate 
+unpredictable results. 
+
+The `autocommit = false` is a default behavior in all JavaLite tests.
+
+> The flag `autocommit = false`  will ensure that the JavaLite test will not attempt to automatically: 1. Start a transaction and 2. Rollback said transaction after the test. 
+
+
+Basically, this flag ensures that the test will be operating with `autocommit = false`. 
+
+### Custom transaction management
+
+In some cases, the code that you test, commits transactions. In such cases,
+rolling back transactions at the end of a test is meaningless, since
+the database has already been polluted with some data. In such cases you 
+want to manage transactions manually. To do so, you can disable this feature: 
+
+
+~~~~ {.java  .numberLines}
+public class SomeTestSpec extends DBSpec {
+    @Test
+    public void shouldExecuteSomeTest() {
+        setRollback(false); //<<----- this feature will set `autocommit = true` on the test database connection.   
+    }
+}
+~~~~
+
+The code above turns off any attempts of JavaLite to manage transactions, so you are on your own! 
+
+
+> Keep in mind, you will need to manually cleanup the data from the database  after the test. 
+
+
+
+
+
 ## Non-models database  tests 
   
 While `DBSpec` is usually used to test models, it can be used to test any code that require a database connection.
