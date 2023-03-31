@@ -68,7 +68,7 @@ public class Person extends ValidationSupport {
 
 ## List of validators
 
-TODO: 
+For more information on the validators, please see: [Validators](/validators)
 
 ## Model declarations
 
@@ -89,7 +89,28 @@ The method `Model.validatePresenceOf()` takes a vararg of strings, which allows 
 
 ## Simple Java classes: Triggering of validation
 
-TODO
+Here is an example of a non-model Java bean that can use the JavaLite validation: 
+
+```java
+public class Person extends ValidationSupport {
+    private String firstName, lastName, dob, email;
+    public Person(String firstName, String lastName, String dob, String email) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dob = dob;
+        this.email = email;
+        validatePresenceOf("firstName", "lastName");
+    }
+}
+```
+then, the validation can trigger the same as for a model: 
+```java
+Person person = new Person("John", "Doe", null, null);
+System.out.println(person.isValid());// prints true
+```
+
+For more examples, you can see the [ValidationSpec](https://github.com/javalite/javalite/blob/master/javalite-common/src/test/java/org/javalite/validation/ValidationSpec.java). 
+
 
 ## Models: Triggering of validation
 
