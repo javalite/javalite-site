@@ -4,7 +4,7 @@
 
 
 As a general rule of thumb, instrumentation needs to be performed in case you run a program or a test that will execute ActiveJDBC models.
-See [Instrumentation](instrumentation) for more detail. Basically Instrumentation adds special byte code instructions for ActiveJDBC to
+See [Instrumentation](/instrumentation) for more detail. Basically Instrumentation adds special byte code instructions for ActiveJDBC to
 operate properly. Since Eclipse automatically recompiles classes each time you make modifications and save, it can blow away
 instrumented ActiveJDBC classes and replace them with just compiled versions (non-instrumented).
 

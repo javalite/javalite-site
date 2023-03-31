@@ -14,6 +14,55 @@ techniques to achieve this goal.
 By convention, the primary key name is `id`. If your table has a surrogate primary key column with a name `id`,
 you do not have to do anything.
 
+## Key Type
+
+The key type _is a number_ that would be able to be auto- incremented 
+by the database without the involvement of the framework. 
+
+Most JDBC drivers support returning a generated key as part of an insert in a single operation, 
+making this method of auto-generated keys very efficient. ActiveJDBC uses:
+[Statement.html.getGeneratedKeys()](https://docs.oracle.com/javase/7/docs/api/java/sql/Statement.html#getGeneratedKeys())
+under the hood to set the ID of the currently inserted model. 
+ 
+Here are some SQL examples showing how to setup surrogate primary keys: 
+
+### MySQL: 
+
+```sql
+CREATE TABLE people (id  int(11) NOT NULL auto_increment PRIMARY KEY, name VARCHAR(56));
+```
+
+### Oracle 
+
+```sql
+CREATE TABLE people (id  NUMBER NOT NULL, first_name VARCHAR(56) NOT NULL, last_name VARCHAR(56);
+
+ALTER TABLE people ADD CONSTRAINT people_pk PRIMARY KEY ( id );
+
+CREATE SEQUENCE people_seq START WITH 1 INCREMENT BY 1;
+
+CREATE OR REPLACE TRIGGER people_trigger
+    BEFORE INSERT ON people REFERENCING
+    NEW AS new
+    OLD AS old
+    FOR ACH ROW
+    begin
+select coalesce(:new.id, people_seq.nextval) into :new.id from dual;
+end;
+```
+
+### Postgres
+
+```sql
+CREATE TABLE people (id serial PRIMARY KEY, first_name VARCHAR(56) NOT NULL, last_name VARCHAR(56));
+```
+
+### MSSQL 
+
+```sql
+CREATE TABLE people (id INT IDENTITY PRIMARY KEY, name VARCHAR(56) NOT NULL, last_name VARCHAR(56));
+```
+
 ## Key Value, insert vs update
 
 When a new object of a model is created, the value of the ID is obviously `null`.

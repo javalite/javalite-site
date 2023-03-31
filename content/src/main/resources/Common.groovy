@@ -12,7 +12,7 @@ def copyProperties(String src, String target){
         if(it.name.endsWith('.properties')) {
             Files.copy(Paths.get(it.canonicalPath), Paths.get(target +"/"+  it.name))
         }
-    }
+        }
 }
 
 def processMarkDown(String src, String target){
