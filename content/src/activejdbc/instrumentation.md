@@ -125,6 +125,13 @@ Please follow this link for more information: [Standalone instrumentation exampl
 
 ... is very fast - for large projects (50 - 60 models) it takes about 5 - 7 seconds, and for small projects (under 10 models) usually within a second or two.
 
+
+## Speed of startup
+
+Another aspect of the Instrumentation plugin  is that it can be configured to speed up the start of the applicaiton. 
+For more information, see: [Runtime Discovery](/runtime_discovery). 
+
+
 ## Build time classpath
 
 The Instrumentation package is required on the classpath only during instrumentation and not required during runtime. For Maven projects, this is automatic. Even it finds its way to the runtime classpath, it will do no harm except for increasing the size.
