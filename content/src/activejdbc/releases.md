@@ -6,38 +6,20 @@
 
 Can be downloaded from the Sonatype Repo: [https://oss.sonatype.org/content/repositories/snapshots/org/javalite/](https://oss.sonatype.org/content/repositories/snapshots/org/javalite/).
 
-* Java 16 version: 3.0-SNAPSHOT, JavaDoc: [3.0-SNAPSHOT](http://javalite.github.io/3.0-SNAPSHOT)
-* Java 8 version: 2.7-j8-SNAPSHOT, JavaDoc: [2.7-j8-SNAPSHOT](http://javalite.github.io/2.7-j8-SNAPSHOT/)
+* Java 16 version: 3.1-SNAPSHOT
+* Java 8 version: 2.7-j8-SNAPSHOT
 
-If you want to pull JavaLite snapshots,  add the snapshot repositories  to your pom: 
+If you want to pull JavaLite snapshots,  add the snapshot repositories  to your pom:
 
-```xml
-<repositories>
-    <repository>
-        <id>sonatype_snapshots</id>
-        <name>Sonatype Snapshots</name>
-        <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-        <snapshots>
-            <enabled>true</enabled>
-            <updatePolicy>always</updatePolicy>
-        </snapshots>
-    </repository>
-</repositories>
-<pluginRepositories>
-    <pluginRepository>
-        <id>sonatype_plugin_snapshots</id>
-        <name>Sonatype Snapshots</name>
-        <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-        <snapshots>
-            <enabled>true</enabled>
-        </snapshots>
-    </pluginRepository>
-</pluginRepositories>
-         
-```
- 
 
-## Roadmap for v 3.0
+## Release 3.0
+
+* Java version: 16
+* Date: April 19, 2023.
+* [Release notes](https://github.com/javalite/javalite/releases/tag/javalite-3.0).
+* [Download from Maven Central](https://central.sonatype.com/search?q=g%3Aorg.javalite&smo=true&namespace=org.javalite&sort=published).
+* [JavaDoc 3.0](http://javalite.github.io/3.0/)
+
 
 Main goal: implementation will run on OpenJDK 16.
 
@@ -58,6 +40,11 @@ Main goal: implementation will run on OpenJDK 16.
 * [#1040 - Implement automatic generation of Open API / Swagger documentation from JavaDoc comments in controllers](https://github.com/javalite/javalite/issues/1040)
 * [ #1177 - Implement a Websockets support](https://github.com/javalite/javalite/issues/1177)
 
+## Release 3.4-j11
+
+* Java version: 11
+* Date: January 5, 2023
+* [Release notes](https://github.com/javalite/javalite/releases/tag/javalite-3.4-j11).
 
 ## Release 2.6-j8
 

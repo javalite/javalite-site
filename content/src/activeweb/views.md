@@ -783,7 +783,7 @@ code:
 <@form controller="simple" action="index" method="put">
      <input type="hidden" name="blah">
 </@>
-~~~~ {.html  .numberLines}
+~~~~
 
 will generate this HMTL:
 
@@ -816,6 +816,20 @@ will generate:
     <input type="hidden" name="blah">
 </form>
 ~~~~
+
+### Disabling method simulation
+
+In some cases, you need to disable the automated processing of the `_method` parameter due to 
+the [Servlet Implementation Issues](https://github.com/javalite/javalite/issues/1300). In a case like that, you 
+can add the following to parameter your `web.xml` file:
+
+```xml
+<init-param>            
+  <param-name>disable_method_simulation</param-name>            
+  <param-value>true</param-value>
+</init-param>
+```
+Just place this inside  your `filter` tag. 
 
 ## Debug tag
 
