@@ -11,6 +11,14 @@ Can be downloaded from the Sonatype Repo: [https://oss.sonatype.org/content/repo
 
 If you want to pull JavaLite snapshots,  add the snapshot repositories  to your pom:
 
+## Release 3.5-j11
+
+* Java version: 11
+* Date: July 30, 2024.
+* [Download from Maven Central](https://central.sonatype.com/search?q=g%3Aorg.javalite&smo=true&namespace=org.javalite&sort=published).
+
+The purpose of this release is to back-port a single issue [Handle concurrent calls to getModelRegistry #1291](https://github.com/javalite/javalite/pull/1291)
+to Java 11. 
 
 ## Release 3.0
 
