@@ -98,6 +98,7 @@
 * [Processing requests with implicit conversion](processing_web_requests_implicit_conversion)
 * [Processing requests with validation](processing_web_requests_with_validation)
 * [Processing requests with JSON validation](processing_web_requests_with_json_validation)
+* [Processing requests with Java Records](processing_web_requests_with_java_records)
 * [Views](views)
 * [Routing](routing)
 * [Context parameters](context-parameters)
